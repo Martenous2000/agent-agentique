@@ -350,14 +350,16 @@ function Comparison() {
       <div className="mx-auto max-w-6xl px-6">
         <div className="text-center">
           <SectionLabel>Comparaison</SectionLabel>
-          <h2 className="mx-auto mt-6 max-w-3xl text-4xl font-bold tracking-tight md:text-5xl">
-            Pourquoi déléguer à un agent IA{" "}
-            <span className="bg-gradient-to-r from-[color:var(--brand-light)] to-white/40 bg-clip-text text-transparent">
-              bat tout le reste
+          <h2 className="mx-auto mt-6 text-4xl font-bold tracking-tight">
+            <span className="text-white">Pourquoi un </span>
+            <span className="bg-gradient-to-b from-[#cfe0ff] via-[#7eb0ff] to-[#3b82f6] bg-clip-text text-transparent">
+              système IA que vous
+              <br />
+              possédez bat tout le reste
             </span>
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-white/65">
-            Outils SaaS, setters, ghostwriters… nous avons tout testé. Voici ce que vous y gagnez réellement en remplaçant vos setters par l'agent IA.
+            Outils SaaS, setters, ghostwriters… nous avons tout testé. Voici ce que vous y gagnez réellement.
           </p>
         </div>
         <div className="mt-14 grid gap-6 md:grid-cols-3">
@@ -384,18 +386,18 @@ function Comparison() {
             ]}
           />
           <CompCard
-            title="LinkedAgent"
-            sub="Délégation 100% à l'agent IA"
+            title="Système Agentique High Ticket™"
+            sub="Le système que vous installez et possédez"
             highlight
             items={[
               "~26 h/semaine économisées (prospection, DM, posts…)",
-              "Tout-en-un — prospection, contenu, DM, commentaires",
-              "Contrôle total sur la qualité, la provenance et VOS critères de qualif",
+              "Tout-en-un — prospection, contenu, DM, qualification",
+              "Contrôle total sur la qualité et VOS critères de qualif",
               "Aucun risque de ban (process avancé)",
             ]}
             extra={{
               icon: <Trophy className="h-4 w-4 text-yellow-400" />,
-              text: "Contrat de garantie & paiement APRÈS résultats",
+              text: "Formation complète + 1 appel coaching/semaine inclus",
             }}
           />
         </div>
