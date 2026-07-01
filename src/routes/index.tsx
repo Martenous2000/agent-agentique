@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import {
   Sparkles,
   Calendar,
@@ -565,15 +565,31 @@ function Row({ k, v }: { k: string; v: string }) {
 }
 
 function BookCall() {
+  useEffect(() => {
+    const script = document.createElement("script");
+    script.src = "https://app.iclosed.io/assets/widget.js";
+    script.async = true;
+    const container = document.getElementById("iclosed-widget-container");
+    if (container && !container.querySelector("script[src='https://app.iclosed.io/assets/widget.js']")) {
+      container.appendChild(script);
+    }
+  }, []);
+
   return (
-    <section className="py-24">
+    <section id="rdv" className="py-24">
       <div className="mx-auto max-w-4xl px-6 text-center">
         <SectionLabel>Réservez un appel</SectionLabel>
-        <h2 className="mt-6 text-4xl font-bold tracking-tight md:text-5xl">Discutons de vos résultats</h2>
+        <h2 className="mt-6 text-4xl font-bold tracking-tight md:text-5xl">
+          Discutons de <span className="bg-gradient-to-b from-[#cfe0ff] via-[#7eb0ff] to-[#3b82f6] bg-clip-text text-transparent">vos résultats</span>
+        </h2>
         <p className="mx-auto mt-4 max-w-xl text-white/65">
-          30 minutes pour valider que LinkedAgent est fait pour votre offre — et obtenir votre devis personnalisé. Pas de pression, pas de pitch agressif. Juste un échange honnête.
+          30 minutes pour valider que le système est fait pour votre offre — et voir comment il s'installe chez vous.
         </p>
-        <div className="mt-10"><a href="https://app.iclosed.io/e/visionaryplanspro/session-visionary-plans" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 rounded-full bg-[color:var(--brand)] px-7 py-3.5 text-sm font-semibold text-white shadow-[0_0_40px_-10px_var(--brand)] transition hover:brightness-110">Réserver mon appel <ArrowRight className="h-4 w-4" /></a></div>
+        <div className="mt-10">
+          <div id="iclosed-widget-container" className="mx-auto overflow-hidden rounded-2xl border border-[color:var(--brand)]/30 bg-[#0a0e17]/80 shadow-[0_0_80px_-30px_var(--brand)]" style={{ width: "100%", maxWidth: "800px", height: "620px" }}>
+            <div className="iclosed-widget" data-url="https://app.iclosed.io/e/visionaryplanspro/session-visionary-plans" title="Session Visionary Plans™" style={{ width: "100%", height: "100%" }} />
+          </div>
+        </div>
       </div>
     </section>
   );
