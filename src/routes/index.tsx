@@ -351,46 +351,92 @@ function Comparison() {
         <div className="text-center">
           <SectionLabel>Comparaison</SectionLabel>
           <h2 className="mx-auto mt-6 max-w-3xl text-4xl font-bold tracking-tight md:text-5xl">
-            Pourquoi déléguer à un agent IA <span className="bg-gradient-to-r from-[color:var(--brand-light)] to-white/40 bg-clip-text text-transparent">bat tout le reste</span>
+            Pourquoi déléguer à un agent IA{" "}
+            <span className="bg-gradient-to-r from-[color:var(--brand-light)] to-white/40 bg-clip-text text-transparent">
+              bat tout le reste
+            </span>
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-white/65">
             Outils SaaS, setters, ghostwriters… nous avons tout testé. Voici ce que vous y gagnez réellement en remplaçant vos setters par l'agent IA.
           </p>
         </div>
         <div className="mt-14 grid gap-6 md:grid-cols-3">
-          <CompCard title="Outils / SaaS / LLM" sub="Gojiberry, wallaxy, ChatGPT…" items={[
-            "Leads peu qualifiés (souvent inactifs sur LinkedIn)",
-            "Abonnements qui s'accumulent — facture salée",
-            "Rien n'est personnalisé, peu de contexte = résultats médiocres",
-            "Risque de ban du compte (connexion d'API, outils tiers…)",
-          ]} bad />
-          <CompCard title="Setter / Ghostwriter" sub="Freelances, agences…" items={[
-            "Cher et rarement de qualité",
-            "Pas scalable à grande échelle",
-            "Manager une équipe & recruter = perte de temps",
-            "Turnover constant — il faut tout réexpliquer",
-          ]} bad />
-          <CompCard title="LinkedAgent" sub="Délégation 100% à l'agent IA" highlight items={[
-            "~26 h/semaine économisées (prospection, DM, posts…)",
-            "Tout-en-un — prospection, contenu, DM, commentaires",
-            "Contrôle total sur la qualité, la provenance et VOS critères de qualif",
-            "Aucun risque de ban (process avancé)",
-          ]} extra={{ icon: <Trophy className="h-4 w-4 text-yellow-400" />, text: "Contrat de garantie & paiement APRÈS résultats" }} />
+          <CompCard
+            title="Outils / SaaS / LLM"
+            sub="Gojiberry, wallaxy, ChatGPT…"
+            bad
+            items={[
+              "Leads peu qualifiés (souvent inactifs sur LinkedIn)",
+              "Abonnements qui s'accumulent — facture salée",
+              "Rien n'est personnalisé, peu de contexte = résultats médiocres",
+              "Risque de ban du compte (connexion d'API, outils tiers…)",
+            ]}
+          />
+          <CompCard
+            title="Setter / Ghostwriter"
+            sub="Freelances, agences…"
+            bad
+            items={[
+              "Cher et rarement de qualité",
+              "Pas scalable à grande échelle",
+              "Manager une équipe & recruter = perte de temps",
+              "Turnover constant — il faut tout réexpliquer",
+            ]}
+          />
+          <CompCard
+            title="LinkedAgent"
+            sub="Délégation 100% à l'agent IA"
+            highlight
+            items={[
+              "~26 h/semaine économisées (prospection, DM, posts…)",
+              "Tout-en-un — prospection, contenu, DM, commentaires",
+              "Contrôle total sur la qualité, la provenance et VOS critères de qualif",
+              "Aucun risque de ban (process avancé)",
+            ]}
+            extra={{
+              icon: <Trophy className="h-4 w-4 text-yellow-400" />,
+              text: "Contrat de garantie & paiement APRÈS résultats",
+            }}
+          />
         </div>
       </div>
     </section>
   );
 }
 
-function CompCard({ title, sub, items, bad, highlight, extra }: { title: string; sub: string; items: string[]; bad?: boolean; highlight?: boolean; extra?: { icon: React.ReactNode; text: string } }) {
+function CompCard({
+  title,
+  sub,
+  items,
+  bad,
+  highlight,
+  extra,
+}: {
+  title: string;
+  sub: string;
+  items: string[];
+  bad?: boolean;
+  highlight?: boolean;
+  extra?: { icon: React.ReactNode; text: string };
+}) {
   return (
-    <div className={`rounded-2xl border p-7 ${highlight ? "border-[color:var(--brand)]/50 bg-[color:var(--brand)]/[.04] shadow-[0_0_60px_-20px_var(--brand)]" : "border-white/10 bg-white/[.02]"}`}>
+    <div
+      className={`rounded-2xl border p-7 ${
+        highlight
+          ? "border-[color:var(--brand)]/50 bg-[color:var(--brand)]/[.04] shadow-[0_0_60px_-20px_var(--brand)]"
+          : "border-white/10 bg-white/[.02]"
+      }`}
+    >
       <h3 className="text-xl font-bold">{title}</h3>
       <p className="mt-1 text-sm text-white/50">{sub}</p>
       <ul className="mt-6 space-y-3.5">
         {items.map((i) => (
           <li key={i} className="flex items-start gap-3 text-sm">
-            <span className={`mt-0.5 flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-full ${bad ? "bg-red-500/15 text-red-400" : "bg-emerald-500/15 text-emerald-400"}`}>
+            <span
+              className={`mt-0.5 flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-full ${
+                bad ? "bg-red-500/15 text-red-400" : "bg-emerald-500/15 text-emerald-400"
+              }`}
+            >
               {bad ? <X className="h-3 w-3" /> : <Check className="h-3 w-3" />}
             </span>
             <span className="text-white/80">{i}</span>
@@ -399,11 +445,15 @@ function CompCard({ title, sub, items, bad, highlight, extra }: { title: string;
         {extra && (
           <li className="flex items-start gap-3 text-sm">
             <span className="mt-0.5 flex h-5 w-5 flex-shrink-0 items-center justify-center">{extra.icon}</span>
-            <span className="text-white/90 font-medium">{extra.text}</span>
+            <span className="font-medium text-white/90">{extra.text}</span>
           </li>
         )}
       </ul>
-      {highlight && <div className="mt-6"><Cta className="w-full">Réserver un appel</Cta></div>}
+      {highlight && (
+        <div className="mt-6">
+          <Cta className="w-full">Réserver un appel</Cta>
+        </div>
+      )}
     </div>
   );
 }
