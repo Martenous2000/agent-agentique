@@ -233,9 +233,9 @@ function TrustBar() {
 
 function Testimonials() {
   const reviews = [
-    { c: "HE", n: "Houdaifa Elanoui", r: "Fondateur · Agence SaaS", color: "from-blue-500 to-blue-700", q: "24 appels qualifiés le premier mois sans avoir à gérer un seul setter. J'ai signé plusieurs clients sans problèmes !" },
-    { c: "JM", n: "Jean-Pierre Martin", r: "Coach Business", color: "from-purple-500 to-purple-700", q: "J'avais essayé gojiberry, bereach, un setter… rien ne marchait vraiment. LinkedAgent a remplacé tout ça et j'ai enfin un flux constant d'appels. Une folie furieuse." },
-    { c: "SP", n: "Sarah Piowtroski", r: "Consultant Tech", color: "from-cyan-500 to-cyan-700", q: "Je gagne 25 h par semaine. Le contenu, les DM, la prospection - tout est géré sans setter. Je me concentre uniquement sur les calls." },
+    { c: "HE", n: "Houdaifa Elanoui", r: "Fondateur · Agence SaaS", color: "from-blue-500 to-blue-700", linkedin: "https://www.linkedin.com/in/houdaifa-el-aouni/", q: "24 appels qualifiés le premier mois sans avoir à gérer un seul setter. J'ai signé plusieurs clients sans problèmes !" },
+    { c: "JM", n: "Jean-Pierre Martin", r: "Coach Business", color: "from-purple-500 to-purple-700", linkedin: "https://www.linkedin.com/in/jean-pierre-martin-5953102a9/", q: "J'avais essayé gojiberry, bereach, un setter… rien ne marchait vraiment. LinkedAgent a remplacé tout ça et j'ai enfin un flux constant d'appels. Une folie furieuse." },
+    { c: "SP", n: "Sarah Piotrowski", r: "Consultant Tech", color: "from-cyan-500 to-cyan-700", linkedin: "https://www.linkedin.com/in/sarahpiotrowski/", q: "Je gagne 25 h par semaine. Le contenu, les DM, la prospection - tout est géré sans setter. Je me concentre uniquement sur les calls." },
   ];
   return (
     <section className="py-24">
@@ -255,10 +255,19 @@ function Testimonials() {
               <p className="text-white/85 leading-relaxed">"{r.q}"</p>
               <div className="mt-6 flex items-center gap-3 border-t border-white/5 pt-4">
                 <div className={`flex h-10 w-10 items-center justify-center rounded-full bg-gradient-to-br ${r.color} text-sm font-bold`}>{r.c}</div>
-                <div>
+                <div className="flex-1 min-w-0">
                   <div className="font-semibold">{r.n}</div>
                   <div className="text-xs text-white/50">{r.r}</div>
                 </div>
+                <a
+                  href={r.linkedin}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full border border-white/10 bg-white/5 text-white/70 transition hover:bg-white/10 hover:text-white"
+                  aria-label={`Profil LinkedIn de ${r.n}`}
+                >
+                  <Linkedin className="h-4 w-4" />
+                </a>
               </div>
             </div>
           ))}
