@@ -228,9 +228,9 @@ function TrustBar() {
 
 function Testimonials() {
   const reviews = [
-    { c: "AR", n: "Antoine R.", r: "Fondateur · Agence SaaS", color: "from-blue-500 to-blue-700", q: "24 appels qualifiés le premier mois sans avoir à gérer un seul setter. J'ai signé plusieurs clients sans problèmes !" },
-    { c: "CB", n: "Camille B.", r: "Coach Business", color: "from-purple-500 to-purple-700", q: "J'avais essayé gojiberry, bereach, un setter… rien ne marchait vraiment. LinkedAgent a remplacé tout ça et j'ai enfin un flux constant d'appels. Une folie furieuse." },
-    { c: "ML", n: "Maxime L.", r: "Consultant Tech", color: "from-cyan-500 to-cyan-700", q: "Je gagne 25 h par semaine. Le contenu, les DM, la prospection - tout est géré sans setter. Je me concentre uniquement sur les calls." },
+    { c: "HE", n: "Houdaifa Elanoui", r: "Fondateur · Agence SaaS", color: "from-blue-500 to-blue-700", q: "24 appels qualifiés le premier mois sans avoir à gérer un seul setter. J'ai signé plusieurs clients sans problèmes !" },
+    { c: "JM", n: "Jean-Pierre Martin", r: "Coach Business", color: "from-purple-500 to-purple-700", q: "J'avais essayé gojiberry, bereach, un setter… rien ne marchait vraiment. LinkedAgent a remplacé tout ça et j'ai enfin un flux constant d'appels. Une folie furieuse." },
+    { c: "SP", n: "Sarah Piowtroski", r: "Consultant Tech", color: "from-cyan-500 to-cyan-700", q: "Je gagne 25 h par semaine. Le contenu, les DM, la prospection - tout est géré sans setter. Je me concentre uniquement sur les calls." },
   ];
   return (
     <section className="py-24">
@@ -482,7 +482,7 @@ function BookCall() {
         <p className="mx-auto mt-4 max-w-xl text-white/65">
           30 minutes pour valider que LinkedAgent est fait pour votre offre — et obtenir votre devis personnalisé. Pas de pression, pas de pitch agressif. Juste un échange honnête.
         </p>
-        <div className="mt-10"><Cta>Réserver mon appel <ArrowRight className="h-4 w-4" /></Cta></div>
+        <div className="mt-10"><a href="https://app.iclosed.io/e/visionaryplanspro/session-visionary-plans" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 rounded-full bg-[color:var(--brand)] px-7 py-3.5 text-sm font-semibold text-white shadow-[0_0_40px_-10px_var(--brand)] transition hover:brightness-110">Réserver mon appel <ArrowRight className="h-4 w-4" /></a></div>
       </div>
     </section>
   );
