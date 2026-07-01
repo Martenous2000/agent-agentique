@@ -105,7 +105,11 @@ function Hero() {
           Offre de lancement — places limitées
         </span>
         <h1 className="mt-8 text-5xl font-bold leading-[1.05] tracking-tight md:text-7xl">
-          Le seul agent IA qui<br />garantit des appels qualifiés
+          <span className="text-white">Le seul agent IA qui</span>
+          <br />
+          <span className="bg-gradient-to-b from-[#cfe0ff] via-[#7eb0ff] to-[#3b82f6] bg-clip-text text-transparent">
+            garantit des appels qualifiés
+          </span>
         </h1>
         <p className="mx-auto mt-8 max-w-2xl text-lg text-white/70">
           Le système Agentique High Ticket™ qui remplit votre agenda d'appels qualifiés 24h/24 — même quand vous dormez. Sans ads, sans contenu à créer, sans setter, sans DM à gérer : <span className="font-semibold text-white">100% en autopilote</span>.
