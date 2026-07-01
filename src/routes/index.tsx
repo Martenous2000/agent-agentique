@@ -467,20 +467,23 @@ function Guarantee() {
         <div className="relative rounded-3xl border border-[color:var(--brand)]/40 bg-gradient-to-b from-[color:var(--brand)]/[.06] to-transparent p-12 shadow-[0_0_80px_-30px_var(--brand)]">
           <div className="text-center">
             <span className="inline-flex items-center gap-2 rounded-full border border-emerald-400/30 bg-emerald-400/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-emerald-300">
-              <span className="h-1.5 w-1.5 rounded-full bg-emerald-400" />Garantie 0 risque
+              <span className="h-1.5 w-1.5 rounded-full bg-emerald-400" />RÉSULTATS DÈS LA 1RE SEMAINE
             </span>
-            <h2 className="mt-6 text-4xl font-bold tracking-tight md:text-5xl">
-              Vous ne gagnez pas d'argent ?<br />
-              <span className="bg-gradient-to-r from-[color:var(--brand-light)] to-white/40 bg-clip-text text-transparent">Nous non plus.</span>
+            <h2 className="mx-auto mt-6 max-w-3xl text-4xl font-bold tracking-tight">
+              Vos premiers appels qualifiés,
+              <br />
+              <span className="bg-gradient-to-b from-[#cfe0ff] via-[#7eb0ff] to-[#3b82f6] bg-clip-text text-transparent">
+                dès la première semaine.
+              </span>
             </h2>
-            <p className="mx-auto mt-5 max-w-xl text-white/70">
-              Vous payez uniquement si les résultats ont été atteints (le nombre d'appels mensuels) — formalisé par contrat.
+            <p className="mx-auto mt-5 max-w-2xl text-white/70">
+              Vous installez le système en quelques clics. Dès la fin de la première semaine, les premiers appels tombent automatiquement dans votre agenda — et on vous accompagne jusqu'à ce que la machine tourne toute seule.
             </p>
             <div className="mx-auto mt-10 grid max-w-3xl gap-4 md:grid-cols-3">
               {[
-                { e: "🤝", t: "Contrat clair", s: "Engagement écrit sur les résultats" },
-                { e: "💸", t: "Paiement après", s: "Vous payez quand les appels arrivent" },
-                { e: "🎯", t: "VOS critères", s: "Vous validez la qualité des leads" },
+                { e: "🤝", t: "Installation express", s: "Le système en place en quelques clics, sans tech" },
+                { e: "💸", t: "Résultats rapides", s: "Vos premiers appels dès la 1re semaine" },
+                { e: "🎯", t: "Accompagnement", s: "Formation complète + coaching hebdo jusqu'au résultat" },
               ].map((x) => (
                 <div key={x.t} className="rounded-xl border border-white/10 bg-white/[.03] p-5 text-left">
                   <div className="text-2xl">{x.e}</div>
@@ -489,13 +492,14 @@ function Guarantee() {
                 </div>
               ))}
             </div>
-            <div className="mt-10"><Cta>Discuter de la garantie <ArrowRight className="h-4 w-4" /></Cta></div>
+            <div className="mt-10"><Cta>Discuter de l'accompagnement <ArrowRight className="h-4 w-4" /></Cta></div>
           </div>
         </div>
       </div>
     </section>
   );
 }
+
 
 function Calculator() {
   const [price, setPrice] = useState(2000);
