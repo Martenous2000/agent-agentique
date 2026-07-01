@@ -106,7 +106,7 @@ function Hero() {
           Offre de lancement — places limitées
         </span>
         <h1 className="mt-8 text-5xl font-bold leading-[1.05] tracking-tight md:text-7xl">
-          <span className="text-white">Le seul agent IA qui</span>
+          <span className="text-white">Le seul agent IA qui vous</span>
           <br />
           <span className="bg-gradient-to-b from-[#cfe0ff] via-[#7eb0ff] to-[#3b82f6] bg-clip-text text-transparent">
             garantit des appels qualifiés
