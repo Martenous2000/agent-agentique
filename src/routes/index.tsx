@@ -350,7 +350,7 @@ function Comparison() {
       <div className="mx-auto max-w-6xl px-6">
         <div className="text-center">
           <SectionLabel>Comparaison</SectionLabel>
-          <h2 className="mx-auto mt-6 max-w-5xl text-4xl font-bold tracking-tight md:text-5xl">
+          <h2 className="mx-auto mt-6 max-w-4xl text-4xl font-bold tracking-tight">
             <span className="text-white">Pourquoi un </span>
             <span className="bg-gradient-to-b from-[#cfe0ff] via-[#7eb0ff] to-[#3b82f6] bg-clip-text text-transparent">
               système IA que vous
