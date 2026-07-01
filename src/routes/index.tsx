@@ -575,7 +575,7 @@ function Index() {
       <Guarantee />
       <Calculator />
       <BookCall />
-      <Pricing />
+      
       <Ban className="hidden" /> {/* keep import */}
       <Footer />
     </div>
