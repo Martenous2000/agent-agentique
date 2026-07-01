@@ -228,9 +228,9 @@ function TrustBar() {
 
 function Testimonials() {
   const reviews = [
-    { c: "AR", n: "Antoine R.", r: "Fondateur · Agence SaaS", color: "from-blue-500 to-blue-700", q: "24 appels qualifiés le premier mois sans avoir à gérer un seul setter. J'ai signé plusieurs clients sans problèmes !" },
-    { c: "CB", n: "Camille B.", r: "Coach Business", color: "from-purple-500 to-purple-700", q: "J'avais essayé gojiberry, bereach, un setter… rien ne marchait vraiment. LinkedAgent a remplacé tout ça et j'ai enfin un flux constant d'appels. Une folie furieuse." },
-    { c: "ML", n: "Maxime L.", r: "Consultant Tech", color: "from-cyan-500 to-cyan-700", q: "Je gagne 25 h par semaine. Le contenu, les DM, la prospection - tout est géré sans setter. Je me concentre uniquement sur les calls." },
+    { c: "HE", n: "Houdaifa Elanoui", r: "Fondateur · Agence SaaS", color: "from-blue-500 to-blue-700", q: "24 appels qualifiés le premier mois sans avoir à gérer un seul setter. J'ai signé plusieurs clients sans problèmes !" },
+    { c: "JM", n: "Jean-Pierre Martin", r: "Coach Business", color: "from-purple-500 to-purple-700", q: "J'avais essayé gojiberry, bereach, un setter… rien ne marchait vraiment. LinkedAgent a remplacé tout ça et j'ai enfin un flux constant d'appels. Une folie furieuse." },
+    { c: "SP", n: "Sarah Piowtroski", r: "Consultant Tech", color: "from-cyan-500 to-cyan-700", q: "Je gagne 25 h par semaine. Le contenu, les DM, la prospection - tout est géré sans setter. Je me concentre uniquement sur les calls." },
   ];
   return (
     <section className="py-24">
