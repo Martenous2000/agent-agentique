@@ -637,32 +637,42 @@ function Pricing() {
 
 function Footer() {
   return (
-    <footer className="border-t border-white/5 py-16">
+    <footer className="border-t border-white/10 py-16">
       <div className="mx-auto grid max-w-6xl gap-10 px-6 md:grid-cols-3">
         <div>
           <div className="flex items-center gap-2">
-            <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-gradient-to-br from-[color:var(--brand)] to-[color:var(--brand-deep)]">
+            <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-gradient-to-br from-[color:var(--brand)] to-[color:var(--brand-deep)] shadow-[0_4px_20px_-2px_var(--brand)]">
               <Sparkles className="h-5 w-5 text-white" />
             </div>
-            <span className="text-lg font-bold">Linked<span className="text-[color:var(--brand-light)]">Agent</span></span>
+            <span className="text-lg font-bold">
+              Linked<span className="text-[color:var(--brand-light)]">Agent</span>
+            </span>
           </div>
-          <p className="mt-5 text-sm text-white/55">L'agent IA qui remplace vos setters et prend en charge l'intégralité de votre acquisition LinkedIn, 24h/24.</p>
+          <p className="mt-5 max-w-xs text-sm leading-relaxed text-white/60">
+            Le système Agentique High Ticket™ qui remplit votre agenda d'appels qualifiés, 24h/24.
+          </p>
         </div>
         <div>
-          <div className="text-xs font-semibold uppercase tracking-wider text-white/40">Navigation</div>
+          <div className="text-xs font-semibold uppercase tracking-widest text-white/40">Navigation</div>
           <ul className="mt-5 space-y-3 text-sm text-white/75">
-            <li><a href="#comment">Comment ça marche</a></li>
-            <li><a href="#comparaison">Comparaison</a></li>
-            <li><a href="#calculateur">Calculateur</a></li>
-            <li><a href="#tarifs">Tarifs</a></li>
+            <li><a href="#comment" className="hover:text-white">Comment ça marche</a></li>
+            <li><a href="#comparaison" className="hover:text-white">Comparaison</a></li>
+            <li><a href="#calculateur" className="hover:text-white">Calculateur</a></li>
+            <li><a href="#tarifs" className="hover:text-white">Tarifs</a></li>
           </ul>
         </div>
         <div>
-          <div className="text-xs font-semibold uppercase tracking-wider text-white/40">Contact</div>
-          <ul className="mt-5 space-y-3 text-sm text-white/75"><li><a href={CTA_URL} target="_blank" rel="noopener noreferrer">Réserver un appel</a></li></ul>
+          <div className="text-xs font-semibold uppercase tracking-widest text-white/40">Contact</div>
+          <ul className="mt-5 space-y-3 text-sm text-white/75">
+            <li>
+              <a href={CTA_URL} target="_blank" rel="noopener noreferrer" className="hover:text-white">
+                Réserver un appel
+              </a>
+            </li>
+          </ul>
         </div>
       </div>
-      <div className="mx-auto mt-12 flex max-w-6xl flex-wrap justify-between gap-3 border-t border-white/5 px-6 pt-6 text-xs text-white/40">
+      <div className="mx-auto mt-16 flex max-w-6xl flex-col justify-between gap-3 border-t border-white/10 px-6 pt-8 text-xs text-white/40 md:flex-row">
         <span>© 2026 LinkedAgent. Tous droits réservés.</span>
         <span>Non affilié à LinkedIn Corporation.</span>
       </div>
