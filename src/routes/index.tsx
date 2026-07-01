@@ -284,17 +284,38 @@ function HowItWorks() {
         <div className="text-center">
           <SectionLabel>Comment ça marche</SectionLabel>
           <h2 className="mt-6 text-4xl font-bold tracking-tight md:text-5xl">
-            Deux étapes. <span className="bg-gradient-to-r from-[color:var(--brand-light)] to-white/40 bg-clip-text text-transparent">Zéro friction.</span>
+            Installez le système en <span className="bg-gradient-to-r from-[color:var(--brand-light)] to-white/40 bg-clip-text text-transparent">quelques clics.</span>
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-white/65">
-            Vous donnez le contexte, l'agent IA se charge de tout le reste — pendant que vous vous concentrez sur vos clients.
+            Vous installez le système Agentique High Ticket™ vous-même — pas besoin d'équipe ni de compétences techniques. Dès la fin de la première semaine, les premiers appels qualifiés tombent automatiquement dans votre agenda.
           </p>
         </div>
         <div className="mt-14 grid gap-6 md:grid-cols-2">
-          <StepCard num="01" title="Donnez le contexte" body="Vous répondez à des questionnaires précis pour donner à l'agent toutes les infos dont il a besoin pour performer avec votre offre high ticket : client idéal, détails de l'offre, ton de voix, objectifs."
-            items={["Profil client idéal (ICP)", "Détails de votre offre high ticket", "Votre ton & angle marketing", "Critères de qualification"]} />
-          <StepCard num="02" title="L'agent prend le relais" highlight body="Notre équipe connecte l'agent sur des comptes LinkedIn dédiés (ou sur le vôtre). C'est fait — il remplace entièrement vos setters et pilote votre acquisition 24h/24, 7j/7."
-            items={["Création de contenu LinkedIn", "Prospection ciblée & demandes de co", "Conversations & qualification prospects", "Réponses aux DM en continu"]} />
+          <StepCard
+            num="01"
+            title="Installez l'agent"
+            body="Connectez l'agent à un compte LinkedIn en quelques clics. Aucune compétence technique requise — tout est prêt à l'emploi."
+            highlight
+            items={["Connexion en quelques clics", "Sur votre compte ou un compte dédié", "Aucune installation complexe"]}
+          />
+          <StepCard
+            num="02"
+            title="Personnalisez l'agent"
+            body="Répondez à quelques questions pour que l'agent colle parfaitement à vous, votre offre et votre business."
+            items={["Profil client idéal (ICP)", "Détails de votre offre high ticket", "Votre ton & angle marketing", "Critères de qualification"]}
+          />
+          <StepCard
+            num="03"
+            title="Lancez l'agent"
+            body="Il prend le relais sur toute votre acquisition — prospection, conversations, qualification — 24h/24, 7j/7."
+            items={["Prospection ciblée & demandes de connexion", "Conversations & qualification des prospects", "Réponses aux DM en continu", "Appels qualifiés directement dans votre agenda"]}
+          />
+          <StepCard
+            num="04"
+            title="Donnez-lui du feedback"
+            body="Chaque semaine, vous affinez l'agent avec un simple feedback — et on vous accompagne en coaching pour le rendre encore plus performant."
+            items={["L'agent s'améliore chaque semaine", "1 appel de coaching par semaine", "Optimisation continue des résultats"]}
+          />
         </div>
       </div>
     </section>
@@ -304,7 +325,7 @@ function HowItWorks() {
 function StepCard({ num, title, body, items, highlight }: { num: string; title: string; body: string; items: string[]; highlight?: boolean }) {
   return (
     <div className={`relative rounded-2xl border p-8 ${highlight ? "border-[color:var(--brand)]/40 bg-[color:var(--brand)]/[.04] shadow-[0_0_60px_-20px_var(--brand)]" : "border-white/10 bg-white/[.02]"}`}>
-      <div className="flex items-start gap-5">
+      <div className="flex items-start gap-4">
         <div className={`text-5xl font-bold ${highlight ? "text-[color:var(--brand-light)]" : "text-white/15"}`}>{num}</div>
         <div className="flex-1 pt-1">
           <h3 className="text-xl font-bold">{title}</h3>
@@ -312,7 +333,7 @@ function StepCard({ num, title, body, items, highlight }: { num: string; title: 
           <ul className="mt-6 space-y-2.5">
             {items.map((i) => (
               <li key={i} className="flex items-center gap-2.5 text-sm">
-                <CheckCircle2 className="h-4 w-4 text-[color:var(--brand-light)]" />
+                <CheckCircle2 className={`h-4 w-4 ${highlight ? "text-[color:var(--brand-light)]" : "text-white/40"}`} />
                 <span className="text-white/80">{i}</span>
               </li>
             ))}
