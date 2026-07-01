@@ -12,6 +12,7 @@ import {
   X,
   ArrowRight,
   Trophy,
+  Linkedin,
 } from "lucide-react";
 
 const CTA_URL = "https://app.iclosed.io/e/visionaryplans/session-visionary-plans";
