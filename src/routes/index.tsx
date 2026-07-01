@@ -215,7 +215,7 @@ function TrustBar() {
   const items = [
     { i: <Star className="h-4 w-4 text-[color:var(--brand-light)]" />, t: "4.9/5 retours clients" },
     { i: <Check className="h-4 w-4 text-[color:var(--brand-light)]" />, t: "Garantie résultats" },
-    { i: <CreditCard className="h-4 w-4 text-[color:var(--brand-light)]" />, t: "Paiement après résultats" },
+    { i: <CreditCard className="h-4 w-4 text-[color:var(--brand-light)]" />, t: "Satisfait ou remboursé" },
     { i: <ShieldCheck className="h-4 w-4 text-[color:var(--brand-light)]" />, t: "Aucun risque de ban" },
   ];
   return (
