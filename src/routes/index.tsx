@@ -482,7 +482,7 @@ function BookCall() {
         <p className="mx-auto mt-4 max-w-xl text-white/65">
           30 minutes pour valider que LinkedAgent est fait pour votre offre — et obtenir votre devis personnalisé. Pas de pression, pas de pitch agressif. Juste un échange honnête.
         </p>
-        <div className="mt-10"><Cta>Réserver mon appel <ArrowRight className="h-4 w-4" /></Cta></div>
+        <div className="mt-10"><a href="https://app.iclosed.io/e/visionaryplanspro/session-visionary-plans" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 rounded-full bg-[color:var(--brand)] px-7 py-3.5 text-sm font-semibold text-white shadow-[0_0_40px_-10px_var(--brand)] transition hover:brightness-110">Réserver mon appel <ArrowRight className="h-4 w-4" /></a></div>
       </div>
     </section>
   );
