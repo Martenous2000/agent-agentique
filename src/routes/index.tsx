@@ -74,7 +74,7 @@ function Nav() {
           <a href="#comment" className="text-sm font-medium text-[color:var(--brand-light)] hover:text-white">Comment ça marche</a>
           <a href="#comparaison" className="text-sm font-medium text-[color:var(--brand-light)] hover:text-white">Comparaison</a>
           <a href="#calculateur" className="text-sm font-medium text-[color:var(--brand-light)] hover:text-white">Calculateur</a>
-          <a href="#tarifs" className="text-sm font-medium text-[color:var(--brand-light)] hover:text-white">Tarifs</a>
+          
         </div>
         <div className="flex items-center gap-3">
           <button className="hidden items-center gap-1 rounded-md border border-white/10 bg-white/5 px-3 py-1.5 text-xs font-medium md:inline-flex">
@@ -575,7 +575,7 @@ function Index() {
       <Guarantee />
       <Calculator />
       <BookCall />
-      <Pricing />
+      
       <Ban className="hidden" /> {/* keep import */}
       <Footer />
     </div>
