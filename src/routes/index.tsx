@@ -587,7 +587,7 @@ function BookCall() {
         </p>
         <div className="mt-10">
           <div id="iclosed-widget-container" className="mx-auto overflow-hidden rounded-2xl border border-[color:var(--brand)]/30 bg-[#0a0e17]/80 shadow-[0_0_80px_-30px_var(--brand)]" style={{ width: "100%", maxWidth: "800px", height: "620px" }}>
-            <div className="iclosed-widget" data-url="https://app.iclosed.io/e/visionaryplanspro/session-visionary-plans" title="Session Visionary Plans™" style={{ width: "100%", height: "100%" }} />
+            <div className="iclosed-widget" data-url="https://app.iclosed.io/e/visionaryplansconsulting/session-visionary-plans-pro" title="Session Visionary Plans™" style={{ width: "100%", height: "100%" }} />
           </div>
         </div>
       </div>
