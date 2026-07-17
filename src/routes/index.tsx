@@ -565,6 +565,17 @@ function Row({ k, v }: { k: string; v: string }) {
 }
 
 function BookCall() {
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    const existing = document.getElementById("calendly-widget-script");
+    if (existing) return;
+    const script = document.createElement("script");
+    script.id = "calendly-widget-script";
+    script.src = "https://assets.calendly.com/assets/external/widget.js";
+    script.async = true;
+    document.body.appendChild(script);
+  }, []);
+
   return (
     <section id="rdv" className="py-24">
       <div className="mx-auto max-w-4xl px-6 text-center">
@@ -575,6 +586,13 @@ function BookCall() {
         <p className="mx-auto mt-4 max-w-xl text-white/65">
           30 minutes pour valider que le système est fait pour votre offre — et voir comment il s'installe chez vous.
         </p>
+        <div className="mt-12 overflow-hidden rounded-2xl border border-white/10 bg-[#0a1020]/60">
+          <div
+            className="calendly-inline-widget"
+            data-url={CTA_URL}
+            style={{ minWidth: "320px", width: "100%", height: "700px" }}
+          />
+        </div>
       </div>
     </section>
   );
