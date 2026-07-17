@@ -565,16 +565,6 @@ function Row({ k, v }: { k: string; v: string }) {
 }
 
 function BookCall() {
-  useEffect(() => {
-    const script = document.createElement("script");
-    script.src = "https://app.iclosed.io/assets/widget.js";
-    script.async = true;
-    const container = document.getElementById("iclosed-widget-container");
-    if (container && !container.querySelector("script[src='https://app.iclosed.io/assets/widget.js']")) {
-      container.appendChild(script);
-    }
-  }, []);
-
   return (
     <section id="rdv" className="py-24">
       <div className="mx-auto max-w-4xl px-6 text-center">
@@ -585,11 +575,6 @@ function BookCall() {
         <p className="mx-auto mt-4 max-w-xl text-white/65">
           30 minutes pour valider que le système est fait pour votre offre — et voir comment il s'installe chez vous.
         </p>
-        <div className="mt-10">
-          <div id="iclosed-widget-container" className="mx-auto overflow-hidden rounded-2xl border border-[color:var(--brand)]/30 bg-[#0a0e17]/80 shadow-[0_0_80px_-30px_var(--brand)]" style={{ width: "100%", maxWidth: "800px", height: "620px" }}>
-            <div className="iclosed-widget" data-url="https://app.iclosed.io/e/visionaryplansconsulting/session-visionary-plans-pro" title="Session Visionary Plans™" style={{ width: "100%", height: "100%" }} />
-          </div>
-        </div>
       </div>
     </section>
   );
