@@ -15,7 +15,7 @@ import {
   Linkedin,
 } from "lucide-react";
 
-const CTA_URL = "https://app.iclosed.io/e/visionaryplans/session-visionary-plans";
+const CTA_URL = "https://calendly.com/visionaryplans_strategic-call/session-strategique-site-web-de-reve-clone";
 
 export const Route = createFileRoute("/")({
   head: () => ({
