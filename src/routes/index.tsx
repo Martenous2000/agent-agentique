@@ -567,11 +567,11 @@ function Row({ k, v }: { k: string; v: string }) {
 function BookCall() {
   useEffect(() => {
     if (typeof window === "undefined") return;
-    const existing = document.getElementById("calendly-widget-script");
+    const existing = document.getElementById("iclosed-widget-script");
     if (existing) return;
     const script = document.createElement("script");
-    script.id = "calendly-widget-script";
-    script.src = "https://assets.calendly.com/assets/external/widget.js";
+    script.id = "iclosed-widget-script";
+    script.src = "https://app.iclosed.io/assets/widget.js";
     script.async = true;
     document.body.appendChild(script);
   }, []);
@@ -586,12 +586,15 @@ function BookCall() {
         <p className="mx-auto mt-4 max-w-xl text-white/65">
           30 minutes pour valider que le système est fait pour votre offre — et voir comment il s'installe chez vous.
         </p>
-        <div className="mt-12 overflow-hidden rounded-2xl border border-white/10 bg-[#0a1020]/60">
-          <div
-            className="calendly-inline-widget"
-            data-url={CTA_URL}
-            style={{ minWidth: "320px", width: "100%", height: "700px" }}
-          />
+        <div className="relative mt-12">
+          <div className="absolute -inset-4 rounded-3xl bg-[color:var(--brand)]/20 blur-3xl" />
+          <div className="relative overflow-hidden rounded-2xl border border-[color:var(--brand)]/40 bg-[#0a1020]/90 shadow-[0_0_80px_-30px_var(--brand)]">
+            <div
+              className="iclosed-inline-widget"
+              data-url="https://app.iclosed.io/e/visionaryplansconsulting/session-visionary-plans-pro"
+              style={{ minWidth: "320px", width: "100%", height: "620px" }}
+            />
+          </div>
         </div>
       </div>
     </section>
