@@ -234,7 +234,7 @@ function TrustBar() {
 function Testimonials() {
   const reviews = [
     { c: "HE", n: "Houdaifa Elanoui", r: "Fondateur · Agence SaaS", color: "from-blue-500 to-blue-700", linkedin: "https://www.linkedin.com/in/houdaifa-el-aouni/", q: "24 appels qualifiés le premier mois sans avoir à gérer un seul setter. J'ai signé plusieurs clients sans problèmes !" },
-    { c: "JM", n: "Jean-Pierre Martin", r: "Coach Business", color: "from-purple-500 to-purple-700", linkedin: "https://www.linkedin.com/in/jean-pierre-martin-5953102a9/", q: "J'avais essayé gojiberry, bereach, un setter… rien ne marchait vraiment. LinkedAgent a remplacé tout ça et j'ai enfin un flux constant d'appels. Une folie furieuse." },
+    { c: "VM", n: "Vianard Mayonka-Matondo", r: "Coach Business", color: "from-purple-500 to-purple-700", linkedin: "https://www.linkedin.com/in/viannard-cinthia-mayoka-18a172209/", q: "J'avais essayé gojiberry, bereach, un setter… rien ne marchait vraiment. LinkedAgent a remplacé tout ça et j'ai enfin un flux constant d'appels. Une folie furieuse." },
     { c: "SP", n: "Sarah Piotrowski", r: "Consultant Tech", color: "from-cyan-500 to-cyan-700", linkedin: "https://www.linkedin.com/in/sarahpiotrowski/", q: "Je gagne 25 h par semaine. Le contenu, les DM, la prospection - tout est géré sans setter. Je me concentre uniquement sur les calls." },
   ];
   return (
@@ -567,11 +567,11 @@ function Row({ k, v }: { k: string; v: string }) {
 function BookCall() {
   useEffect(() => {
     if (typeof window === "undefined") return;
-    const existing = document.getElementById("calendly-widget-script");
+    const existing = document.getElementById("iclosed-widget-script");
     if (existing) return;
     const script = document.createElement("script");
-    script.id = "calendly-widget-script";
-    script.src = "https://assets.calendly.com/assets/external/widget.js";
+    script.id = "iclosed-widget-script";
+    script.src = "https://app.iclosed.io/assets/widget.js";
     script.async = true;
     document.body.appendChild(script);
   }, []);
@@ -586,12 +586,15 @@ function BookCall() {
         <p className="mx-auto mt-4 max-w-xl text-white/65">
           30 minutes pour valider que le système est fait pour votre offre — et voir comment il s'installe chez vous.
         </p>
-        <div className="mt-12 overflow-hidden rounded-2xl border border-white/10 bg-[#0a1020]/60">
-          <div
-            className="calendly-inline-widget"
-            data-url={CTA_URL}
-            style={{ minWidth: "320px", width: "100%", height: "700px" }}
-          />
+        <div className="relative mt-12">
+          <div className="absolute -inset-4 rounded-3xl bg-[color:var(--brand)]/20 blur-3xl" />
+          <div className="relative overflow-hidden rounded-2xl border border-[color:var(--brand)]/40 bg-[#0a1020]/90 shadow-[0_0_80px_-30px_var(--brand)]">
+            <div
+              className="iclosed-inline-widget"
+              data-url="https://app.iclosed.io/e/visionaryplansconsulting/session-visionary-plans-pro"
+              style={{ minWidth: "320px", width: "100%", height: "620px" }}
+            />
+          </div>
         </div>
       </div>
     </section>
