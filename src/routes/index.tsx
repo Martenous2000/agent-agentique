@@ -20,13 +20,13 @@ const CTA_URL = "https://calendly.com/visionaryplans_strategic-call/session-stra
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "LinkedAgent — L'agent IA qui remplace vos setters" },
+      { title: "visionaryplanspro.com — L'agent IA qui remplace vos setters" },
       {
         name: "description",
         content:
           "Remplacez vos setters par un agent IA qui prend en charge l'intégralité de votre acquisition LinkedIn 24/7 et vous ramène des appels qualifiés chaque semaine.",
       },
-      { property: "og:title", content: "LinkedAgent — L'agent IA qui remplace vos setters" },
+      { property: "og:title", content: "visionaryplanspro.com — L'agent IA qui remplace vos setters" },
       {
         property: "og:description",
         content:
@@ -68,7 +68,7 @@ function Nav() {
             <Sparkles className="h-5 w-5 text-white" />
           </div>
           <span className="text-lg font-bold">
-            Linked<span className="text-[color:var(--brand-light)]">Agent</span>
+            visionaryplans<span className="text-[color:var(--brand-light)]">pro.com</span>
           </span>
         </a>
         <div className="hidden items-center gap-8 md:flex">
@@ -234,7 +234,7 @@ function TrustBar() {
 function Testimonials() {
   const reviews = [
     { c: "HE", n: "Houdaifa Elanoui", r: "Fondateur · Agence SaaS", color: "from-blue-500 to-blue-700", linkedin: "https://www.linkedin.com/in/houdaifa-el-aouni/", q: "24 appels qualifiés le premier mois sans avoir à gérer un seul setter. J'ai signé plusieurs clients sans problèmes !" },
-    { c: "VM", n: "Vianard Mayonka-Matondo", r: "Coach Business", color: "from-purple-500 to-purple-700", linkedin: "https://www.linkedin.com/in/viannard-cinthia-mayoka-18a172209/", q: "J'avais essayé gojiberry, bereach, un setter… rien ne marchait vraiment. LinkedAgent a remplacé tout ça et j'ai enfin un flux constant d'appels. Une folie furieuse." },
+    { c: "VM", n: "Vianard Mayonka-Matondo", r: "Coach Business", color: "from-purple-500 to-purple-700", linkedin: "https://www.linkedin.com/in/viannard-cinthia-mayoka-18a172209/", q: "J'avais essayé gojiberry, bereach, un setter… rien ne marchait vraiment. visionaryplanspro.com a remplacé tout ça et j'ai enfin un flux constant d'appels. Une folie furieuse." },
     { c: "SP", n: "Sarah Piotrowski", r: "Consultant Tech", color: "from-cyan-500 to-cyan-700", linkedin: "https://www.linkedin.com/in/sarahpiotrowski/", q: "Je gagne 25 h par semaine. Le contenu, les DM, la prospection - tout est géré sans setter. Je me concentre uniquement sur les calls." },
   ];
   return (
@@ -651,7 +651,7 @@ function Footer() {
               <Sparkles className="h-5 w-5 text-white" />
             </div>
             <span className="text-lg font-bold">
-              Linked<span className="text-[color:var(--brand-light)]">Agent</span>
+              visionaryplans<span className="text-[color:var(--brand-light)]">pro.com</span>
             </span>
           </div>
           <p className="mt-5 max-w-xs text-sm leading-relaxed text-white/60">
@@ -679,7 +679,7 @@ function Footer() {
         </div>
       </div>
       <div className="mx-auto mt-16 flex max-w-6xl flex-col justify-between gap-3 border-t border-white/10 px-6 pt-8 text-xs text-white/40 md:flex-row">
-        <span>© 2026 LinkedAgent. Tous droits réservés.</span>
+        <span>© 2026 visionaryplanspro.com. Tous droits réservés.</span>
         <span>Non affilié à LinkedIn Corporation.</span>
       </div>
     </footer>
