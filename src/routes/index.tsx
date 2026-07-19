@@ -234,8 +234,8 @@ function TrustBar() {
 function Testimonials() {
   const reviews = [
     { c: "HE", n: "Houdaifa Elanoui", r: "Fondateur · Agence SaaS", color: "from-blue-500 to-blue-700", linkedin: "https://www.linkedin.com/in/houdaifa-el-aouni/", q: "24 appels qualifiés le premier mois sans avoir à gérer un seul setter. J'ai signé plusieurs clients sans problèmes !" },
-    { c: "VM", n: "Vianard Mayonka-Matondo", r: "Coach Business", color: "from-purple-500 to-purple-700", linkedin: "https://www.linkedin.com/in/viannard-cinthia-mayoka-18a172209/", q: "J'avais essayé gojiberry, bereach, un setter… rien ne marchait vraiment. LinkedAgent a remplacé tout ça et j'ai enfin un flux constant d'appels. Une folie furieuse." },
-    { c: "SP", n: "Sarah Piotrowski", r: "Consultant Tech", color: "from-cyan-500 to-cyan-700", linkedin: "https://www.linkedin.com/in/sarahpiotrowski/", q: "Je gagne 25 h par semaine. Le contenu, les DM, la prospection - tout est géré sans setter. Je me concentre uniquement sur les calls." },
+    { c: "VM", n: "Viannard Mayonka-Matondo", r: "Expert-Comptable", color: "from-purple-500 to-purple-700", linkedin: "https://www.linkedin.com/in/viannard-cinthia-mayoka-18a172209/", q: "J'avais essayé gojiberry, bereach, un setter… rien ne marchait vraiment. LinkedAgent a remplacé tout ça et j'ai enfin un flux constant d'appels. Une folie furieuse." },
+    { c: "SP", n: "Sarah Piotrowski", r: "Manageuse de transition", color: "from-cyan-500 to-cyan-700", linkedin: "https://www.linkedin.com/in/sarahpiotrowski/", q: "Je gagne 25 h par semaine. Le contenu, les DM, la prospection - tout est géré sans setter. Je me concentre uniquement sur les calls." },
   ];
   return (
     <section className="py-24">
