@@ -590,7 +590,7 @@ function BookCall() {
           <div className="absolute -inset-4 rounded-3xl bg-[color:var(--brand)]/20 blur-3xl" />
           <div className="relative overflow-hidden rounded-2xl border border-[color:var(--brand)]/40 bg-[#0a1020]/90 shadow-[0_0_80px_-30px_var(--brand)]">
             <div
-              className="iclosed-inline-widget"
+              className="iclosed-widget"
               data-url="https://app.iclosed.io/e/visionaryplansconsulting/session-visionary-plans-pro"
               style={{ minWidth: "320px", width: "100%", height: "620px" }}
             />
