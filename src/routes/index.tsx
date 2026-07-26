@@ -15,7 +15,7 @@ import {
   Linkedin,
 } from "lucide-react";
 
-const CTA_URL = "https://calendly.com/visionaryplans_strategic-call/session-strategique-site-web-de-reve-clone";
+const CTA_URL = "https://app.iclosed.io/e/visionary-consulting/visionary-consulting";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -591,7 +591,7 @@ function BookCall() {
           <div className="relative overflow-hidden rounded-2xl border border-[color:var(--brand)]/40 bg-[#0a1020]/90 shadow-[0_0_80px_-30px_var(--brand)]">
             <div
               className="iclosed-widget"
-              data-url="https://app.iclosed.io/e/visionaryplansconsulting/session-visionary-plans-pro"
+              data-url="https://app.iclosed.io/e/visionary-consulting/visionary-consulting"
               style={{ minWidth: "320px", width: "100%", height: "620px" }}
             />
           </div>
