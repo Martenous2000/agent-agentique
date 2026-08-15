@@ -20,17 +20,17 @@ const CTA_URL = "https://app.iclosed.io/e/visionary-consulting/visionary-consult
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "LinkedAgent — L'agent IA qui remplace vos setters" },
+      { title: "LinkedAgent : l'agent IA qui remplace vos setters" },
       {
         name: "description",
         content:
           "Remplacez vos setters par un agent IA qui prend en charge l'intégralité de votre acquisition LinkedIn 24/7 et vous ramène des appels qualifiés chaque semaine.",
       },
-      { property: "og:title", content: "LinkedAgent — L'agent IA qui remplace vos setters" },
+      { property: "og:title", content: "LinkedAgent : l'agent IA qui remplace vos setters" },
       {
         property: "og:description",
         content:
-          "Un super-agent IA qui remplace vos setters et pilote toute votre acquisition 24/7 — contenu, prospection, DM, qualification.",
+          "Un super-agent IA qui remplace vos setters et pilote toute votre acquisition 24/7 : contenu, prospection, DM, qualification.",
       },
     ],
   }),
@@ -103,7 +103,7 @@ function Hero() {
       <div className="relative mx-auto max-w-6xl px-6 pt-28 pb-20 text-center">
         <span className="inline-flex items-center gap-2 rounded-full border border-emerald-400/30 bg-emerald-400/10 px-4 py-1.5 text-xs font-medium text-emerald-300">
           <span className="h-1.5 w-1.5 rounded-full bg-emerald-400 animate-pulse" />
-          Offre de lancement — places limitées
+          Offre de lancement : places limitées
         </span>
         <h1 className="mt-8 text-5xl font-bold leading-[1.05] tracking-tight md:text-7xl">
           <span className="text-white">Le seul agent IA qui vous</span>
@@ -113,7 +113,7 @@ function Hero() {
           </span>
         </h1>
         <p className="mx-auto mt-8 max-w-2xl text-lg text-white/70">
-          Le système Agentique High Ticket™ qui remplit votre agenda d'appels qualifiés 24h/24 — même quand vous dormez. Sans ads, sans contenu à créer, sans setter, sans DM à gérer : <span className="font-semibold text-white">100% en autopilote</span>.
+          Le système Agentique High Ticket™ qui remplit votre agenda d'appels qualifiés 24h/24, même quand vous dormez. Sans ads, sans contenu à créer, sans setter, sans DM à gérer : <span className="font-semibold text-white">100% en autopilote</span>.
         </p>
         <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
           <Cta>Réserver un appel gratuit <ArrowRight className="h-4 w-4" /></Cta>
@@ -244,7 +244,7 @@ function Testimonials() {
           <div className="mb-2 flex justify-center gap-1 text-white/30">
             {[...Array(5)].map((_, i) => <span key={i}>★</span>)}
           </div>
-          4.9/5 — basé sur les retours clients
+          4.9/5, basé sur les retours clients
         </div>
         <div className="grid gap-6 md:grid-cols-3">
           {reviews.map((r) => (
@@ -287,14 +287,14 @@ function HowItWorks() {
             Installez le système en <span className="bg-gradient-to-r from-[color:var(--brand-light)] to-white/40 bg-clip-text text-transparent">quelques clics.</span>
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-white/65">
-            Vous installez le système Agentique High Ticket™ vous-même — pas besoin d'équipe ni de compétences techniques. Dès la fin de la première semaine, les premiers appels qualifiés tombent automatiquement dans votre agenda.
+            Vous installez le système Agentique High Ticket™ vous-même. Pas besoin d'équipe ni de compétences techniques. Dès la fin de la première semaine, les premiers appels qualifiés tombent automatiquement dans votre agenda.
           </p>
         </div>
         <div className="mt-14 grid gap-6 md:grid-cols-2">
           <StepCard
             num="01"
             title="Installez l'agent"
-            body="Connectez l'agent à un compte LinkedIn en quelques clics. Aucune compétence technique requise — tout est prêt à l'emploi."
+            body="Connectez l'agent à un compte LinkedIn en quelques clics. Aucune compétence technique requise : tout est prêt à l'emploi."
             highlight
             items={["Connexion en quelques clics", "Sur votre compte ou un compte dédié", "Aucune installation complexe"]}
           />
@@ -307,13 +307,13 @@ function HowItWorks() {
           <StepCard
             num="03"
             title="Lancez l'agent"
-            body="Il prend le relais sur toute votre acquisition — prospection, conversations, qualification — 24h/24, 7j/7."
+            body="Il prend le relais sur toute votre acquisition (prospection, conversations, qualification) 24h/24, 7j/7."
             items={["Prospection ciblée & demandes de connexion", "Conversations & qualification des prospects", "Réponses aux DM en continu", "Appels qualifiés directement dans votre agenda"]}
           />
           <StepCard
             num="04"
             title="Donnez-lui du feedback"
-            body="Chaque semaine, vous affinez l'agent avec un simple feedback — et on vous accompagne en coaching pour le rendre encore plus performant."
+            body="Chaque semaine, vous affinez l'agent avec un simple feedback, et on vous accompagne en coaching pour le rendre encore plus performant."
             items={["L'agent s'améliore chaque semaine", "1 appel de coaching par semaine", "Optimisation continue des résultats"]}
           />
         </div>
@@ -369,7 +369,7 @@ function Comparison() {
             bad
             items={[
               "Leads peu qualifiés (souvent inactifs sur LinkedIn)",
-              "Abonnements qui s'accumulent — facture salée",
+              "Abonnements qui s'accumulent : facture salée",
               "Rien n'est personnalisé, peu de contexte = résultats médiocres",
               "Risque de ban du compte (connexion d'API, outils tiers…)",
             ]}
@@ -382,7 +382,7 @@ function Comparison() {
               "Cher et rarement de qualité",
               "Pas scalable à grande échelle",
               "Manager une équipe & recruter = perte de temps",
-              "Turnover constant — il faut tout réexpliquer",
+              "Turnover constant : il faut tout réexpliquer",
             ]}
           />
           <CompCard
@@ -391,7 +391,7 @@ function Comparison() {
             highlight
             items={[
               "~26 h/semaine économisées (prospection, DM, posts…)",
-              "Tout-en-un — prospection, contenu, DM, qualification",
+              "Tout-en-un : prospection, contenu, DM, qualification",
               "Contrôle total sur la qualité et VOS critères de qualif",
               "Aucun risque de ban (process avancé)",
             ]}
@@ -477,7 +477,7 @@ function Guarantee() {
               </span>
             </h2>
             <p className="mx-auto mt-5 max-w-2xl text-white/70">
-              Vous installez le système en quelques clics. Dès la fin de la première semaine, les premiers appels tombent automatiquement dans votre agenda — et on vous accompagne jusqu'à ce que la machine tourne toute seule.
+              Vous installez le système en quelques clics. Dès la fin de la première semaine, les premiers appels tombent automatiquement dans votre agenda, et on vous accompagne jusqu'à ce que la machine tourne toute seule.
             </p>
             <div className="mx-auto mt-10 grid max-w-3xl gap-4 md:grid-cols-3">
               {[
@@ -516,7 +516,7 @@ function Calculator() {
             Combien d'appels vous <span className="bg-gradient-to-r from-[color:var(--brand-light)] to-white/40 bg-clip-text text-transparent">faut-il chaque mois ?</span>
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-white/65">
-            Entrez vos chiffres — nous calculons exactement le nombre d'appels qualifiés à viser pour atteindre votre objectif.
+            Entrez vos chiffres : nous calculons exactement le nombre d'appels qualifiés à viser pour atteindre votre objectif.
           </p>
         </div>
         <div className="mt-12 grid gap-6 md:grid-cols-2">
@@ -584,7 +584,7 @@ function BookCall() {
           Discutons de <span className="bg-gradient-to-b from-[#cfe0ff] via-[#7eb0ff] to-[#3b82f6] bg-clip-text text-transparent">vos résultats</span>
         </h2>
         <p className="mx-auto mt-4 max-w-xl text-white/65">
-          30 minutes pour valider que le système est fait pour votre offre — et voir comment il s'installe chez vous.
+          30 minutes pour valider que le système est fait pour votre offre et voir comment il s'installe chez vous.
         </p>
         <div className="relative mt-12">
           <div className="absolute -inset-4 rounded-3xl bg-[color:var(--brand)]/20 blur-3xl" />
@@ -607,13 +607,13 @@ function Pricing() {
     <section id="tarifs" className="py-24">
       <div className="mx-auto max-w-4xl px-6 text-center">
         <span className="inline-flex items-center gap-2 rounded-full border border-yellow-500/30 bg-gradient-to-r from-yellow-500/10 to-orange-500/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-yellow-300">
-          🚀 Offre de lancement — places limitées
+          🚀 Offre de lancement : places limitées
         </span>
         <h2 className="mt-6 text-4xl font-bold tracking-tight md:text-5xl">
           Choisissez votre niveau <span className="bg-gradient-to-r from-[color:var(--brand-light)] to-white/40 bg-clip-text text-transparent">d'appels qualifiés</span>
         </h2>
         <p className="mx-auto mt-4 max-w-2xl text-white/65">
-          Un seul forfait, totalement modulable selon votre objectif mensuel. Garantie de résultats — sinon vous ne payez pas. Le tarif vous est communiqué pendant l'appel.
+          Un seul forfait, totalement modulable selon votre objectif mensuel. Garantie de résultats : sinon vous ne payez pas. Le tarif vous est communiqué pendant l'appel.
         </p>
         <div className="relative mt-12 rounded-3xl border border-[color:var(--brand)]/40 bg-[#0a1020]/80 p-10 text-left shadow-[0_0_80px_-30px_var(--brand)]">
           <div className="absolute left-1/2 -top-4 -translate-x-1/2 rounded-full bg-[color:var(--brand)] px-5 py-1.5 text-xs font-bold uppercase tracking-wider">Forfait unique</div>
@@ -634,7 +634,7 @@ function Pricing() {
             ))}
           </ul>
           <div className="mt-8"><Cta className="w-full">Obtenir le tarif en appel <ArrowRight className="h-4 w-4" /></Cta></div>
-          <p className="mt-4 text-center text-xs text-white/45">Le prix vous est partagé directement en appel — adapté à votre offre, votre cible et le volume d'appels visé.</p>
+          <p className="mt-4 text-center text-xs text-white/45">Le prix vous est partagé directement en appel, adapté à votre offre, votre cible et le volume d'appels visé.</p>
         </div>
       </div>
     </section>
