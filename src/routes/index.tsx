@@ -39,11 +39,11 @@ export const Route = createFileRoute("/")({
 
 function Cta({ children, variant = "primary", className = "" }: { children: React.ReactNode; variant?: "primary" | "ghost"; className?: string }) {
   const base =
-    "inline-flex items-center justify-center gap-2 rounded-full px-7 py-3.5 text-sm font-semibold transition-all";
+    "inline-flex items-center justify-center gap-2 rounded-full px-7 py-3.5 text-sm font-bold tracking-wide transition-all";
   const styles =
     variant === "primary"
-      ? "bg-[color:var(--brand)] text-white shadow-[0_10px_40px_-10px_var(--brand)] hover:brightness-110"
-      : "border border-white/10 bg-white/5 text-white hover:bg-white/10";
+      ? "btn-premium"
+      : "border border-[color:var(--brand)]/30 bg-[color:var(--brand)]/[.06] text-[color:var(--brand-light)] hover:bg-[color:var(--brand)]/15 hover:border-[color:var(--brand)]/60 transition-all duration-300";
   return (
     <a href={CTA_URL} target="_blank" rel="noopener noreferrer" className={`${base} ${styles} ${className}`}>
       {children}
@@ -53,7 +53,7 @@ function Cta({ children, variant = "primary", className = "" }: { children: Reac
 
 function SectionLabel({ children }: { children: React.ReactNode }) {
   return (
-    <span className="inline-flex items-center rounded-full border border-[color:var(--brand)]/30 bg-[color:var(--brand)]/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-[color:var(--brand-light)]">
+    <span className="inline-flex items-center rounded-full border border-[color:var(--brand)]/40 bg-[color:var(--brand)]/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-[color:var(--brand-light)] shadow-[0_0_20px_-6px_var(--brand)]">
       {children}
     </span>
   );
@@ -61,21 +61,21 @@ function SectionLabel({ children }: { children: React.ReactNode }) {
 
 function Nav() {
   return (
-    <nav className="sticky top-0 z-50 border-b border-white/5 bg-[#070b14]/80 backdrop-blur-xl">
+    <nav className="sticky top-0 z-50 border-b border-[color:var(--brand)]/15 bg-[#080603]/80 backdrop-blur-xl">
       <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
-        <a href="#" className="flex items-center gap-2">
-          <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-gradient-to-br from-[color:var(--brand)] to-[color:var(--brand-deep)] shadow-[0_4px_20px_-2px_var(--brand)]">
-            <Sparkles className="h-5 w-5 text-white" />
+        <a href="#" className="flex items-center gap-2.5">
+          <div className="btn-premium flex h-9 w-9 items-center justify-center rounded-lg !p-0">
+            <Zap className="h-5 w-5" />
           </div>
-          <span className="text-lg font-bold">
-            Linked<span className="text-[color:var(--brand-light)]">Agent</span>
+          <span className="text-lg font-bold tracking-tight">
+            ClientFlow <span className="gold-text-shine">AI™</span>
           </span>
         </a>
         <div className="hidden items-center gap-8 md:flex">
-          <a href="#comment" className="text-sm font-medium text-[color:var(--brand-light)] hover:text-white">Comment ça marche</a>
-          <a href="#comparaison" className="text-sm font-medium text-[color:var(--brand-light)] hover:text-white">Comparaison</a>
-          <a href="#calculateur" className="text-sm font-medium text-[color:var(--brand-light)] hover:text-white">Calculateur</a>
-          
+          <a href="#comment" className="text-sm font-medium text-[color:var(--brand-light)]/80 hover:text-[color:var(--brand-light)] transition-colors duration-300">Comment ça marche</a>
+          <a href="#comparaison" className="text-sm font-medium text-[color:var(--brand-light)]/80 hover:text-[color:var(--brand-light)] transition-colors duration-300">Comparaison</a>
+          <a href="#calculateur" className="text-sm font-medium text-[color:var(--brand-light)]/80 hover:text-[color:var(--brand-light)] transition-colors duration-300">Calculateur</a>
+
         </div>
         <div className="flex items-center gap-3">
           <button className="hidden items-center gap-1 rounded-md border border-white/10 bg-white/5 px-3 py-1.5 text-xs font-medium md:inline-flex">
@@ -233,9 +233,9 @@ function TrustBar() {
 
 function Testimonials() {
   const reviews = [
-    { c: "HE", n: "Houdaifa Elanoui", r: "Fondateur · Agence SaaS", color: "from-blue-500 to-blue-700", linkedin: "https://www.linkedin.com/in/houdaifa-el-aouni/", q: "24 appels qualifiés le premier mois sans avoir à gérer un seul setter. J'ai signé plusieurs clients sans problèmes !" },
-    { c: "VM", n: "Viannard Mayonka-Matondo", r: "Expert-Comptable", color: "from-purple-500 to-purple-700", linkedin: "https://www.linkedin.com/in/viannard-cinthia-mayoka-18a172209/", q: "J'avais essayé gojiberry, bereach, un setter… rien ne marchait vraiment. LinkedAgent a remplacé tout ça et j'ai enfin un flux constant d'appels. Une folie furieuse." },
-    { c: "SP", n: "Sarah Piotrowski", r: "Manageuse de transition", color: "from-cyan-500 to-cyan-700", linkedin: "https://www.linkedin.com/in/sarahpiotrowski/", q: "Je gagne 25 h par semaine. Le contenu, les DM, la prospection - tout est géré sans setter. Je me concentre uniquement sur les calls." },
+    { c: "BH", n: "Baptiste Hoguet", r: "Fondateur · Agence SaaS", color: "from-amber-500 to-yellow-700", linkedin: "https://www.linkedin.com/in/baptiste-hoguet-00a171336/", q: "34 appels qualifiés le premier mois sans avoir à gérer un seul setter. J'ai signé plusieurs clients sans problèmes !" },
+    { c: "MR", n: "Myriam Renaud", r: "Expert-Comptable", color: "from-yellow-600 to-amber-800", linkedin: "https://www.linkedin.com/in/myriam-renaud-567563ba/", q: "J'avais essayé gojiberry, bereach, un setter… rien ne marchait vraiment. ClientFlow AI™ a remplacé tout ça et j'ai enfin un flux constant d'appels. Une folie furieuse." },
+    { c: "SL", n: "Samuel Lyon", r: "Manager de transition", color: "from-orange-500 to-amber-700", linkedin: "https://www.linkedin.com/in/samuel-lyon-b02465399/", q: "Je gagne 25 h par semaine. Le contenu, les DM, la prospection - tout est géré sans setter. Je me concentre uniquement sur les calls." },
   ];
   return (
     <section className="py-24">
