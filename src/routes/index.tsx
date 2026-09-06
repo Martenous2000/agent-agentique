@@ -1,13 +1,12 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useMemo, useState } from "react";
 import {
-  Sparkles,
+  Zap,
   Calendar,
   Star,
   ShieldCheck,
   CheckCircle2,
   CreditCard,
-  Ban,
   Check,
   X,
   ArrowRight,
@@ -20,13 +19,13 @@ const CTA_URL = "https://app.iclosed.io/e/martinvision/session-decouverte";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "LinkedAgent : l'agent IA qui remplace vos setters" },
+      { title: "ClientFlow AI™ : l'agent IA qui remplace vos setters" },
       {
         name: "description",
         content:
-          "Remplacez vos setters par un agent IA qui prend en charge l'intégralité de votre acquisition LinkedIn 24/7 et vous ramène des appels qualifiés chaque semaine.",
+          "Remplacez vos setters par ClientFlow AI™, l'agent qui prend en charge l'intégralité de votre acquisition LinkedIn 24/7 et vous ramène des appels qualifiés chaque semaine.",
       },
-      { property: "og:title", content: "LinkedAgent : l'agent IA qui remplace vos setters" },
+      { property: "og:title", content: "ClientFlow AI™ : l'agent IA qui remplace vos setters" },
       {
         property: "og:description",
         content:
@@ -95,29 +94,31 @@ function Hero() {
         className="absolute inset-0"
         style={{
           backgroundImage:
-            "linear-gradient(rgba(255,255,255,.04) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.04) 1px, transparent 1px)",
+            "linear-gradient(rgba(227,185,78,.05) 1px, transparent 1px), linear-gradient(90deg, rgba(227,185,78,.05) 1px, transparent 1px)",
           backgroundSize: "60px 60px",
         }}
       />
-      <div className="absolute left-1/2 top-0 -z-0 h-[500px] w-[800px] -translate-x-1/2 rounded-full bg-[color:var(--brand)]/20 blur-[120px]" />
+      <div className="absolute left-1/2 top-0 -z-0 h-[500px] w-[800px] -translate-x-1/2 rounded-full bg-[color:var(--brand)]/20 blur-[120px] animate-glow" />
+      <div className="absolute -left-20 top-40 h-64 w-64 rounded-full bg-[color:var(--brand)]/10 blur-[100px] animate-float-slow" />
+      <div className="absolute -right-20 top-72 h-72 w-72 rounded-full bg-[color:var(--brand)]/10 blur-[110px] animate-float-slow" style={{ animationDelay: "-3s" }} />
       <div className="relative mx-auto max-w-6xl px-6 pt-28 pb-20 text-center">
-        <span className="inline-flex items-center gap-2 rounded-full border border-emerald-400/30 bg-emerald-400/10 px-4 py-1.5 text-xs font-medium text-emerald-300">
-          <span className="h-1.5 w-1.5 rounded-full bg-emerald-400 animate-pulse" />
+        <span className="animate-rise inline-flex items-center gap-2 rounded-full border border-[color:var(--brand)]/40 bg-[color:var(--brand)]/10 px-4 py-1.5 text-xs font-medium text-[color:var(--brand-light)] shadow-[0_0_25px_-8px_var(--brand)]">
+          <span className="h-1.5 w-1.5 rounded-full bg-[color:var(--brand-light)] animate-blink" />
           Offre de lancement : places limitées
         </span>
-        <h1 className="mt-8 text-5xl font-bold leading-[1.05] tracking-tight md:text-7xl">
+        <h1 className="animate-rise mt-8 text-5xl font-bold leading-[1.05] tracking-tight md:text-7xl" style={{ animationDelay: ".1s" }}>
           <span className="text-white">Le seul agent IA qui vous</span>
           <br />
-          <span className="bg-gradient-to-b from-[#fdf3d0] via-[#e9c565] to-[#b98a1e] bg-clip-text text-transparent">
+          <span className="gold-text-shine">
             garantit des appels qualifiés
           </span>
         </h1>
-        <p className="mx-auto mt-8 max-w-2xl text-lg text-white/70">
-          Le système Agentique High Ticket™ qui remplit votre agenda d'appels qualifiés 24h/24, même quand vous dormez. Sans ads, sans contenu à créer, sans setter, sans DM à gérer : <span className="font-semibold text-white">100% en autopilote</span>.
+        <p className="animate-rise mx-auto mt-8 max-w-2xl text-lg text-white/70" style={{ animationDelay: ".2s" }}>
+          Le système Agentique High Ticket™ qui remplit votre agenda d'appels qualifiés 24h/24, même quand vous dormez. Sans ads, sans contenu à créer, sans setter, sans DM à gérer : <span className="gold-mark font-semibold text-white">100% en autopilote</span>.
         </p>
-        <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
+        <div className="animate-rise mt-10 flex flex-wrap items-center justify-center gap-4" style={{ animationDelay: ".3s" }}>
           <Cta>Réserver un appel gratuit <ArrowRight className="h-4 w-4" /></Cta>
-          <a href="#comment" className="inline-flex items-center justify-center gap-2 rounded-full border border-white/10 bg-white/5 px-7 py-3.5 text-sm font-semibold text-white hover:bg-white/10">
+          <a href="#comment" className="inline-flex items-center justify-center gap-2 rounded-full border border-[color:var(--brand)]/30 bg-[color:var(--brand)]/[.06] px-7 py-3.5 text-sm font-semibold text-[color:var(--brand-light)] transition-all duration-300 hover:bg-[color:var(--brand)]/15 hover:border-[color:var(--brand)]/60 hover:-translate-y-0.5">
             Voir comment ça marche
           </a>
         </div>
@@ -163,9 +164,9 @@ function CalendarMock() {
     ]},
   ];
   return (
-    <div className="relative mt-20">
-      <div className="absolute -inset-4 rounded-3xl bg-[color:var(--brand)]/20 blur-3xl" />
-      <div className="relative rounded-2xl border border-white/10 bg-[#0a1020]/90 p-6 shadow-2xl backdrop-blur">
+    <div className="relative mt-20 animate-rise" style={{ animationDelay: ".4s" }}>
+      <div className="absolute -inset-4 rounded-3xl bg-[color:var(--brand)]/20 blur-3xl animate-glow" />
+      <div className="relative rounded-2xl border border-[color:var(--brand)]/25 bg-[#0c0904]/90 p-6 shadow-2xl backdrop-blur">
         <div className="flex items-start justify-between gap-4 border-b border-white/5 pb-4">
           <div className="flex items-center gap-3">
             <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-[color:var(--brand)]/20">
