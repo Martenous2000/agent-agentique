@@ -1,13 +1,12 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useMemo, useState } from "react";
 import {
-  Sparkles,
+  Zap,
   Calendar,
   Star,
   ShieldCheck,
   CheckCircle2,
   CreditCard,
-  Ban,
   Check,
   X,
   ArrowRight,
@@ -15,18 +14,18 @@ import {
   Linkedin,
 } from "lucide-react";
 
-const CTA_URL = "https://app.iclosed.io/e/visionary-consulting/visionary-consulting";
+const CTA_URL = "https://app.iclosed.io/e/martinvision/session-decouverte";
 
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "LinkedAgent : l'agent IA qui remplace vos setters" },
+      { title: "ClientFlow AI™ : l'agent IA qui remplace vos setters" },
       {
         name: "description",
         content:
-          "Remplacez vos setters par un agent IA qui prend en charge l'intégralité de votre acquisition LinkedIn 24/7 et vous ramène des appels qualifiés chaque semaine.",
+          "Remplacez vos setters par ClientFlow AI™, l'agent qui prend en charge l'intégralité de votre acquisition LinkedIn 24/7 et vous ramène des appels qualifiés chaque semaine.",
       },
-      { property: "og:title", content: "LinkedAgent : l'agent IA qui remplace vos setters" },
+      { property: "og:title", content: "ClientFlow AI™ : l'agent IA qui remplace vos setters" },
       {
         property: "og:description",
         content:
@@ -39,11 +38,11 @@ export const Route = createFileRoute("/")({
 
 function Cta({ children, variant = "primary", className = "" }: { children: React.ReactNode; variant?: "primary" | "ghost"; className?: string }) {
   const base =
-    "inline-flex items-center justify-center gap-2 rounded-full px-7 py-3.5 text-sm font-semibold transition-all";
+    "inline-flex items-center justify-center gap-2 rounded-full px-7 py-3.5 text-sm font-bold tracking-wide transition-all";
   const styles =
     variant === "primary"
-      ? "bg-[color:var(--brand)] text-white shadow-[0_10px_40px_-10px_var(--brand)] hover:brightness-110"
-      : "border border-white/10 bg-white/5 text-white hover:bg-white/10";
+      ? "btn-premium"
+      : "border border-[color:var(--brand)]/30 bg-[color:var(--brand)]/[.06] text-[color:var(--brand-light)] hover:bg-[color:var(--brand)]/15 hover:border-[color:var(--brand)]/60 transition-all duration-300";
   return (
     <a href={CTA_URL} target="_blank" rel="noopener noreferrer" className={`${base} ${styles} ${className}`}>
       {children}
@@ -53,7 +52,7 @@ function Cta({ children, variant = "primary", className = "" }: { children: Reac
 
 function SectionLabel({ children }: { children: React.ReactNode }) {
   return (
-    <span className="inline-flex items-center rounded-full border border-[color:var(--brand)]/30 bg-[color:var(--brand)]/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-[color:var(--brand-light)]">
+    <span className="inline-flex items-center rounded-full border border-[color:var(--brand)]/40 bg-[color:var(--brand)]/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-[color:var(--brand-light)] shadow-[0_0_20px_-6px_var(--brand)]">
       {children}
     </span>
   );
@@ -61,21 +60,21 @@ function SectionLabel({ children }: { children: React.ReactNode }) {
 
 function Nav() {
   return (
-    <nav className="sticky top-0 z-50 border-b border-white/5 bg-[#070b14]/80 backdrop-blur-xl">
+    <nav className="sticky top-0 z-50 border-b border-[color:var(--brand)]/15 bg-[#080603]/80 backdrop-blur-xl">
       <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
-        <a href="#" className="flex items-center gap-2">
-          <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-gradient-to-br from-[color:var(--brand)] to-[color:var(--brand-deep)] shadow-[0_4px_20px_-2px_var(--brand)]">
-            <Sparkles className="h-5 w-5 text-white" />
+        <a href="#" className="flex items-center gap-2.5">
+          <div className="btn-premium flex h-9 w-9 items-center justify-center rounded-lg !p-0">
+            <Zap className="h-5 w-5" />
           </div>
-          <span className="text-lg font-bold">
-            Linked<span className="text-[color:var(--brand-light)]">Agent</span>
+          <span className="text-lg font-bold tracking-tight">
+            ClientFlow <span className="gold-text-shine">AI™</span>
           </span>
         </a>
         <div className="hidden items-center gap-8 md:flex">
-          <a href="#comment" className="text-sm font-medium text-[color:var(--brand-light)] hover:text-white">Comment ça marche</a>
-          <a href="#comparaison" className="text-sm font-medium text-[color:var(--brand-light)] hover:text-white">Comparaison</a>
-          <a href="#calculateur" className="text-sm font-medium text-[color:var(--brand-light)] hover:text-white">Calculateur</a>
-          
+          <a href="#comment" className="text-sm font-medium text-[color:var(--brand-light)]/80 hover:text-[color:var(--brand-light)] transition-colors duration-300">Comment ça marche</a>
+          <a href="#comparaison" className="text-sm font-medium text-[color:var(--brand-light)]/80 hover:text-[color:var(--brand-light)] transition-colors duration-300">Comparaison</a>
+          <a href="#calculateur" className="text-sm font-medium text-[color:var(--brand-light)]/80 hover:text-[color:var(--brand-light)] transition-colors duration-300">Calculateur</a>
+
         </div>
         <div className="flex items-center gap-3">
           <button className="hidden items-center gap-1 rounded-md border border-white/10 bg-white/5 px-3 py-1.5 text-xs font-medium md:inline-flex">
@@ -95,29 +94,31 @@ function Hero() {
         className="absolute inset-0"
         style={{
           backgroundImage:
-            "linear-gradient(rgba(255,255,255,.04) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.04) 1px, transparent 1px)",
+            "linear-gradient(rgba(227,185,78,.05) 1px, transparent 1px), linear-gradient(90deg, rgba(227,185,78,.05) 1px, transparent 1px)",
           backgroundSize: "60px 60px",
         }}
       />
-      <div className="absolute left-1/2 top-0 -z-0 h-[500px] w-[800px] -translate-x-1/2 rounded-full bg-[color:var(--brand)]/20 blur-[120px]" />
+      <div className="absolute left-1/2 top-0 -z-0 h-[500px] w-[800px] -translate-x-1/2 rounded-full bg-[color:var(--brand)]/20 blur-[120px] animate-glow" />
+      <div className="absolute -left-20 top-40 h-64 w-64 rounded-full bg-[color:var(--brand)]/10 blur-[100px] animate-float-slow" />
+      <div className="absolute -right-20 top-72 h-72 w-72 rounded-full bg-[color:var(--brand)]/10 blur-[110px] animate-float-slow" style={{ animationDelay: "-3s" }} />
       <div className="relative mx-auto max-w-6xl px-6 pt-28 pb-20 text-center">
-        <span className="inline-flex items-center gap-2 rounded-full border border-emerald-400/30 bg-emerald-400/10 px-4 py-1.5 text-xs font-medium text-emerald-300">
-          <span className="h-1.5 w-1.5 rounded-full bg-emerald-400 animate-pulse" />
+        <span className="animate-rise inline-flex items-center gap-2 rounded-full border border-[color:var(--brand)]/40 bg-[color:var(--brand)]/10 px-4 py-1.5 text-xs font-medium text-[color:var(--brand-light)] shadow-[0_0_25px_-8px_var(--brand)]">
+          <span className="h-1.5 w-1.5 rounded-full bg-[color:var(--brand-light)] animate-blink" />
           Offre de lancement : places limitées
         </span>
-        <h1 className="mt-8 text-5xl font-bold leading-[1.05] tracking-tight md:text-7xl">
+        <h1 className="animate-rise mt-8 text-5xl font-bold leading-[1.05] tracking-tight md:text-7xl" style={{ animationDelay: ".1s" }}>
           <span className="text-white">Le seul agent IA qui vous</span>
           <br />
-          <span className="bg-gradient-to-b from-[#cfe0ff] via-[#7eb0ff] to-[#3b82f6] bg-clip-text text-transparent">
+          <span className="gold-text-shine">
             garantit des appels qualifiés
           </span>
         </h1>
-        <p className="mx-auto mt-8 max-w-2xl text-lg text-white/70">
-          Le système Agentique High Ticket™ qui remplit votre agenda d'appels qualifiés 24h/24, même quand vous dormez. Sans ads, sans contenu à créer, sans setter, sans DM à gérer : <span className="font-semibold text-white">100% en autopilote</span>.
+        <p className="animate-rise mx-auto mt-8 max-w-2xl text-lg text-white/70" style={{ animationDelay: ".2s" }}>
+          Le système Agentique High Ticket™ qui remplit votre agenda d'appels qualifiés 24h/24, même quand vous dormez. Sans ads, sans contenu à créer, sans setter, sans DM à gérer : <span className="gold-mark font-semibold text-white">100% en autopilote</span>.
         </p>
-        <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
+        <div className="animate-rise mt-10 flex flex-wrap items-center justify-center gap-4" style={{ animationDelay: ".3s" }}>
           <Cta>Réserver un appel gratuit <ArrowRight className="h-4 w-4" /></Cta>
-          <a href="#comment" className="inline-flex items-center justify-center gap-2 rounded-full border border-white/10 bg-white/5 px-7 py-3.5 text-sm font-semibold text-white hover:bg-white/10">
+          <a href="#comment" className="inline-flex items-center justify-center gap-2 rounded-full border border-[color:var(--brand)]/30 bg-[color:var(--brand)]/[.06] px-7 py-3.5 text-sm font-semibold text-[color:var(--brand-light)] transition-all duration-300 hover:bg-[color:var(--brand)]/15 hover:border-[color:var(--brand)]/60 hover:-translate-y-0.5">
             Voir comment ça marche
           </a>
         </div>
@@ -163,9 +164,9 @@ function CalendarMock() {
     ]},
   ];
   return (
-    <div className="relative mt-20">
-      <div className="absolute -inset-4 rounded-3xl bg-[color:var(--brand)]/20 blur-3xl" />
-      <div className="relative rounded-2xl border border-white/10 bg-[#0a1020]/90 p-6 shadow-2xl backdrop-blur">
+    <div className="relative mt-20 animate-rise" style={{ animationDelay: ".4s" }}>
+      <div className="absolute -inset-4 rounded-3xl bg-[color:var(--brand)]/20 blur-3xl animate-glow" />
+      <div className="relative rounded-2xl border border-[color:var(--brand)]/25 bg-[#0c0904]/90 p-6 shadow-2xl backdrop-blur">
         <div className="flex items-start justify-between gap-4 border-b border-white/5 pb-4">
           <div className="flex items-center gap-3">
             <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-[color:var(--brand)]/20">
@@ -233,9 +234,9 @@ function TrustBar() {
 
 function Testimonials() {
   const reviews = [
-    { c: "HE", n: "Houdaifa Elanoui", r: "Fondateur · Agence SaaS", color: "from-blue-500 to-blue-700", linkedin: "https://www.linkedin.com/in/houdaifa-el-aouni/", q: "24 appels qualifiés le premier mois sans avoir à gérer un seul setter. J'ai signé plusieurs clients sans problèmes !" },
-    { c: "VM", n: "Viannard Mayonka-Matondo", r: "Expert-Comptable", color: "from-purple-500 to-purple-700", linkedin: "https://www.linkedin.com/in/viannard-cinthia-mayoka-18a172209/", q: "J'avais essayé gojiberry, bereach, un setter… rien ne marchait vraiment. LinkedAgent a remplacé tout ça et j'ai enfin un flux constant d'appels. Une folie furieuse." },
-    { c: "SP", n: "Sarah Piotrowski", r: "Manageuse de transition", color: "from-cyan-500 to-cyan-700", linkedin: "https://www.linkedin.com/in/sarahpiotrowski/", q: "Je gagne 25 h par semaine. Le contenu, les DM, la prospection - tout est géré sans setter. Je me concentre uniquement sur les calls." },
+    { c: "BH", n: "Baptiste Hoguet", r: "Fondateur · Agence SaaS", color: "from-amber-500 to-yellow-700", linkedin: "https://www.linkedin.com/in/baptiste-hoguet-00a171336/", q: "34 appels qualifiés le premier mois sans avoir à gérer un seul setter. J'ai signé plusieurs clients sans problèmes !" },
+    { c: "MR", n: "Myriam Renaud", r: "Expert-Comptable", color: "from-yellow-600 to-amber-800", linkedin: "https://www.linkedin.com/in/myriam-renaud-567563ba/", q: "J'avais essayé gojiberry, bereach, un setter… rien ne marchait vraiment. ClientFlow AI™ a remplacé tout ça et j'ai enfin un flux constant d'appels. Une folie furieuse." },
+    { c: "SL", n: "Samuel Lyon", r: "Manager de transition", color: "from-orange-500 to-amber-700", linkedin: "https://www.linkedin.com/in/samuel-lyon-b02465399/", q: "Je gagne 25 h par semaine. Le contenu, les DM, la prospection - tout est géré sans setter. Je me concentre uniquement sur les calls." },
   ];
   return (
     <section className="py-24">
@@ -352,7 +353,7 @@ function Comparison() {
           <SectionLabel>Comparaison</SectionLabel>
           <h2 className="mx-auto mt-6 text-4xl font-bold tracking-tight">
             <span className="text-white">Pourquoi un </span>
-            <span className="bg-gradient-to-b from-[#cfe0ff] via-[#7eb0ff] to-[#3b82f6] bg-clip-text text-transparent">
+            <span className="bg-gradient-to-b from-[#fdf3d0] via-[#e9c565] to-[#b98a1e] bg-clip-text text-transparent">
               système IA que vous
               <br />
               possédez bat tout le reste
@@ -472,7 +473,7 @@ function Guarantee() {
             <h2 className="mx-auto mt-6 max-w-3xl text-4xl font-bold tracking-tight">
               Vos premiers appels qualifiés,
               <br />
-              <span className="bg-gradient-to-b from-[#cfe0ff] via-[#7eb0ff] to-[#3b82f6] bg-clip-text text-transparent">
+              <span className="bg-gradient-to-b from-[#fdf3d0] via-[#e9c565] to-[#b98a1e] bg-clip-text text-transparent">
                 dès la première semaine.
               </span>
             </h2>
@@ -581,7 +582,7 @@ function BookCall() {
       <div className="mx-auto max-w-4xl px-6 text-center">
         <SectionLabel>Réservez un appel</SectionLabel>
         <h2 className="mt-6 text-4xl font-bold tracking-tight md:text-5xl">
-          Discutons de <span className="bg-gradient-to-b from-[#cfe0ff] via-[#7eb0ff] to-[#3b82f6] bg-clip-text text-transparent">vos résultats</span>
+          Discutons de <span className="bg-gradient-to-b from-[#fdf3d0] via-[#e9c565] to-[#b98a1e] bg-clip-text text-transparent">vos résultats</span>
         </h2>
         <p className="mx-auto mt-4 max-w-xl text-white/65">
           30 minutes pour valider que le système est fait pour votre offre et voir comment il s'installe chez vous.
@@ -591,7 +592,7 @@ function BookCall() {
           <div className="relative overflow-hidden rounded-2xl border border-[color:var(--brand)]/40 bg-[#0a1020]/90 shadow-[0_0_80px_-30px_var(--brand)]">
             <div
               className="iclosed-widget"
-              data-url="https://app.iclosed.io/e/visionary/consulting"
+              data-url="https://app.iclosed.io/e/martinvision/session-decouverte"
               style={{ minWidth: "320px", width: "100%", height: "620px" }}
             />
           </div>

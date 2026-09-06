@@ -11,16 +11,133 @@
 }
 
 :root {
-  --background: #04060c;
+  --background: #050403;
   --foreground: #ffffff;
-  --brand: #2f7dff;
-  --brand-light: #7eb0ff;
-  --brand-deep: #1a5fd6;
+  --brand: #e3b94e;
+  --brand-light: #f6dd8f;
+  --brand-deep: #9a7413;
 }
 
 @layer base {
-  html, body { background: #04060c; color: #fff; }
+  html, body { background: #050403; color: #fff; }
   body { font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; }
+}
+
+/* ===== Gold premium tokens ===== */
+.gold-text {
+  background: linear-gradient(180deg, #fdf3d0 0%, #e9c565 45%, #b98a1e 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.gold-text-shine {
+  background: linear-gradient(110deg, #b98a1e 0%, #e9c565 25%, #fff6d8 50%, #e9c565 75%, #b98a1e 100%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: shine-text 4s linear infinite;
+}
+
+/* Highlight marker */
+.gold-mark {
+  background: linear-gradient(180deg, transparent 55%, rgba(227,185,78,.35) 55%, rgba(227,185,78,.35) 92%, transparent 92%);
+  padding: 0 .15em;
+  border-radius: 2px;
+}
+
+/* ===== Premium button ===== */
+.btn-premium {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(135deg, #f6dd8f 0%, #e3b94e 40%, #b98a1e 100%);
+  color: #1a1305;
+  box-shadow: 0 10px 40px -10px rgba(227,185,78,.65), inset 0 1px 0 rgba(255,255,255,.55);
+  transition: transform .25s cubic-bezier(.22,1,.36,1), box-shadow .25s, filter .25s;
+}
+.btn-premium:hover {
+  transform: translateY(-2px) scale(1.02);
+  filter: brightness(1.08);
+  box-shadow: 0 18px 55px -12px rgba(227,185,78,.85), inset 0 1px 0 rgba(255,255,255,.65);
+}
+.btn-premium::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(105deg, transparent 30%, rgba(255,255,255,.75) 50%, transparent 70%);
+  transform: translateX(-120%);
+  animation: btn-shine 3.2s ease-in-out infinite;
+  pointer-events: none;
+}
+
+/* ===== Animations ===== */
+@keyframes btn-shine {
+  0%, 60% { transform: translateX(-120%); }
+  100% { transform: translateX(120%); }
+}
+@keyframes shine-text {
+  to { background-position: 200% center; }
+}
+@keyframes float-slow {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-14px); }
+}
+@keyframes glow-pulse {
+  0%, 100% { opacity: .5; transform: scale(1); }
+  50% { opacity: .9; transform: scale(1.08); }
+}
+@keyframes blink-soft {
+  0%, 100% { opacity: 1; }
+  50% { opacity: .35; }
+}
+@keyframes marquee-x {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+@keyframes border-flow {
+  to { background-position: 300% 0; }
+}
+@keyframes rise-in {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes slot-pop {
+  0% { opacity: .4; }
+  50% { opacity: 1; box-shadow: 0 0 14px rgba(227,185,78,.5); }
+  100% { opacity: .85; }
+}
+
+.animate-float-slow { animation: float-slow 7s ease-in-out infinite; }
+.animate-glow { animation: glow-pulse 5s ease-in-out infinite; }
+.animate-blink { animation: blink-soft 1.6s ease-in-out infinite; }
+.animate-rise { animation: rise-in .8s cubic-bezier(.22,1,.36,1) both; }
+.animate-slot { animation: slot-pop 4s ease-in-out infinite; }
+
+.marquee-track {
+  display: flex;
+  width: max-content;
+  animation: marquee-x 28s linear infinite;
+}
+.marquee-track:hover { animation-play-state: paused; }
+
+/* Flowing gold border for featured cards */
+.border-flow-gold {
+  border: 1px solid transparent;
+  background:
+    linear-gradient(#0a0803, #0a0803) padding-box,
+    linear-gradient(90deg, rgba(227,185,78,.1), rgba(246,221,143,.9), rgba(227,185,78,.1), rgba(246,221,143,.9), rgba(227,185,78,.1)) border-box;
+  background-size: 100% 100%, 300% 100%;
+  animation: border-flow 6s linear infinite;
+}
+
+/* Card hover lift */
+.card-lift {
+  transition: transform .35s cubic-bezier(.22,1,.36,1), box-shadow .35s, border-color .35s;
+}
+.card-lift:hover {
+  transform: translateY(-6px);
+  border-color: rgba(227,185,78,.45);
+  box-shadow: 0 24px 60px -20px rgba(227,185,78,.35);
 }
 
 .brand-range {
