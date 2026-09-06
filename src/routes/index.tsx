@@ -15,7 +15,7 @@ import {
   Linkedin,
 } from "lucide-react";
 
-const CTA_URL = "https://app.iclosed.io/e/visionary-consulting/visionary-consulting";
+const CTA_URL = "https://app.iclosed.io/e/martinvision/session-decouverte";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -108,7 +108,7 @@ function Hero() {
         <h1 className="mt-8 text-5xl font-bold leading-[1.05] tracking-tight md:text-7xl">
           <span className="text-white">Le seul agent IA qui vous</span>
           <br />
-          <span className="bg-gradient-to-b from-[#cfe0ff] via-[#7eb0ff] to-[#3b82f6] bg-clip-text text-transparent">
+          <span className="bg-gradient-to-b from-[#fdf3d0] via-[#e9c565] to-[#b98a1e] bg-clip-text text-transparent">
             garantit des appels qualifiés
           </span>
         </h1>
@@ -352,7 +352,7 @@ function Comparison() {
           <SectionLabel>Comparaison</SectionLabel>
           <h2 className="mx-auto mt-6 text-4xl font-bold tracking-tight">
             <span className="text-white">Pourquoi un </span>
-            <span className="bg-gradient-to-b from-[#cfe0ff] via-[#7eb0ff] to-[#3b82f6] bg-clip-text text-transparent">
+            <span className="bg-gradient-to-b from-[#fdf3d0] via-[#e9c565] to-[#b98a1e] bg-clip-text text-transparent">
               système IA que vous
               <br />
               possédez bat tout le reste
@@ -472,7 +472,7 @@ function Guarantee() {
             <h2 className="mx-auto mt-6 max-w-3xl text-4xl font-bold tracking-tight">
               Vos premiers appels qualifiés,
               <br />
-              <span className="bg-gradient-to-b from-[#cfe0ff] via-[#7eb0ff] to-[#3b82f6] bg-clip-text text-transparent">
+              <span className="bg-gradient-to-b from-[#fdf3d0] via-[#e9c565] to-[#b98a1e] bg-clip-text text-transparent">
                 dès la première semaine.
               </span>
             </h2>
@@ -581,7 +581,7 @@ function BookCall() {
       <div className="mx-auto max-w-4xl px-6 text-center">
         <SectionLabel>Réservez un appel</SectionLabel>
         <h2 className="mt-6 text-4xl font-bold tracking-tight md:text-5xl">
-          Discutons de <span className="bg-gradient-to-b from-[#cfe0ff] via-[#7eb0ff] to-[#3b82f6] bg-clip-text text-transparent">vos résultats</span>
+          Discutons de <span className="bg-gradient-to-b from-[#fdf3d0] via-[#e9c565] to-[#b98a1e] bg-clip-text text-transparent">vos résultats</span>
         </h2>
         <p className="mx-auto mt-4 max-w-xl text-white/65">
           30 minutes pour valider que le système est fait pour votre offre et voir comment il s'installe chez vous.
@@ -591,7 +591,7 @@ function BookCall() {
           <div className="relative overflow-hidden rounded-2xl border border-[color:var(--brand)]/40 bg-[#0a1020]/90 shadow-[0_0_80px_-30px_var(--brand)]">
             <div
               className="iclosed-widget"
-              data-url="https://app.iclosed.io/e/visionary-consulting/visionary-consulting"
+              data-url="https://app.iclosed.io/e/martinvision/session-decouverte"
               style={{ minWidth: "320px", width: "100%", height: "620px" }}
             />
           </div>
