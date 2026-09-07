@@ -590,7 +590,7 @@ function BookCall() {
         </p>
         <div className="relative mt-12">
           <div className="absolute -inset-4 rounded-3xl bg-[color:var(--brand)]/20 blur-3xl" />
-          <div className="relative overflow-hidden rounded-2xl border border-[color:var(--brand)]/40 bg-[#0a1020]/90 shadow-[0_0_80px_-30px_var(--brand)]">
+          <div className="relative overflow-hidden rounded-2xl border border-[color:var(--brand)]/40 bg-[#0c0904]/90 shadow-[0_0_80px_-30px_var(--brand)]">
             <div
               className="iclosed-widget"
               data-url="https://app.iclosed.io/e/martinvision/session-decouverte"
@@ -617,7 +617,7 @@ function Pricing() {
         <p className="mx-auto mt-4 max-w-2xl text-white/65">
           Un seul forfait, totalement modulable selon votre objectif mensuel. Garantie de résultats : sinon vous ne payez pas. Le tarif vous est communiqué pendant l'appel.
         </p>
-        <div className="relative mt-12 rounded-3xl border border-[color:var(--brand)]/40 bg-[#0a1020]/80 p-10 text-left shadow-[0_0_80px_-30px_var(--brand)]">
+        <div className="relative mt-12 rounded-3xl border border-[color:var(--brand)]/40 bg-[#0c0904]/80 p-10 text-left shadow-[0_0_80px_-30px_var(--brand)]">
           <div className="absolute left-1/2 -top-4 -translate-x-1/2 rounded-full bg-[color:var(--brand)] px-5 py-1.5 text-xs font-bold uppercase tracking-wider">Forfait unique</div>
           <h3 className="text-3xl font-bold">Scaling Partner</h3>
           <p className="mt-2 text-sm text-white/60">Vous choisissez votre objectif mensuel d'appels qualifiés</p>
