@@ -645,19 +645,19 @@ function Pricing() {
 
 function Footer() {
   return (
-    <footer className="border-t border-white/10 py-16">
+    <footer className="border-t border-[color:var(--brand)]/15 py-16">
       <div className="mx-auto grid max-w-6xl gap-10 px-6 md:grid-cols-3">
         <div>
           <div className="flex items-center gap-2">
-            <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-gradient-to-br from-[color:var(--brand)] to-[color:var(--brand-deep)] shadow-[0_4px_20px_-2px_var(--brand)]">
-              <Sparkles className="h-5 w-5 text-white" />
+            <div className="btn-premium flex h-9 w-9 items-center justify-center rounded-lg !p-0">
+              <Sparkles className="h-5 w-5" />
             </div>
             <span className="text-lg font-bold">
-              Linked<span className="text-[color:var(--brand-light)]">Agent</span>
+              ClientFlow <span className="gold-text-shine">AI™</span>
             </span>
           </div>
           <p className="mt-5 max-w-xs text-sm leading-relaxed text-white/60">
-            Le système Agentique High Ticket™ qui remplit votre agenda d'appels qualifiés, 24h/24.
+            L'agent IA qui remplace vos setters et prend en charge l'intégralité de votre acquisition LinkedIn, 24h/24.
           </p>
         </div>
         <div>
