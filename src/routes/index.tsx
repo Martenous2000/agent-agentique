@@ -12,6 +12,7 @@ import {
   ArrowRight,
   Trophy,
   Linkedin,
+  Sparkles,
 } from "lucide-react";
 
 const CTA_URL = "https://app.iclosed.io/e/martinvision/session-decouverte";
@@ -249,7 +250,7 @@ function Testimonials() {
         </div>
         <div className="grid gap-6 md:grid-cols-3">
           {reviews.map((r) => (
-            <div key={r.n} className="rounded-2xl border border-white/10 bg-white/[.02] p-6">
+            <div key={r.n} className="card-lift rounded-2xl border border-white/10 bg-white/[.02] p-6">
               <div className="mb-4 flex gap-0.5 text-yellow-400">
                 {[...Array(5)].map((_, i) => <Star key={i} className="h-4 w-4 fill-current" />)}
               </div>
@@ -325,7 +326,7 @@ function HowItWorks() {
 
 function StepCard({ num, title, body, items, highlight }: { num: string; title: string; body: string; items: string[]; highlight?: boolean }) {
   return (
-    <div className={`relative rounded-2xl border p-8 ${highlight ? "border-[color:var(--brand)]/40 bg-[color:var(--brand)]/[.04] shadow-[0_0_60px_-20px_var(--brand)]" : "border-white/10 bg-white/[.02]"}`}>
+    <div className={`card-lift relative rounded-2xl border p-8 ${highlight ? "border-flow-gold shadow-[0_0_60px_-20px_var(--brand)]" : "border-white/10 bg-white/[.02]"}`}>
       <div className="flex items-start gap-4">
         <div className={`text-5xl font-bold ${highlight ? "text-[color:var(--brand-light)]" : "text-white/15"}`}>{num}</div>
         <div className="flex-1 pt-1">
@@ -424,9 +425,9 @@ function CompCard({
 }) {
   return (
     <div
-      className={`rounded-2xl border p-7 ${
+      className={`card-lift rounded-2xl border p-7 ${
         highlight
-          ? "border-[color:var(--brand)]/50 bg-[color:var(--brand)]/[.04] shadow-[0_0_60px_-20px_var(--brand)]"
+          ? "border-flow-gold shadow-[0_0_60px_-20px_var(--brand)]"
           : "border-white/10 bg-white/[.02]"
       }`}
     >
@@ -589,7 +590,7 @@ function BookCall() {
         </p>
         <div className="relative mt-12">
           <div className="absolute -inset-4 rounded-3xl bg-[color:var(--brand)]/20 blur-3xl" />
-          <div className="relative overflow-hidden rounded-2xl border border-[color:var(--brand)]/40 bg-[#0a1020]/90 shadow-[0_0_80px_-30px_var(--brand)]">
+          <div className="relative overflow-hidden rounded-2xl border border-[color:var(--brand)]/40 bg-[#0c0904]/90 shadow-[0_0_80px_-30px_var(--brand)]">
             <div
               className="iclosed-widget"
               data-url="https://app.iclosed.io/e/martinvision/session-decouverte"
@@ -616,7 +617,7 @@ function Pricing() {
         <p className="mx-auto mt-4 max-w-2xl text-white/65">
           Un seul forfait, totalement modulable selon votre objectif mensuel. Garantie de résultats : sinon vous ne payez pas. Le tarif vous est communiqué pendant l'appel.
         </p>
-        <div className="relative mt-12 rounded-3xl border border-[color:var(--brand)]/40 bg-[#0a1020]/80 p-10 text-left shadow-[0_0_80px_-30px_var(--brand)]">
+        <div className="relative mt-12 rounded-3xl border border-[color:var(--brand)]/40 bg-[#0c0904]/80 p-10 text-left shadow-[0_0_80px_-30px_var(--brand)]">
           <div className="absolute left-1/2 -top-4 -translate-x-1/2 rounded-full bg-[color:var(--brand)] px-5 py-1.5 text-xs font-bold uppercase tracking-wider">Forfait unique</div>
           <h3 className="text-3xl font-bold">Scaling Partner</h3>
           <p className="mt-2 text-sm text-white/60">Vous choisissez votre objectif mensuel d'appels qualifiés</p>
@@ -644,19 +645,19 @@ function Pricing() {
 
 function Footer() {
   return (
-    <footer className="border-t border-white/10 py-16">
+    <footer className="border-t border-[color:var(--brand)]/15 py-16">
       <div className="mx-auto grid max-w-6xl gap-10 px-6 md:grid-cols-3">
         <div>
           <div className="flex items-center gap-2">
-            <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-gradient-to-br from-[color:var(--brand)] to-[color:var(--brand-deep)] shadow-[0_4px_20px_-2px_var(--brand)]">
-              <Sparkles className="h-5 w-5 text-white" />
+            <div className="btn-premium flex h-9 w-9 items-center justify-center rounded-lg !p-0">
+              <Sparkles className="h-5 w-5" />
             </div>
             <span className="text-lg font-bold">
-              Linked<span className="text-[color:var(--brand-light)]">Agent</span>
+              ClientFlow <span className="gold-text-shine">AI™</span>
             </span>
           </div>
           <p className="mt-5 max-w-xs text-sm leading-relaxed text-white/60">
-            Le système Agentique High Ticket™ qui remplit votre agenda d'appels qualifiés, 24h/24.
+            L'agent IA qui remplace vos setters et prend en charge l'intégralité de votre acquisition LinkedIn, 24h/24.
           </p>
         </div>
         <div>
@@ -680,27 +681,51 @@ function Footer() {
         </div>
       </div>
       <div className="mx-auto mt-16 flex max-w-6xl flex-col justify-between gap-3 border-t border-white/10 px-6 pt-8 text-xs text-white/40 md:flex-row">
-        <span>© 2026 LinkedAgent. Tous droits réservés.</span>
+        <span>© 2026 ClientFlow AI™. Tous droits réservés.</span>
         <span>Non affilié à LinkedIn Corporation.</span>
       </div>
     </footer>
   );
 }
 
+function Marquee() {
+  const words = [
+    "Appels qualifiés 24/7",
+    "Zéro setter",
+    "Prospection en autopilote",
+    "DM gérés par l'IA",
+    "Contenu automatique",
+    "Qualification sur VOS critères",
+    "Aucun risque de ban",
+    "Coaching hebdo inclus",
+  ];
+  return (
+    <div className="relative overflow-hidden border-y border-[color:var(--brand)]/15 bg-[color:var(--brand)]/[.03] py-4">
+      <div className="marquee-track">
+        {[...words, ...words].map((w, i) => (
+          <span key={i} className="mx-6 flex items-center gap-6 whitespace-nowrap text-sm font-semibold uppercase tracking-widest text-[color:var(--brand-light)]/80">
+            {w}
+            <Sparkles className="h-3.5 w-3.5 text-[color:var(--brand)]/60" />
+          </span>
+        ))}
+      </div>
+    </div>
+  );
+}
+
 function Index() {
   return (
-    <div className="min-h-screen bg-[#04060c] text-white">
+    <div className="min-h-screen bg-[#050403] text-white">
       <Nav />
       <Hero />
       <TrustBar />
+      <Marquee />
       <Testimonials />
       <HowItWorks />
       <Comparison />
       <Guarantee />
       <Calculator />
       <BookCall />
-      
-      <Ban className="hidden" /> {/* keep import */}
       <Footer />
     </div>
   );
