@@ -12,6 +12,7 @@ import {
   ArrowRight,
   Trophy,
   Linkedin,
+  Sparkles,
 } from "lucide-react";
 
 const CTA_URL = "https://app.iclosed.io/e/martinvision/session-decouverte";
@@ -249,7 +250,7 @@ function Testimonials() {
         </div>
         <div className="grid gap-6 md:grid-cols-3">
           {reviews.map((r) => (
-            <div key={r.n} className="rounded-2xl border border-white/10 bg-white/[.02] p-6">
+            <div key={r.n} className="card-lift rounded-2xl border border-white/10 bg-white/[.02] p-6">
               <div className="mb-4 flex gap-0.5 text-yellow-400">
                 {[...Array(5)].map((_, i) => <Star key={i} className="h-4 w-4 fill-current" />)}
               </div>
@@ -325,7 +326,7 @@ function HowItWorks() {
 
 function StepCard({ num, title, body, items, highlight }: { num: string; title: string; body: string; items: string[]; highlight?: boolean }) {
   return (
-    <div className={`relative rounded-2xl border p-8 ${highlight ? "border-[color:var(--brand)]/40 bg-[color:var(--brand)]/[.04] shadow-[0_0_60px_-20px_var(--brand)]" : "border-white/10 bg-white/[.02]"}`}>
+    <div className={`card-lift relative rounded-2xl border p-8 ${highlight ? "border-flow-gold shadow-[0_0_60px_-20px_var(--brand)]" : "border-white/10 bg-white/[.02]"}`}>
       <div className="flex items-start gap-4">
         <div className={`text-5xl font-bold ${highlight ? "text-[color:var(--brand-light)]" : "text-white/15"}`}>{num}</div>
         <div className="flex-1 pt-1">
@@ -424,9 +425,9 @@ function CompCard({
 }) {
   return (
     <div
-      className={`rounded-2xl border p-7 ${
+      className={`card-lift rounded-2xl border p-7 ${
         highlight
-          ? "border-[color:var(--brand)]/50 bg-[color:var(--brand)]/[.04] shadow-[0_0_60px_-20px_var(--brand)]"
+          ? "border-flow-gold shadow-[0_0_60px_-20px_var(--brand)]"
           : "border-white/10 bg-white/[.02]"
       }`}
     >
