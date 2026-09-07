@@ -681,27 +681,51 @@ function Footer() {
         </div>
       </div>
       <div className="mx-auto mt-16 flex max-w-6xl flex-col justify-between gap-3 border-t border-white/10 px-6 pt-8 text-xs text-white/40 md:flex-row">
-        <span>© 2026 LinkedAgent. Tous droits réservés.</span>
+        <span>© 2026 ClientFlow AI™. Tous droits réservés.</span>
         <span>Non affilié à LinkedIn Corporation.</span>
       </div>
     </footer>
   );
 }
 
+function Marquee() {
+  const words = [
+    "Appels qualifiés 24/7",
+    "Zéro setter",
+    "Prospection en autopilote",
+    "DM gérés par l'IA",
+    "Contenu automatique",
+    "Qualification sur VOS critères",
+    "Aucun risque de ban",
+    "Coaching hebdo inclus",
+  ];
+  return (
+    <div className="relative overflow-hidden border-y border-[color:var(--brand)]/15 bg-[color:var(--brand)]/[.03] py-4">
+      <div className="marquee-track">
+        {[...words, ...words].map((w, i) => (
+          <span key={i} className="mx-6 flex items-center gap-6 whitespace-nowrap text-sm font-semibold uppercase tracking-widest text-[color:var(--brand-light)]/80">
+            {w}
+            <Sparkles className="h-3.5 w-3.5 text-[color:var(--brand)]/60" />
+          </span>
+        ))}
+      </div>
+    </div>
+  );
+}
+
 function Index() {
   return (
-    <div className="min-h-screen bg-[#04060c] text-white">
+    <div className="min-h-screen bg-[#050403] text-white">
       <Nav />
       <Hero />
       <TrustBar />
+      <Marquee />
       <Testimonials />
       <HowItWorks />
       <Comparison />
       <Guarantee />
       <Calculator />
       <BookCall />
-      
-      <Ban className="hidden" /> {/* keep import */}
       <Footer />
     </div>
   );
