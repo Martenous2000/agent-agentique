@@ -235,47 +235,85 @@ function TrustBar() {
 
 function Testimonials() {
   const reviews = [
-    { c: "BH", n: "Baptiste Hoguet", r: "Fondateur · Agence SaaS", color: "from-amber-500 to-yellow-700", linkedin: "https://www.linkedin.com/in/baptiste-hoguet-00a171336/", q: "34 appels qualifiés le premier mois sans avoir à gérer un seul setter. J'ai signé plusieurs clients sans problèmes !" },
-    { c: "MR", n: "Myriam Renaud", r: "Expert-Comptable", color: "from-yellow-600 to-amber-800", linkedin: "https://www.linkedin.com/in/myriam-renaud-567563ba/", q: "J'avais essayé gojiberry, bereach, un setter… rien ne marchait vraiment. ClientFlow AI™ a remplacé tout ça et j'ai enfin un flux constant d'appels. Une folie furieuse." },
-    { c: "SL", n: "Samuel Lyon", r: "Manager de transition", color: "from-orange-500 to-amber-700", linkedin: "https://www.linkedin.com/in/samuel-lyon-b02465399/", q: "Je gagne 25 h par semaine. Le contenu, les DM, la prospection - tout est géré sans setter. Je me concentre uniquement sur les calls." },
+    { c: "BH", n: "Baptiste Hoguet", r: "Agence de scaling, France", color: "from-amber-500 to-yellow-700", linkedin: "https://www.linkedin.com/in/baptiste-hoguet-00a171336/", q: "34 appels qualifiés dès le premier mois, sans gérer un seul setter. Avant j'avais essayé Gojiberry, Bereach, un setter humain. Rien ne marchait vraiment. Aujourd'hui je tourne à 40 à 50 rdv qualifiés par mois et l'agence dépasse le million de CA annuel." },
+    { c: "MR", n: "Myriam Renaud", r: "Closeuse indépendante, formation closing, France", color: "from-yellow-600 to-amber-800", linkedin: "https://www.linkedin.com/in/myriam-renaud-567563ba/", q: "Depuis janvier 2026, je génère 20 à 25 rdv qualifiés par mois sans toucher à quoi que ce soit. Mon taux de conversion dépasse 40%. Je me concentre uniquement sur les appels et la formation." },
+    { c: "SL", n: "Samuel Lyon", r: "Infrastructure IA, France", color: "from-orange-500 to-amber-700", linkedin: "https://www.linkedin.com/in/samuel-lyon-b02465399/", q: "Parti de salarié dans la sécurité avec 0 rdv et 0 vente. Après 5 mois avec le système sur mon compte et celui de ma femme, on tourne à 35 à 40 rdv qualifiés par mois en continu." },
+    { c: "JB", n: "Jessica Bensaid", r: "Coach commerciaux en entreprise, France", color: "from-amber-400 to-orange-600", q: "Je coach des équipes commerciales toute la journée. Je n'avais pas une minute à consacrer à ma propre prospection. Depuis l'installation, je génère 9 500€ par mois supplémentaires et plus de 25 rdv qualifiés, en y passant zéro minute." },
+    { c: "BG", n: "Burdy Goureige", r: "Architecte solutions IA, secteur nettoyage, France", color: "from-yellow-500 to-amber-700", q: "Il y a 2 semaines, j'ai signé un contrat à 8 000€ dans le nettoyage grâce au système. Je génère 20 rdv qualifiés par mois en automatique, sur une niche très ciblée où la prospection manuelle ne fonctionnait pas." },
+    { c: "TB", n: "Talel Ben Selma", r: "Formateur setting et closing, tech et SaaS, France", color: "from-amber-600 to-yellow-800", q: "Je scale les boîtes tech et SaaS au-delà de 100K€ par mois. Le système me génère 35 à 40 rdv qualifiés par mois et je l'installe maintenant chez mes propres clients tellement il est fiable." },
+    { c: "HA", n: "Henry Acolaste", r: "France", color: "from-orange-600 to-amber-900", q: "Le système a été installé il y a quelques jours. 6 rendez-vous en 4 jours, les conversations sont qualitatives. Je n'avais pas imaginé des résultats aussi rapides." },
+    { c: "EV", n: "Enzo Vidiella", r: "Tech et digital, implantation Europe, France", color: "from-yellow-500 to-orange-700", q: "Premier rdv le jour même de l'installation. 5 rdv en 2 jours. J'accompagne des SaaS sur leur implantation en France et je n'ai plus à penser à la prospection." },
   ];
+
+  const rowA = reviews.slice(0, 4);
+  const rowB = reviews.slice(4);
+
   return (
-    <section className="py-24">
+    <section className="relative overflow-hidden py-24">
+      <div className="pointer-events-none absolute left-1/2 top-1/2 h-[400px] w-[900px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[color:var(--brand)]/[.06] blur-[140px]" />
       <div className="mx-auto max-w-6xl px-6">
         <div className="mb-12 text-center text-sm text-white/50">
-          <div className="mb-2 flex justify-center gap-1 text-white/30">
-            {[...Array(5)].map((_, i) => <span key={i}>★</span>)}
+          <div className="mb-2 flex justify-center gap-1 text-[color:var(--brand-light)]">
+            {[...Array(5)].map((_, i) => <Star key={i} className="h-4 w-4 fill-current" />)}
           </div>
-          4.9/5, basé sur les retours clients
+          <div>
+            <span className="gold-text font-bold text-lg">4.9/5</span>, basé sur les retours de <span className="gold-text font-semibold">plus de 50 clients</span>
+          </div>
         </div>
-        <div className="grid gap-6 md:grid-cols-3">
-          {reviews.map((r) => (
-            <div key={r.n} className="card-lift rounded-2xl border border-white/10 bg-white/[.02] p-6">
-              <div className="mb-4 flex gap-0.5 text-yellow-400">
+      </div>
+
+      <div className="relative space-y-6">
+        <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-16 bg-gradient-to-r from-[#050403] to-transparent md:w-32" />
+        <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-16 bg-gradient-to-l from-[#050403] to-transparent md:w-32" />
+
+        <TestimonialRow items={rowA} duration="70s" />
+        <TestimonialRow items={rowB} duration="85s" reverse />
+      </div>
+    </section>
+  );
+}
+
+function TestimonialRow({ items, duration, reverse }: { items: typeof Testimonials extends never ? never : { c: string; n: string; r: string; color: string; linkedin?: string; q: string }[]; duration: string; reverse?: boolean }) {
+  const doubled = [...items, ...items];
+  return (
+    <div
+      className="marquee-track"
+      style={{ animationDuration: duration, animationDirection: reverse ? "reverse" : undefined }}
+    >
+      {doubled.map((r, idx) => (
+        <div key={`${r.n}-${idx}`} className="mr-6 w-[340px] flex-shrink-0 md:w-[400px]">
+          <div className="card-lift border-flow-gold h-full rounded-2xl p-6">
+            <div className="mb-4 flex items-center justify-between">
+              <div className="flex gap-0.5 text-[color:var(--brand-light)]">
                 {[...Array(5)].map((_, i) => <Star key={i} className="h-4 w-4 fill-current" />)}
               </div>
-              <p className="text-white/85 leading-relaxed">"{r.q}"</p>
-              <div className="mt-6 flex items-center gap-3 border-t border-white/5 pt-4">
-                <div className={`flex h-10 w-10 items-center justify-center rounded-full bg-gradient-to-br ${r.color} text-sm font-bold`}>{r.c}</div>
-                <div className="flex-1 min-w-0">
-                  <div className="font-semibold">{r.n}</div>
-                  <div className="text-xs text-white/50">{r.r}</div>
-                </div>
+              <span className="rounded-full border border-[color:var(--brand)]/25 bg-[color:var(--brand)]/10 px-2.5 py-0.5 text-[10px] font-semibold uppercase tracking-wider text-[color:var(--brand-light)]">
+                Client vérifié
+              </span>
+            </div>
+            <p className="text-sm leading-relaxed text-white/85">"{r.q}"</p>
+            <div className="mt-6 flex items-center gap-3 border-t border-[color:var(--brand)]/10 pt-4">
+              <div className={`flex h-10 w-10 items-center justify-center rounded-full bg-gradient-to-br ${r.color} text-sm font-bold text-black/80`}>{r.c}</div>
+              <div className="min-w-0 flex-1">
+                <div className="truncate font-semibold">{r.n}</div>
+                <div className="truncate text-xs text-white/50">{r.r}</div>
+              </div>
+              {r.linkedin && (
                 <a
                   href={r.linkedin}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full border border-white/10 bg-white/5 text-white/70 transition hover:bg-white/10 hover:text-white"
+                  className="flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full border border-[color:var(--brand)]/25 bg-[color:var(--brand)]/10 text-[color:var(--brand-light)] transition hover:bg-[color:var(--brand)]/25 hover:text-white"
                   aria-label={`Profil LinkedIn de ${r.n}`}
                 >
                   <Linkedin className="h-4 w-4" />
                 </a>
-              </div>
+              )}
             </div>
-          ))}
+          </div>
         </div>
-      </div>
-    </section>
+      ))}
+    </div>
   );
 }
 
