@@ -273,7 +273,9 @@ function Testimonials() {
   );
 }
 
-function TestimonialRow({ items, duration, reverse }: { items: typeof Testimonials extends never ? never : { c: string; n: string; r: string; color: string; linkedin?: string; q: string }[]; duration: string; reverse?: boolean }) {
+type Testimonial = { c: string; n: string; r: string; color: string; linkedin?: string; q: string };
+
+function TestimonialRow({ items, duration, reverse }: { items: Testimonial[]; duration: string; reverse?: boolean }) {
   const doubled = [...items, ...items];
   return (
     <div
