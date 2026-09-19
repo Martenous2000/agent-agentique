@@ -880,6 +880,7 @@ function Index() {
       <Comparison />
       <Guarantee />
       <Calculator />
+      <Pricing />
       <BookCall />
       <Footer />
     </div>
