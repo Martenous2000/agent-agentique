@@ -75,6 +75,7 @@ function Nav() {
           <a href="#comment" className="text-sm font-medium text-[color:var(--brand-light)]/80 hover:text-[color:var(--brand-light)] transition-colors duration-300">Comment ça marche</a>
           <a href="#comparaison" className="text-sm font-medium text-[color:var(--brand-light)]/80 hover:text-[color:var(--brand-light)] transition-colors duration-300">Comparaison</a>
           <a href="#calculateur" className="text-sm font-medium text-[color:var(--brand-light)]/80 hover:text-[color:var(--brand-light)] transition-colors duration-300">Calculateur</a>
+          <a href="#tarifs" className="text-sm font-medium text-[color:var(--brand-light)]/80 hover:text-[color:var(--brand-light)] transition-colors duration-300">Tarifs</a>
 
         </div>
         <div className="flex items-center gap-3">
@@ -238,11 +239,11 @@ function Testimonials() {
     { c: "BH", n: "Baptiste Hoguet", r: "Agence de scaling, France", color: "from-amber-500 to-yellow-700", linkedin: "https://www.linkedin.com/in/baptiste-hoguet-00a171336/", q: "34 appels qualifiés dès le premier mois, sans gérer un seul setter. Avant j'avais essayé Gojiberry, Bereach, un setter humain. Rien ne marchait vraiment. Aujourd'hui je tourne à 40 à 50 rdv qualifiés par mois et l'agence dépasse le million de CA annuel." },
     { c: "MR", n: "Myriam Renaud", r: "Closeuse indépendante, formation closing, France", color: "from-yellow-600 to-amber-800", linkedin: "https://www.linkedin.com/in/myriam-renaud-567563ba/", q: "Depuis janvier 2026, je génère 20 à 25 rdv qualifiés par mois sans toucher à quoi que ce soit. Mon taux de conversion dépasse 40%. Je me concentre uniquement sur les appels et la formation." },
     { c: "SL", n: "Samuel Lyon", r: "Infrastructure IA, France", color: "from-orange-500 to-amber-700", linkedin: "https://www.linkedin.com/in/samuel-lyon-b02465399/", q: "Parti de salarié dans la sécurité avec 0 rdv et 0 vente. Après 5 mois avec le système sur mon compte et celui de ma femme, on tourne à 35 à 40 rdv qualifiés par mois en continu." },
-    { c: "JB", n: "Jessica Bensaid", r: "Coach commerciaux en entreprise, France", color: "from-amber-400 to-orange-600", q: "Je coach des équipes commerciales toute la journée. Je n'avais pas une minute à consacrer à ma propre prospection. Depuis l'installation, je génère 9 500€ par mois supplémentaires et plus de 25 rdv qualifiés, en y passant zéro minute." },
-    { c: "BG", n: "Burdy Goureige", r: "Architecte solutions IA, secteur nettoyage, France", color: "from-yellow-500 to-amber-700", q: "Il y a 2 semaines, j'ai signé un contrat à 8 000€ dans le nettoyage grâce au système. Je génère 20 rdv qualifiés par mois en automatique, sur une niche très ciblée où la prospection manuelle ne fonctionnait pas." },
-    { c: "TB", n: "Talel Ben Selma", r: "Formateur setting et closing, tech et SaaS, France", color: "from-amber-600 to-yellow-800", q: "Je scale les boîtes tech et SaaS au-delà de 100K€ par mois. Le système me génère 35 à 40 rdv qualifiés par mois et je l'installe maintenant chez mes propres clients tellement il est fiable." },
-    { c: "HA", n: "Henry Acolaste", r: "France", color: "from-orange-600 to-amber-900", q: "Le système a été installé il y a quelques jours. 6 rendez-vous en 4 jours, les conversations sont qualitatives. Je n'avais pas imaginé des résultats aussi rapides." },
-    { c: "EV", n: "Enzo Vidiella", r: "Tech et digital, implantation Europe, France", color: "from-yellow-500 to-orange-700", q: "Premier rdv le jour même de l'installation. 5 rdv en 2 jours. J'accompagne des SaaS sur leur implantation en France et je n'ai plus à penser à la prospection." },
+    { c: "JB", n: "Jessica Bensaid", r: "Coach commerciaux en entreprise, France", color: "from-amber-400 to-orange-600", linkedin: "https://www.linkedin.com/in/bensaidjessica/", q: "Je coach des équipes commerciales toute la journée. Je n'avais pas une minute à consacrer à ma propre prospection. Depuis l'installation, je génère 9 500€ par mois supplémentaires et plus de 25 rdv qualifiés, en y passant zéro minute." },
+    { c: "BG", n: "Burdy Goureige", r: "Architecte solutions IA, secteur nettoyage, France", color: "from-yellow-500 to-amber-700", linkedin: "https://www.linkedin.com/in/burdy-goureige-0b15ab303/", q: "Il y a 2 semaines, j'ai signé un contrat à 8 000€ dans le nettoyage grâce au système. Je génère 20 rdv qualifiés par mois en automatique, sur une niche très ciblée où la prospection manuelle ne fonctionnait pas." },
+    { c: "TB", n: "Talel Ben Selma", r: "Formateur setting et closing, tech et SaaS, France", color: "from-amber-600 to-yellow-800", linkedin: "https://www.linkedin.com/in/talel-ben-selma-05ba02261/", q: "Je scale les boîtes tech et SaaS au-delà de 100K€ par mois. Le système me génère 35 à 40 rdv qualifiés par mois et je l'installe maintenant chez mes propres clients tellement il est fiable." },
+    { c: "HA", n: "Henry Acolaste", r: "France", color: "from-orange-600 to-amber-900", linkedin: "https://www.linkedin.com/in/henry-acolatse/", q: "Le système a été installé il y a quelques jours. 6 rendez-vous en 4 jours, les conversations sont qualitatives. Je n'avais pas imaginé des résultats aussi rapides." },
+    { c: "EV", n: "Enzo Vidiella", r: "Tech et digital, implantation Europe, France", color: "from-yellow-500 to-orange-700", linkedin: "https://www.linkedin.com/in/enzo-vidiella/", q: "Premier rdv le jour même de l'installation. 5 rdv en 2 jours. J'accompagne des SaaS sur leur implantation en France et je n'ai plus à penser à la prospection." },
   ];
 
   const rowA = reviews.slice(0, 4);
@@ -644,42 +645,158 @@ function BookCall() {
 }
 
 function Pricing() {
-  const [target, setTarget] = useState(20);
+  const plans = [
+    {
+      name: "Starter",
+      price: "À partir de 2 000€",
+      sub: "200€ par RDV qualifié, engagement minimum 10 RDV",
+      badge: "Garanti contractuellement",
+      floatingBadge: "",
+      features: [
+        "Campagne LinkedIn DFY (Done For You) : on gère tout",
+        "Scraping et ciblage de ton ICP exact",
+        "Messages de connexion et icebreakers personnalisés par IA",
+        "Relances et gestion des conversations automatisées",
+        "Reporting hebdomadaire (taux de réponse, RDV obtenus)",
+        "Optimisation continue incluse sans surcoût",
+        "Reconduction automatique au même tarif tant que tu es client",
+      ],
+      guarantee: "10 RDV qualifiés sur 30 jours, écrit et signé dans le contrat, remboursement intégral sous 72h si non atteint.",
+      cta: "Réserver mon audit gratuit",
+      highlight: false,
+    },
+    {
+      name: "Scale",
+      price: "À partir de 4 000€ TTC/mois",
+      sub: "20 RDV qualifiés par mois, engagement sur 30 jours renouvelable",
+      badge: "",
+      floatingBadge: "Le plus choisi",
+      features: [
+        "Tout ce qui est inclus dans Starter",
+        "Volume doublé : 2 comptes LinkedIn gérés simultanément",
+        "Ciblage multi-ICP (jusqu'à 3 profils de prospects différents)",
+        "A/B test des séquences de messages en continu",
+        "Intégration directe dans ton CRM (iClosed, Close, HubSpot)",
+        "Rapport mensuel complet avec analyse des signaux de conversion",
+        "Accès prioritaire à l'équipe pour les ajustements en cours de mois",
+        "Reconduction automatique, aucun frais supplémentaire",
+      ],
+      guarantee: "20 RDV qualifiés par mois + 10 000€ de CA mensuel ajouté, écrit et signé dans le contrat, remboursement intégral sous 72h si non atteint.",
+      cta: "Réserver mon audit gratuit",
+      highlight: true,
+    },
+    {
+      name: "Sur-mesure",
+      price: "Sur devis",
+      sub: "Conçu pour les ambitions sans plafond",
+      badge: "",
+      floatingBadge: "",
+      features: [
+        "Tout ce qui est inclus dans Scale",
+        "Nombre de comptes LinkedIn illimité (multi-comptes)",
+        "Ciblage sur plusieurs marchés simultanément (France, UK, US, etc.)",
+        "Équipe dédiée : un gestionnaire de compte attitré",
+        "Séquences rédigées sur-mesure par un copywriter",
+        "Intégration complète dans ta stack (CRM, agenda, Slack, webhook)",
+        "Tableau de bord personnalisé en temps réel",
+        "Accompagnement stratégique mensuel avec Martin",
+        "Conditions définies ensemble selon ta cible et ton marché",
+      ],
+      guarantee: "+40 RDV qualifiés par mois + 20 000€ de CA mensuel ajouté minimum, écrit et signé dans le contrat, remboursement intégral sous 72h si non atteint.",
+      cta: "Demander un devis personnalisé",
+      highlight: false,
+    },
+  ];
+
   return (
-    <section id="tarifs" className="py-24">
-      <div className="mx-auto max-w-4xl px-6 text-center">
-        <span className="inline-flex items-center gap-2 rounded-full border border-yellow-500/30 bg-gradient-to-r from-yellow-500/10 to-orange-500/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-yellow-300">
-          🚀 Offre de lancement : places limitées
-        </span>
-        <h2 className="mt-6 text-4xl font-bold tracking-tight md:text-5xl">
-          Choisissez votre niveau <span className="bg-gradient-to-r from-[color:var(--brand-light)] to-white/40 bg-clip-text text-transparent">d'appels qualifiés</span>
-        </h2>
-        <p className="mx-auto mt-4 max-w-2xl text-white/65">
-          Un seul forfait, totalement modulable selon votre objectif mensuel. Garantie de résultats : sinon vous ne payez pas. Le tarif vous est communiqué pendant l'appel.
-        </p>
-        <div className="relative mt-12 rounded-3xl border border-[color:var(--brand)]/40 bg-[#0c0904]/80 p-10 text-left shadow-[0_0_80px_-30px_var(--brand)]">
-          <div className="absolute left-1/2 -top-4 -translate-x-1/2 rounded-full bg-[color:var(--brand)] px-5 py-1.5 text-xs font-bold uppercase tracking-wider">Forfait unique</div>
-          <h3 className="text-3xl font-bold">Scaling Partner</h3>
-          <p className="mt-2 text-sm text-white/60">Vous choisissez votre objectif mensuel d'appels qualifiés</p>
-          <div className="mt-7 rounded-xl border border-white/10 bg-white/[.03] p-6">
-            <div className="text-xs font-semibold uppercase tracking-wider text-white/50">Garantie de résultats</div>
-            <div className="mt-2 flex items-baseline gap-3">
-              <div className="text-6xl font-bold">{target}</div>
-              <div className="text-white/65">appels qualifiés / mois</div>
-            </div>
-            <input type="range" min={10} max={200} value={target} onChange={(e) => setTarget(+e.target.value)} className="brand-range mt-5 w-full" />
-            <div className="mt-2 flex justify-between text-xs text-white/45"><span>10</span><span>100</span><span>200+</span></div>
-          </div>
-          <ul className="mt-7 space-y-3">
-            {["Contrôle total sur la qualité des leads", "Contrat & paiement uniquement après résultats", "Optimisation continue & accompagnement dédié", "Pas d'engagement"].map((i) => (
-              <li key={i} className="flex items-center gap-2.5 text-sm"><CheckCircle2 className="h-4 w-4 text-[color:var(--brand-light)]" /><span className="text-white/85">{i}</span></li>
-            ))}
-          </ul>
-          <div className="mt-8"><Cta className="w-full">Obtenir le tarif en appel <ArrowRight className="h-4 w-4" /></Cta></div>
-          <p className="mt-4 text-center text-xs text-white/45">Le prix vous est partagé directement en appel, adapté à votre offre, votre cible et le volume d'appels visé.</p>
+    <section id="tarifs" className="relative py-24">
+      <div className="pointer-events-none absolute left-1/2 top-1/3 h-[400px] w-[900px] -translate-x-1/2 rounded-full bg-[color:var(--brand)]/[.05] blur-[140px]" />
+      <div className="relative mx-auto max-w-6xl px-6">
+        <div className="text-center">
+          <SectionLabel>Tarifs</SectionLabel>
+          <h2 className="mx-auto mt-6 max-w-3xl text-4xl font-bold tracking-tight md:text-5xl">
+            Des résultats <span className="bg-gradient-to-r from-[color:var(--brand-light)] to-white/40 bg-clip-text text-transparent">garantis contractuellement.</span>
+          </h2>
+          <p className="mx-auto mt-4 max-w-2xl text-white/65">
+            Chaque offre est adossée à une garantie écrite et signée dans le contrat. Si les RDV qualifiés ne sont pas au rendez-vous, remboursement intégral sous 72h.
+          </p>
+        </div>
+        <div className="mt-16 grid items-stretch gap-6 pt-4 lg:grid-cols-3">
+          {plans.map((p) => (
+            <PlanCard key={p.name} {...p} />
+          ))}
         </div>
       </div>
     </section>
+  );
+}
+
+function PlanCard({
+  name,
+  price,
+  sub,
+  badge,
+  floatingBadge,
+  features,
+  guarantee,
+  cta,
+  highlight,
+}: {
+  name: string;
+  price: string;
+  sub: string;
+  badge: string;
+  floatingBadge: string;
+  features: string[];
+  guarantee: string;
+  cta: string;
+  highlight: boolean;
+}) {
+  return (
+    <div
+      className={`card-lift relative flex h-full flex-col rounded-2xl border p-8 ${
+        highlight
+          ? "border-flow-gold shadow-[0_0_60px_-20px_var(--brand)] lg:scale-[1.03]"
+          : "border-white/10 bg-white/[.02]"
+      }`}
+    >
+      {floatingBadge && (
+        <div className="absolute -top-4 left-1/2 z-10 -translate-x-1/2">
+          <div className="btn-premium whitespace-nowrap rounded-full px-5 py-1.5 text-xs font-bold uppercase tracking-wider">
+            {floatingBadge}
+          </div>
+        </div>
+      )}
+      <h3 className="text-2xl font-bold">{name}</h3>
+      <div className="mt-4 text-3xl font-bold gold-text">{price}</div>
+      <p className="mt-2 text-sm text-white/60">{sub}</p>
+      {badge && (
+        <span className="mt-4 inline-flex w-fit items-center gap-1.5 rounded-full border border-emerald-400/30 bg-emerald-400/10 px-3 py-1 text-xs font-semibold text-emerald-300">
+          <ShieldCheck className="h-3.5 w-3.5" />
+          {badge}
+        </span>
+      )}
+      <ul className="mt-6 flex-1 space-y-3">
+        {features.map((f) => (
+          <li key={f} className="flex items-start gap-2.5 text-sm">
+            <CheckCircle2 className="mt-0.5 h-4 w-4 flex-shrink-0 text-[color:var(--brand-light)]" />
+            <span className="text-white/80">{f}</span>
+          </li>
+        ))}
+      </ul>
+      <div className="mt-6 rounded-xl border border-emerald-400/25 bg-emerald-400/[.06] p-4">
+        <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-emerald-300">
+          <ShieldCheck className="h-4 w-4" />
+          Garantie contractuelle
+        </div>
+        <p className="mt-2 text-sm leading-relaxed text-white/80">{guarantee}</p>
+      </div>
+      <div className="mt-7">
+        <Cta className="w-full">
+          {cta} <ArrowRight className="h-4 w-4" />
+        </Cta>
+      </div>
+    </div>
   );
 }
 
@@ -765,6 +882,7 @@ function Index() {
       <Comparison />
       <Guarantee />
       <Calculator />
+      <Pricing />
       <BookCall />
       <Footer />
     </div>
