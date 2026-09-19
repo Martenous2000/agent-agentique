@@ -761,8 +761,10 @@ function PlanCard({
       }`}
     >
       {floatingBadge && (
-        <div className="btn-premium absolute -top-4 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-full !px-5 !py-1.5 text-xs font-bold uppercase tracking-wider">
-          {floatingBadge}
+        <div className="absolute -top-4 left-1/2 z-10 -translate-x-1/2">
+          <div className="btn-premium whitespace-nowrap rounded-full px-5 py-1.5 text-xs font-bold uppercase tracking-wider">
+            {floatingBadge}
+          </div>
         </div>
       )}
       <h3 className="text-2xl font-bold">{name}</h3>
