@@ -14,10 +14,16 @@ import {
   Linkedin,
   Sparkles,
   ChevronDown,
+  Bot,
+  ExternalLink,
+  MessageCircle,
+  Play,
+  XIcon,
 } from "lucide-react";
 import acquisitionEngineLogo from "@/assets/acquisition-engine-mark-transparent.png.asset.json";
 
 const CTA_URL = "https://app.iclosed.io/e/martinvision/session-decouverte";
+const WHATSAPP_URL = "https://wa.me/33786663503";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -89,10 +95,93 @@ function Nav() {
           <div className="hidden items-center gap-1 rounded-md border border-white/10 bg-white/5 px-3 py-1.5 text-xs font-medium md:inline-flex">
             🇫🇷 FR
           </div>
-          <Cta className="!px-5 !py-2.5 !text-sm">Réserver un appel</Cta>
+          <a
+            href={WHATSAPP_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center justify-center gap-2 rounded-full border border-[color:var(--brand)]/35 bg-[color:var(--brand)]/[.08] px-4 py-2.5 text-xs font-bold text-[color:var(--brand-light)] transition-all duration-300 hover:border-[color:var(--brand)]/70 hover:bg-[color:var(--brand)]/15 sm:text-sm"
+          >
+            <MessageCircle className="h-4 w-4" />
+            <span className="hidden sm:inline">Parler au fondateur</span>
+            <span className="sm:hidden">Fondateur</span>
+          </a>
+          <Cta className="hidden !px-5 !py-2.5 !text-sm lg:inline-flex">Réserver un appel</Cta>
         </div>
       </div>
     </nav>
+  );
+}
+
+function MidPagePopup() {
+  const [isOpen, setIsOpen] = useState(false);
+  const [hasOpened, setHasOpened] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollableHeight = document.documentElement.scrollHeight - window.innerHeight;
+      if (!hasOpened && scrollableHeight > 0 && window.scrollY / scrollableHeight >= 0.5) {
+        setIsOpen(true);
+        setHasOpened(true);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    handleScroll();
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [hasOpened]);
+
+  if (!isOpen) return null;
+
+  return (
+    <div className="fixed inset-0 z-[100] flex items-center justify-center bg-black/75 px-4 py-8 backdrop-blur-sm" role="dialog" aria-modal="true" aria-labelledby="results-popup-title">
+      <div className="relative w-full max-w-xl overflow-hidden rounded-lg border border-[color:var(--brand)]/45 bg-[#0d0a05] p-6 shadow-[0_24px_90px_-20px_rgba(227,185,78,.4)] sm:p-8">
+        <button
+          type="button"
+          onClick={() => setIsOpen(false)}
+          aria-label="Fermer"
+          className="absolute right-4 top-4 flex h-9 w-9 items-center justify-center rounded-full border border-white/10 text-white/60 transition-colors hover:border-[color:var(--brand)]/50 hover:text-white"
+        >
+          <XIcon className="h-5 w-5" />
+        </button>
+
+        <SectionLabel>Résultats clients</SectionLabel>
+        <h2 id="results-popup-title" className="mt-7 max-w-lg text-3xl font-bold leading-tight text-white sm:text-4xl">
+          Comment on ajoute en moyenne <span className="gold-text">+20 rendez-vous qualifiés par mois</span> à nos clients
+        </h2>
+        <p className="mt-5 max-w-lg text-base leading-7 text-white/60">
+          Découvre le système LinkedIn automatisé qui identifie, qualifie et convertit tes prospects pendant que tu te concentres sur tes rendez-vous.
+        </p>
+
+        <div className="mt-8 grid gap-3">
+          <a
+            href="https://www.youtube.com/watch?v=aGXD0z-WUD0"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn-premium flex min-h-24 items-center gap-4 rounded-lg px-5 py-4"
+          >
+            <span className="flex h-14 w-14 shrink-0 items-center justify-center rounded-lg bg-black/15"><Play className="h-6 w-6" /></span>
+            <span className="min-w-0 flex-1 text-left">
+              <span className="block text-base font-bold">Voir le système en action</span>
+              <span className="mt-1 block text-xs font-semibold uppercase tracking-wider opacity-70">Démonstration YouTube</span>
+            </span>
+            <ExternalLink className="h-5 w-5 shrink-0" />
+          </a>
+          <a
+            href="https://www.linkedin.com/in/jules-brommet/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex min-h-24 items-center gap-4 rounded-lg border border-white/20 bg-white/[.04] px-5 py-4 text-white transition-colors hover:border-[color:var(--brand)]/50 hover:bg-[color:var(--brand)]/[.07]"
+          >
+            <span className="flex h-14 w-14 shrink-0 items-center justify-center rounded-lg border border-white/10 bg-black/10"><Bot className="h-6 w-6" /></span>
+            <span className="min-w-0 flex-1 text-left">
+              <span className="block text-base font-bold">Tester l'agent LinkedIn</span>
+              <span className="mt-1 block text-xs font-semibold uppercase tracking-wider text-white/55">Expérience en direct</span>
+            </span>
+            <ExternalLink className="h-5 w-5 shrink-0 text-white/55" />
+          </a>
+        </div>
+      </div>
+    </div>
   );
 }
 
@@ -1293,6 +1382,7 @@ function Index() {
   return (
     <div className="min-h-screen bg-[#050403] text-white">
       <Nav />
+      <MidPagePopup />
       <Hero />
       <TrustBar />
       <Marquee />
