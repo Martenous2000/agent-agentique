@@ -1199,6 +1199,49 @@ function MeasuredResults() {
             </article>
           ))}
         </div>
+
+        <div className="mt-14">
+          <div className="text-center">
+            <SectionLabel>Derniers clients signés</SectionLabel>
+          </div>
+          <div className="mt-8 grid gap-6 lg:grid-cols-2">
+            {recentClients.map((c) => (
+              <article key={c.name} className="card-lift flex flex-col overflow-hidden rounded-2xl border border-white/10 bg-white/[.02]">
+                <div className="flex flex-wrap items-center gap-4 border-b border-white/10 p-6">
+                  <div className={`flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-gradient-to-br ${c.color} text-sm font-bold text-black/80`}>
+                    {c.initials}
+                  </div>
+                  <div className="min-w-0 flex-1">
+                    <h3 className="font-bold text-white">{c.name}</h3>
+                    <p className="mt-0.5 text-xs text-white/45">{c.role}</p>
+                  </div>
+                  {c.badge && (
+                    <span className="inline-flex items-center gap-1.5 rounded-full border border-emerald-400/30 bg-emerald-400/10 px-3 py-1 text-[10px] font-semibold uppercase tracking-wider text-emerald-300">
+                      <span className="h-1.5 w-1.5 rounded-full bg-emerald-400" />
+                      {c.badge}
+                    </span>
+                  )}
+                  <a href={c.linkedin} target="_blank" rel="noopener noreferrer" aria-label={`Profil LinkedIn de ${c.name}`} className="text-[color:var(--brand-light)] transition-opacity hover:opacity-70">
+                    <Linkedin className="h-5 w-5" />
+                  </a>
+                </div>
+                <blockquote className="px-6 pt-6 text-sm leading-7 text-white/80">“{c.quote}”</blockquote>
+                <p className="px-6 pt-4 text-xs leading-6 text-white/45">{c.description}</p>
+                <div className="mt-auto grid grid-cols-2 border-t border-white/10">
+                  <div className="border-r border-white/10 p-6">
+                    <div className="text-xs font-semibold uppercase tracking-wider text-white/40">{c.before.label}</div>
+                    <div className="mt-2 font-semibold text-white/70">{c.before.value}</div>
+                  </div>
+                  <div className="p-6">
+                    <div className="text-xs font-semibold uppercase tracking-wider text-white/40">{c.after.label}</div>
+                    <div className="gold-text mt-2 text-2xl font-bold">{c.after.value}</div>
+                    <div className="mt-0.5 text-xs text-white/40">{c.after.detail}</div>
+                  </div>
+                </div>
+              </article>
+            ))}
+          </div>
+        </div>
         <div className="mt-12 text-center">
           <a
             href="https://cas-clients.visionaryplansagency.com"
