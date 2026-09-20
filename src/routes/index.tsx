@@ -592,6 +592,90 @@ function CompCard({
   );
 }
 
+const AGENCY_ROWS: { bad: string; good: string }[] = [
+  {
+    bad: "Facture des prestations : posts, campagnes, rapports",
+    good: "Installe un système complet de prospection automatisée, de A à Z",
+  },
+  {
+    bad: "Aucun engagement sur les résultats",
+    good: "Garantie contractuelle de rendez-vous qualifiés, ou remboursé intégralement",
+  },
+  {
+    bad: "Se concentre sur un seul canal",
+    good: "Approche centrée sur LinkedIn, combinant IA et setting automatisé",
+  },
+  {
+    bad: "Reporting basé sur des indicateurs d'audience (vues, likes, abonnés)",
+    good: "Un seul indicateur qui compte : les rendez-vous qualifiés obtenus",
+  },
+  {
+    bad: "Retainer mensuel reconduit sans limite claire",
+    good: "Deux formats définis dès le départ : accompagnement récurrent et installation ponctuelle du système",
+  },
+];
+
+function AgencyVs() {
+  return (
+    <section className="py-24">
+      <div className="mx-auto max-w-6xl px-6">
+        <div className="text-center">
+          <SectionLabel>Comparaison</SectionLabel>
+          <h2 className="mx-auto mt-6 text-4xl font-bold tracking-tight">
+            <span className="text-white">Agence classique vs </span>
+            <span className="bg-gradient-to-b from-[#fdf3d0] via-[#e9c565] to-[#b98a1e] bg-clip-text text-transparent">
+              Acquisition Engine™
+            </span>
+          </h2>
+          <p className="mx-auto mt-4 max-w-2xl text-white/65">
+            Ce qui change concrètement quand vous arrêtez de payer pour des prestations et que vous installez un système.
+          </p>
+        </div>
+
+        <div className="mt-14 overflow-hidden rounded-2xl border border-white/10 bg-white/[.02]">
+          {/* En-tête */}
+          <div className="grid md:grid-cols-2">
+            <div className="flex items-center gap-3 border-b border-white/10 p-5 md:border-b-0 md:border-r">
+              <span className="flex h-7 w-7 flex-shrink-0 items-center justify-center rounded-full bg-white/5 text-white/40">
+                <X className="h-4 w-4" />
+              </span>
+              <span className="text-sm font-semibold uppercase tracking-wider text-white/40">
+                Agence classique
+              </span>
+            </div>
+            <div className="flex items-center gap-3 border-b border-white/10 bg-[color:var(--brand)]/[.07] p-5">
+              <span className="flex h-7 w-7 flex-shrink-0 items-center justify-center rounded-full bg-[color:var(--brand)]/20 text-[color:var(--brand-light)]">
+                <Check className="h-4 w-4" />
+              </span>
+              <span className="bg-gradient-to-b from-[#fdf3d0] via-[#e9c565] to-[#b98a1e] bg-clip-text text-sm font-semibold uppercase tracking-wider text-transparent">
+                Acquisition Engine™
+              </span>
+            </div>
+          </div>
+
+          {/* Lignes */}
+          {AGENCY_ROWS.map((row) => (
+            <div key={row.bad} className="grid md:grid-cols-2">
+              <div className="flex items-start gap-3 border-b border-white/[.06] p-5 md:border-r">
+                <span className="mt-0.5 flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-full bg-red-500/15 text-red-400">
+                  <X className="h-3 w-3" />
+                </span>
+                <span className="text-sm text-white/60">{row.bad}</span>
+              </div>
+              <div className="flex items-start gap-3 border-b border-white/[.06] bg-[color:var(--brand)]/[.04] p-5">
+                <span className="mt-0.5 flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-full bg-[color:var(--brand)]/20 text-[color:var(--brand-light)]">
+                  <Check className="h-3 w-3" />
+                </span>
+                <span className="text-sm font-medium text-white/85">{row.good}</span>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
 function Guarantee() {
   return (
     <section className="py-24">
@@ -1191,6 +1275,7 @@ function Index() {
       <LatestSignups />
       <HowItWorks />
       <Comparison />
+      <AgencyVs />
       <MeasuredResults />
       <Guarantee />
       <Calculator />
