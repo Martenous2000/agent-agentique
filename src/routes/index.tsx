@@ -99,9 +99,9 @@ function Nav() {
             href={WHATSAPP_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center justify-center gap-2 rounded-full border border-[color:var(--brand)]/35 bg-[color:var(--brand)]/[.08] px-4 py-2.5 text-xs font-bold text-[color:var(--brand-light)] transition-all duration-300 hover:border-[color:var(--brand)]/70 hover:bg-[color:var(--brand)]/15 sm:text-sm"
+            className="inline-flex items-center justify-center gap-2 rounded-full bg-[#25D366] px-4 py-2.5 text-xs font-bold text-[#062e18] shadow-[0_4px_20px_rgba(37,211,102,0.35)] transition-all duration-300 hover:bg-[#2ee06f] hover:shadow-[0_6px_28px_rgba(37,211,102,0.5)] sm:text-sm"
           >
-            <MessageCircle className="h-4 w-4" />
+            <WhatsAppIcon className="h-4 w-4" />
             <span className="hidden sm:inline">Parler au fondateur</span>
             <span className="sm:hidden">Fondateur</span>
           </a>
