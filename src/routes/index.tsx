@@ -1343,7 +1343,6 @@ function Index() {
       <TrustBar />
       <Marquee />
       <Testimonials />
-      <LatestSignups />
       <HowItWorks />
       <Comparison />
       <AgencyVs />
