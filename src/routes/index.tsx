@@ -1109,6 +1109,34 @@ function MeasuredResults() {
       ],
     },
   ];
+
+  const recentClients = [
+    {
+      initials: "EV",
+      name: "Enzo Vidiella",
+      role: "Jeune entrepreneur, tech & digital",
+      color: "from-yellow-500 to-orange-700",
+      linkedin: "https://www.linkedin.com/in/enzo-vidiella/",
+      badge: "",
+      quote: "Je suis à mon compte depuis plus d'1 an et j'aide les business dans la tech et le digital, comme les SaaS, à s'implémenter en Europe et plus précisément en France. En même pas 1 journée j'ai eu mon premier rendez-vous.",
+      description: "Après plusieurs années à développer son activité dans la tech et le digital, Enzo connaît bien le défi auquel sont confrontés les entrepreneurs qui veulent accélérer : trouver de nouvelles opportunités sans passer leurs journées à prospecter. Il a donc décidé de tester une approche plus automatisée pour soutenir son développement commercial.",
+      before: { label: "Install", value: "< 1 semaine" },
+      after: { label: "Après", value: "5 RDV", detail: "en 4 jours" },
+    },
+    {
+      initials: "HA",
+      name: "Henry Acolaste",
+      role: "France",
+      color: "from-orange-600 to-amber-900",
+      linkedin: "https://www.linkedin.com/in/henry-acolatse/",
+      badge: "Dernier client signé",
+      quote: "Le système a été installé il y a quelques jours et les conversations sont qualitatives, j'ai eu 6 rendez-vous en 4 jours.",
+      description: "Henry vient tout juste de faire ses premiers pas avec le système. Quelques jours seulement après sa mise en production, les premières conversations commencent déjà à s'enchaîner. Une installation récente, mais des premiers signaux suffisamment concrets pour lui permettre de se projeter sur la suite.",
+      before: { label: "Avant", value: "Prospection manuelle" },
+      after: { label: "Après", value: "6 RDV", detail: "en 4 jours" },
+    },
+  ];
+
   return (
     <section className="relative overflow-hidden py-24">
       <div className="pointer-events-none absolute left-1/2 top-1/2 h-[400px] w-[900px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[color:var(--brand)]/[.06] blur-[140px]" />
