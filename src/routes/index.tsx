@@ -1206,17 +1206,20 @@ function MeasuredResults() {
                 </div>
                 <blockquote className="px-6 pt-6 text-sm leading-7 text-white/80">“{c.quote}”</blockquote>
                 <p className="px-6 pt-4 text-xs leading-6 text-white/45">{c.description}</p>
-                <div className="mt-auto grid grid-cols-2 border-t border-white/10">
-                  <div className="border-r border-white/10 p-6">
-                    <div className="text-xs font-semibold uppercase tracking-wider text-white/40">{c.before.label}</div>
-                    <div className="mt-2 font-semibold text-white/70">{c.before.value}</div>
+                {(c.before || c.after) && (
+                  <div className="mt-auto grid grid-cols-2 border-t border-white/10">
+                    <div className="border-r border-white/10 p-6">
+                      <div className="text-xs font-semibold uppercase tracking-wider text-white/40">{c.before!.label}</div>
+                      <div className="mt-2 font-semibold text-white/70">{c.before!.value}</div>
+                      {c.before!.detail && <div className="mt-0.5 text-xs text-white/40">{c.before!.detail}</div>}
+                    </div>
+                    <div className="p-6">
+                      <div className="text-xs font-semibold uppercase tracking-wider text-white/40">{c.after!.label}</div>
+                      <div className="gold-text mt-2 text-2xl font-bold">{c.after!.value}</div>
+                      <div className="mt-0.5 text-xs text-white/40">{c.after!.detail}</div>
+                    </div>
                   </div>
-                  <div className="p-6">
-                    <div className="text-xs font-semibold uppercase tracking-wider text-white/40">{c.after.label}</div>
-                    <div className="gold-text mt-2 text-2xl font-bold">{c.after.value}</div>
-                    <div className="mt-0.5 text-xs text-white/40">{c.after.detail}</div>
-                  </div>
-                </div>
+                )}
               </article>
             ))}
           </div>
