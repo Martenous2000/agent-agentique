@@ -1173,13 +1173,25 @@ function MeasuredResults() {
       before: { label: "Avant", value: "Prospection manuelle" },
       after: { label: "Après", value: "6 RDV", detail: "en 4 jours" },
     },
+  ];
+
+  const systemUsers: {
+    initials: string;
+    name: string;
+    role: string;
+    color: string;
+    linkedin?: string;
+    quote: string;
+    description: string;
+    before?: { label: string; value: string; detail?: string };
+    after?: { label: string; value: string; detail?: string };
+  }[] = [
     {
       initials: "MR",
       name: "Myriam Renaud",
       role: "Closeuse indépendante",
       color: "from-yellow-600 to-amber-800",
       linkedin: "https://www.linkedin.com/in/myriam-renaud-567563ba/",
-      badge: "",
       quote: "Depuis janvier 2026, j'utilise le système qui me génère 20 à 25 rendez-vous qualifiés par mois et qui me sert à vendre ma formation en closing pour dépasser 40% de taux de conversion.",
       description: "Closeuse à son compte, elle utilise le système qui lui génère 20 à 25 rendez-vous qualifiés par mois et qui lui sert à vendre sa formation en closing pour dépasser 40% de taux de conversion.",
     },
@@ -1189,11 +1201,20 @@ function MeasuredResults() {
       role: "Coach commerciaux en entreprise",
       color: "from-amber-400 to-orange-600",
       linkedin: "https://www.linkedin.com/in/bensaidjessica/",
-      badge: "",
       quote: "Je coach les commerciaux en entreprise pour qu'ils surperforment et dépassent leur objectif. Je génère +25 rendez-vous super qualifiés par mois grâce au système en y passant zéro minute.",
       description: "À la tête de son activité, Jessica accompagne au quotidien des équipes commerciales qui cherchent à franchir un cap dans leurs performances. Son enjeu : pouvoir continuer à développer son activité tout en consacrant son temps à ce qu'elle fait réellement le mieux, l'accompagnement et le coaching.",
       before: { label: "Avant", value: "Aucun système", detail: "pas de RDV automatiques" },
       after: { label: "Après", value: "+25 RDV", detail: "super qualifiés / mois" },
+    },
+    {
+      initials: "SL",
+      name: "Samuel Lyon",
+      role: "Entrepreneur, infrastructure IA",
+      color: "from-amber-500 to-yellow-700",
+      quote: "Je propose une infrastructure IA qui fait gagner un temps fou pour les grands cabinets sur la partie réseaux sociaux, facturation, devis, etc. Après 5 mois avec le système dans mon activité, j'obtiens 35 à 40 rendez-vous chaque mois en utilisant aussi le compte de ma femme en complémentarité du mien.",
+      description: "Avec sa femme, Samuel développe une activité dans laquelle l'acquisition occupe une place importante. Plutôt que de limiter l'utilisation du système à sa propre prospection, il l'a intégré à leur organisation et permet également aux membres de son équipe d'en profiter. Une manière pour eux de structurer leur développement commercial autour d'une mécanique commune.",
+      before: { label: "Avant", value: "Salarié", detail: "secteur sécurité" },
+      after: { label: "Après", value: "35–40 RDV", detail: "/ mois depuis 5 mois" },
     },
   ];
 
