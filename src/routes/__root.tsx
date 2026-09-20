@@ -77,23 +77,25 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Lovable App" },
-      { name: "description", content: "The AI Acquisition Agent automates your LinkedIn outreach to generate qualified calls for your business." },
-      { name: "author", content: "Lovable" },
-      { property: "og:title", content: "Lovable App" },
-      { property: "og:description", content: "The AI Acquisition Agent automates your LinkedIn outreach to generate qualified calls for your business." },
+      { title: "Acquisition Engine™" },
+      { name: "description", content: "Acquisition Engine™ automatise votre prospection LinkedIn pour générer des rendez-vous qualifiés." },
+      { name: "author", content: "Acquisition Engine™" },
+      { property: "og:title", content: "Acquisition Engine™" },
+      { property: "og:description", content: "Automatisez votre prospection LinkedIn et générez des rendez-vous qualifiés." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
-      { name: "twitter:site", content: "@Lovable" },
-      { name: "twitter:title", content: "Lovable App" },
-      { name: "twitter:description", content: "The AI Acquisition Agent automates your LinkedIn outreach to generate qualified calls for your business." },
-      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/f8b8502a-e957-4377-8bf1-e0f5573e9ad2/id-preview-e7dae20a--727cd747-1649-49b7-85b1-3fff848f6473.lovable.app-1781506704898.png" },
-      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/f8b8502a-e957-4377-8bf1-e0f5573e9ad2/id-preview-e7dae20a--727cd747-1649-49b7-85b1-3fff848f6473.lovable.app-1781506704898.png" },
+      { name: "twitter:title", content: "Acquisition Engine™" },
+      { name: "twitter:description", content: "Automatisez votre prospection LinkedIn et générez des rendez-vous qualifiés." },
     ],
     links: [
       {
         rel: "stylesheet",
         href: appCss,
+      },
+      {
+        rel: "icon",
+        type: "image/png",
+        href: "/favicon.png",
       },
     ],
   }),
@@ -105,7 +107,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
 
 function RootShell({ children }: { children: ReactNode }) {
   return (
-    <html lang="en">
+    <html lang="fr">
       <head>
         <HeadContent />
       </head>

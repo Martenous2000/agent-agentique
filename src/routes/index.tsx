@@ -13,24 +13,33 @@ import {
   Trophy,
   Linkedin,
   Sparkles,
+  ChevronDown,
 } from "lucide-react";
+import acquisitionEngineLogo from "@/assets/acquisition-engine-mark-transparent.png.asset.json";
 
 const CTA_URL = "https://app.iclosed.io/e/martinvision/session-decouverte";
 
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "ClientFlow AI™ : l'agent IA qui remplace vos setters" },
+      { title: "Acquisition Engine™ : l'agent IA qui remplace vos setters" },
       {
         name: "description",
         content:
-          "Remplacez vos setters par ClientFlow AI™, l'agent qui prend en charge l'intégralité de votre acquisition LinkedIn 24/7 et vous ramène des appels qualifiés chaque semaine.",
+          "Remplacez vos setters par Acquisition Engine™, le système qui prend en charge votre acquisition LinkedIn et génère des appels qualifiés chaque semaine.",
       },
-      { property: "og:title", content: "ClientFlow AI™ : l'agent IA qui remplace vos setters" },
+      { property: "og:title", content: "Acquisition Engine™ : l'agent IA qui remplace vos setters" },
       {
         property: "og:description",
         content:
           "Un super-agent IA qui remplace vos setters et pilote toute votre acquisition 24/7 : contenu, prospection, DM, qualification.",
+      },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: "Acquisition Engine™ : l'agent IA qui remplace vos setters" },
+      {
+        name: "twitter:description",
+        content: "Un système d'acquisition LinkedIn qui génère des appels qualifiés chaque semaine, sans setter à gérer.",
       },
     ],
   }),
@@ -63,12 +72,10 @@ function Nav() {
   return (
     <nav className="sticky top-0 z-50 border-b border-[color:var(--brand)]/15 bg-[#080603]/80 backdrop-blur-xl">
       <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
-        <a href="#" className="flex items-center gap-2.5">
-          <div className="btn-premium flex h-9 w-9 items-center justify-center rounded-lg !p-0">
-            <Zap className="h-5 w-5" />
-          </div>
-          <span className="text-lg font-bold tracking-tight">
-            ClientFlow <span className="gold-text-shine">AI™</span>
+        <a href="#" className="flex min-w-0 items-center gap-3">
+          <img src={acquisitionEngineLogo.url} alt="" className="h-11 w-13 shrink-0 object-contain" />
+          <span className="truncate text-base font-bold tracking-tight sm:text-lg">
+            Acquisition <span className="gold-text-shine">Engine™</span>
           </span>
         </a>
         <div className="hidden items-center gap-8 md:flex">
@@ -79,9 +86,9 @@ function Nav() {
 
         </div>
         <div className="flex items-center gap-3">
-          <button className="hidden items-center gap-1 rounded-md border border-white/10 bg-white/5 px-3 py-1.5 text-xs font-medium md:inline-flex">
+          <div className="hidden items-center gap-1 rounded-md border border-white/10 bg-white/5 px-3 py-1.5 text-xs font-medium md:inline-flex">
             🇫🇷 FR
-          </button>
+          </div>
           <Cta className="!px-5 !py-2.5 !text-sm">Réserver un appel</Cta>
         </div>
       </div>
@@ -607,6 +614,40 @@ function Row({ k, v }: { k: string; v: string }) {
   return <div className="flex justify-between"><span className="text-white/60">{k}</span><span className="font-semibold">{v}</span></div>;
 }
 
+function CostOfInaction() {
+  return (
+    <section className="pb-24">
+      <div className="mx-auto max-w-5xl px-6">
+        <div className="text-center">
+          <h2 className="text-4xl font-bold tracking-tight md:text-5xl">
+            Combien coûte chaque mois <span className="gold-text">sans système&nbsp;?</span>
+          </h2>
+          <p className="mx-auto mt-5 max-w-3xl text-lg leading-relaxed text-white/60">
+            Ne rien changer n'est pas gratuit. C'est même la ligne de dépense la plus chère de ton budget. Elle n'apparaît juste nulle part.
+          </p>
+        </div>
+        <div className="mx-auto mt-12 overflow-hidden rounded-2xl border border-white/10 bg-white/[.025] font-mono shadow-[0_24px_80px_-35px_var(--brand)]">
+          <div className="flex flex-col gap-2 border-b border-white/10 px-7 py-7 text-base font-semibold sm:flex-row sm:items-center sm:justify-between sm:text-lg">
+            <span className="text-white/70">RDV manqués chaque mois, faute de système actif</span>
+            <span className="whitespace-nowrap text-white">10 à 20</span>
+          </div>
+          <div className="flex flex-col gap-2 border-b border-white/10 px-7 py-7 text-base font-semibold sm:flex-row sm:items-center sm:justify-between sm:text-lg">
+            <span className="text-white/70">Panier moyen par client signé</span>
+            <span className="whitespace-nowrap text-white">× 5 000&nbsp;€</span>
+          </div>
+          <div className="flex flex-col gap-2 bg-red-600 px-7 py-7 text-lg font-bold sm:flex-row sm:items-center sm:justify-between sm:text-xl">
+            <span>Pipeline perdu chaque mois</span>
+            <span className="whitespace-nowrap">50 à 100 k€</span>
+          </div>
+        </div>
+        <p className="mx-auto mt-10 text-center text-lg text-white/60">
+          La question n'est pas «&nbsp;combien ça coûte&nbsp;», c'est «&nbsp;<strong className="text-white">combien coûte de ne pas le faire</strong>&nbsp;».
+        </p>
+      </div>
+    </section>
+  );
+}
+
 function BookCall() {
   useEffect(() => {
     if (typeof window === "undefined") return;
@@ -667,7 +708,7 @@ function Pricing() {
     },
     {
       name: "Scale",
-      price: "À partir de 4 000€ TTC/mois",
+      price: "À partir de 4 000€ TTC",
       sub: "20 RDV qualifiés par mois, engagement sur 30 jours renouvelable",
       badge: "",
       floatingBadge: "Le plus choisi",
@@ -800,46 +841,100 @@ function PlanCard({
   );
 }
 
-function Footer() {
+const FAQ_ITEMS = [
+  {
+    question: "Combien de temps avant les premiers résultats ?",
+    answer: "Les premiers rendez-vous tombent en moyenne dans les 6 jours suivant l'installation. Henry a eu 6 rdv en 4 jours. Enzo a eu son premier rdv le jour même. Sur 30 jours, la garantie contractuelle de 10 rdv minimum s'applique dans tous les cas, remboursement intégral sous 72h si non atteint.",
+  },
+  {
+    question: "Et si ça ne marche pas pour mon industrie ?",
+    answer: "On a livré des résultats dans le nettoyage, l'audit comptable, la tech, le SaaS, le coaching commercial, la gestion de patrimoine, l'infrastructure IA et le closing. Si lors de l'audit gratuit on estime que ton secteur ne permet pas de tenir la garantie, on te le dit avant de signer. On ne prend pas de client qu'on ne peut pas livrer.",
+  },
+  {
+    question: "Je vais recevoir des touristes en call ?",
+    answer: "Non. L'IA qualifie chaque prospect selon tes critères exacts avant de booker le rdv dans ton agenda. Tu définis qui est qualifié, l'IA filtre. Seules les personnes qui correspondent à ton ICP et qui ont confirmé leur intérêt se retrouvent dans ton agenda.",
+  },
+  {
+    question: "Pourquoi LinkedIn plutôt qu'un seul autre canal ?",
+    answer: "LinkedIn est le seul réseau où le prospect affiche lui-même son poste, son secteur, sa taille d'entreprise et son ancienneté. Ça permet un ciblage chirurgical impossible ailleurs. On opère en multi-comptes, ce qui signifie qu'une restriction sur un compte n'arrête pas ta prospection. Le cold email peut être ajouté en upsell pour les clients qui veulent doubler le volume sans dépendre d'un seul canal.",
+  },
+  {
+    question: "Combien ça coûte ?",
+    answer: "À partir de 200€ par rdv qualifié, avec un engagement minimum de 10 rdv garantis contractuellement, soit 2 000€. Pas de frais de setup, pas d'abonnement caché, reconduction automatique au même tarif. L'offre Scale démarre à 4 000€ TTC par mois pour 20 rdv garantis. Pour les volumes supérieurs à 40 rdv par mois, on établit un devis sur-mesure ensemble.",
+  },
+  {
+    question: "Est-ce que je garde le contrôle sur ce qui est envoyé en mon nom ?",
+    answer: "Oui. Avant le lancement, tu valides les messages, le ton, les critères de qualification et le profil de prospect ciblé. Chaque semaine tu reçois un reporting complet et tu peux demander des ajustements à tout moment. Le système tourne pour toi, pas à ta place sans te consulter.",
+  },
+  {
+    question: "Est-ce que mon compte LinkedIn risque d'être banni ?",
+    answer: "Non. On utilise un process avancé qui respecte les limites de LinkedIn. Zéro connexion d'API directe, zéro outil tiers risqué. Aucun de nos clients n'a subi de restriction depuis le lancement de Martin Vision.",
+  },
+];
+
+function FAQ() {
+  const [openIndex, setOpenIndex] = useState<number | null>(null);
+
   return (
-    <footer className="border-t border-[color:var(--brand)]/15 py-16">
-      <div className="mx-auto grid max-w-6xl gap-10 px-6 md:grid-cols-3">
-        <div>
-          <div className="flex items-center gap-2">
-            <div className="btn-premium flex h-9 w-9 items-center justify-center rounded-lg !p-0">
-              <Sparkles className="h-5 w-5" />
-            </div>
-            <span className="text-lg font-bold">
-              ClientFlow <span className="gold-text-shine">AI™</span>
-            </span>
-          </div>
-          <p className="mt-5 max-w-xs text-sm leading-relaxed text-white/60">
-            L'agent IA qui remplace vos setters et prend en charge l'intégralité de votre acquisition LinkedIn, 24h/24.
-          </p>
+    <section className="py-24">
+      <div className="mx-auto max-w-4xl px-6">
+        <div className="text-center">
+          <SectionLabel>FAQ</SectionLabel>
+          <h2 className="mt-6 text-4xl font-bold tracking-tight md:text-5xl">Questions fréquentes</h2>
         </div>
-        <div>
-          <div className="text-xs font-semibold uppercase tracking-widest text-white/40">Navigation</div>
-          <ul className="mt-5 space-y-3 text-sm text-white/75">
-            <li><a href="#comment" className="hover:text-white">Comment ça marche</a></li>
-            <li><a href="#comparaison" className="hover:text-white">Comparaison</a></li>
-            <li><a href="#calculateur" className="hover:text-white">Calculateur</a></li>
-            <li><a href="#tarifs" className="hover:text-white">Tarifs</a></li>
-          </ul>
-        </div>
-        <div>
-          <div className="text-xs font-semibold uppercase tracking-widest text-white/40">Contact</div>
-          <ul className="mt-5 space-y-3 text-sm text-white/75">
-            <li>
-              <a href={CTA_URL} target="_blank" rel="noopener noreferrer" className="hover:text-white">
-                Réserver un appel
-              </a>
-            </li>
-          </ul>
+        <div className="mt-12 divide-y divide-white/10 border-y border-white/10">
+          {FAQ_ITEMS.map((item, index) => {
+            const isOpen = openIndex === index;
+            const panelId = `faq-panel-${index}`;
+            return (
+              <div key={item.question}>
+                <button
+                  type="button"
+                  aria-expanded={isOpen}
+                  aria-controls={panelId}
+                  onClick={() => setOpenIndex(isOpen ? null : index)}
+                  className="flex w-full items-center justify-between gap-6 py-6 text-left text-base font-semibold transition-colors duration-300 hover:text-[color:var(--brand-light)] sm:text-lg"
+                >
+                  <span>{item.question}</span>
+                  <ChevronDown className={`h-5 w-5 shrink-0 text-[color:var(--brand-light)] transition-transform duration-300 ease-in-out ${isOpen ? "rotate-180" : ""}`} />
+                </button>
+                <div
+                  id={panelId}
+                  className={`grid transition-[grid-template-rows,opacity] duration-300 ease-in-out ${isOpen ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"}`}
+                >
+                  <div className="overflow-hidden">
+                    <p className="max-w-3xl pb-6 text-sm leading-7 text-white/65 sm:text-base">{item.answer}</p>
+                  </div>
+                </div>
+              </div>
+            );
+          })}
         </div>
       </div>
-      <div className="mx-auto mt-16 flex max-w-6xl flex-col justify-between gap-3 border-t border-white/10 px-6 pt-8 text-xs text-white/40 md:flex-row">
-        <span>© 2026 ClientFlow AI™. Tous droits réservés.</span>
-        <span>Non affilié à LinkedIn Corporation.</span>
+    </section>
+  );
+}
+
+function Footer() {
+  return (
+    <footer className="border-t border-[color:var(--brand)]/15 py-12">
+      <div className="mx-auto flex max-w-6xl flex-col items-center px-6 text-center">
+        <div className="flex items-center gap-3">
+          <img src={acquisitionEngineLogo.url} alt="" className="h-14 w-16 object-contain" />
+          <span className="text-lg font-bold">Acquisition <span className="gold-text-shine">Engine™</span></span>
+        </div>
+        <div className="mt-7 flex flex-wrap items-center justify-center gap-x-3 gap-y-2 text-sm text-white/70">
+          <span className="font-semibold text-white">Acquisition Engine™</span>
+          <span aria-hidden="true">·</span>
+          <span>Mentions légales</span>
+          <span aria-hidden="true">·</span>
+          <span>Politique de confidentialité</span>
+          <span aria-hidden="true">·</span>
+          <a href={CTA_URL} target="_blank" rel="noopener noreferrer" className="transition-colors hover:text-[color:var(--brand-light)]">Contact</a>
+        </div>
+        <div className="mt-5 text-[11px] text-white/35">
+          © 2026 Acquisition Engine™. Tous droits réservés. Non affilié à LinkedIn Corporation.
+        </div>
       </div>
     </footer>
   );
@@ -882,8 +977,10 @@ function Index() {
       <Comparison />
       <Guarantee />
       <Calculator />
+      <CostOfInaction />
       <Pricing />
       <BookCall />
+      <FAQ />
       <Footer />
     </div>
   );
