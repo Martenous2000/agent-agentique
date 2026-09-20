@@ -1064,6 +1064,28 @@ function MeasuredResults() {
       before: { label: "Avant", value: "Prospection manuelle" },
       after: { label: "Après", value: "6 RDV", detail: "en 4 jours" },
     },
+    {
+      initials: "MR",
+      name: "Myriam Renaud",
+      role: "Closeuse indépendante",
+      color: "from-yellow-600 to-amber-800",
+      linkedin: "https://www.linkedin.com/in/myriam-renaud-567563ba/",
+      badge: "",
+      quote: "Depuis janvier 2026, j'utilise le système qui me génère 20 à 25 rendez-vous qualifiés par mois et qui me sert à vendre ma formation en closing pour dépasser 40% de taux de conversion.",
+      description: "Closeuse à son compte, elle utilise le système qui lui génère 20 à 25 rendez-vous qualifiés par mois et qui lui sert à vendre sa formation en closing pour dépasser 40% de taux de conversion.",
+    },
+    {
+      initials: "JB",
+      name: "Jessica Bensaid",
+      role: "Coach commerciaux en entreprise",
+      color: "from-amber-400 to-orange-600",
+      linkedin: "https://www.linkedin.com/in/bensaidjessica/",
+      badge: "",
+      quote: "Je coach les commerciaux en entreprise pour qu'ils surperforment et dépassent leur objectif. Je génère +25 rendez-vous super qualifiés par mois grâce au système en y passant zéro minute.",
+      description: "À la tête de son activité, Jessica accompagne au quotidien des équipes commerciales qui cherchent à franchir un cap dans leurs performances. Son enjeu : pouvoir continuer à développer son activité tout en consacrant son temps à ce qu'elle fait réellement le mieux, l'accompagnement et le coaching.",
+      before: { label: "Avant", value: "Aucun système", detail: "pas de RDV automatiques" },
+      after: { label: "Après", value: "+25 RDV", detail: "super qualifiés / mois" },
+    },
   ];
 
   return (
