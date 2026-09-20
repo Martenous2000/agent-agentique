@@ -327,6 +327,88 @@ function TestimonialRow({ items, duration, reverse }: { items: Testimonial[]; du
   );
 }
 
+function LatestSignups() {
+  const clients = [
+    {
+      initials: "EV",
+      name: "Enzo Vidiella",
+      role: "Jeune entrepreneur, tech & digital",
+      color: "from-yellow-500 to-orange-700",
+      linkedin: "https://www.linkedin.com/in/enzo-vidiella/",
+      badge: "",
+      quote: "Je suis à mon compte depuis plus d'1 an et j'aide les business dans la tech et le digital, comme les SaaS, à s'implémenter en Europe et plus précisément en France. En même pas 1 journée j'ai eu mon premier rendez-vous.",
+      description: "Après plusieurs années à développer son activité dans la tech et le digital, Enzo connaît bien le défi auquel sont confrontés les entrepreneurs qui veulent accélérer : trouver de nouvelles opportunités sans passer leurs journées à prospecter. Il a donc décidé de tester une approche plus automatisée pour soutenir son développement commercial.",
+      before: { label: "Install", value: "< 1 semaine" },
+      after: { label: "Après", value: "5 RDV", detail: "en 4 jours" },
+    },
+    {
+      initials: "HA",
+      name: "Henry Acolaste",
+      role: "France",
+      color: "from-orange-600 to-amber-900",
+      linkedin: "https://www.linkedin.com/in/henry-acolatse/",
+      badge: "Dernier client signé",
+      quote: "Le système a été installé il y a quelques jours et les conversations sont qualitatives, j'ai eu 6 rendez-vous en 4 jours.",
+      description: "Henry vient tout juste de faire ses premiers pas avec le système. Quelques jours seulement après sa mise en production, les premières conversations commencent déjà à s'enchaîner. Une installation récente, mais des premiers signaux suffisamment concrets pour lui permettre de se projeter sur la suite.",
+      before: { label: "Avant", value: "Prospection manuelle" },
+      after: { label: "Après", value: "6 RDV", detail: "en 4 jours" },
+    },
+  ];
+
+  return (
+    <section className="relative py-24">
+      <div className="mx-auto max-w-6xl px-6">
+        <div className="text-center">
+          <SectionLabel>Derniers clients signés</SectionLabel>
+          <h2 className="mx-auto mt-6 max-w-3xl text-4xl font-bold tracking-tight md:text-5xl">
+            Installé il y a quelques jours, <span className="gold-text">déjà des RDV au compteur</span>
+          </h2>
+          <p className="mx-auto mt-4 max-w-2xl text-white/65">
+            Les installations les plus récentes et leurs premiers résultats, sans filtre ni retouche.
+          </p>
+        </div>
+        <div className="mt-14 grid gap-6 lg:grid-cols-2">
+          {clients.map((c) => (
+            <article key={c.name} className="card-lift flex flex-col overflow-hidden rounded-2xl border border-white/10 bg-white/[.02]">
+              <div className="flex flex-wrap items-center gap-4 border-b border-white/10 p-6">
+                <div className={`flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-gradient-to-br ${c.color} text-sm font-bold text-black/80`}>
+                  {c.initials}
+                </div>
+                <div className="min-w-0 flex-1">
+                  <h3 className="font-bold text-white">{c.name}</h3>
+                  <p className="mt-0.5 text-xs text-white/45">{c.role}</p>
+                </div>
+                {c.badge && (
+                  <span className="inline-flex items-center gap-1.5 rounded-full border border-emerald-400/30 bg-emerald-400/10 px-3 py-1 text-[10px] font-semibold uppercase tracking-wider text-emerald-300">
+                    <span className="h-1.5 w-1.5 rounded-full bg-emerald-400" />
+                    {c.badge}
+                  </span>
+                )}
+                <a href={c.linkedin} target="_blank" rel="noopener noreferrer" aria-label={`Profil LinkedIn de ${c.name}`} className="text-[color:var(--brand-light)] transition-opacity hover:opacity-70">
+                  <Linkedin className="h-5 w-5" />
+                </a>
+              </div>
+              <blockquote className="px-6 pt-6 text-sm leading-7 text-white/80">“{c.quote}”</blockquote>
+              <p className="px-6 pt-4 text-xs leading-6 text-white/45">{c.description}</p>
+              <div className="mt-auto grid grid-cols-2 border-t border-white/10">
+                <div className="border-r border-white/10 p-6">
+                  <div className="text-xs font-semibold uppercase tracking-wider text-white/40">{c.before.label}</div>
+                  <div className="mt-2 font-semibold text-white/70">{c.before.value}</div>
+                </div>
+                <div className="p-6">
+                  <div className="text-xs font-semibold uppercase tracking-wider text-white/40">{c.after.label}</div>
+                  <div className="gold-text mt-2 text-2xl font-bold">{c.after.value}</div>
+                  <div className="mt-0.5 text-xs text-white/40">{c.after.detail}</div>
+                </div>
+              </div>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
 function HowItWorks() {
   return (
     <section id="comment" className="py-24">
@@ -920,29 +1002,26 @@ function FAQ() {
 }
 
 function MeasuredResults() {
+  const funnel = [
+    { value: "840", label: "Demandes de connexion envoyées", detail: "par mois, par compte LinkedIn" },
+    { rate: "Taux d'acceptation : 40%", value: "336", label: "Connexions acceptées" },
+    { rate: "Taux de réponse au 1er message : 35%", value: "118", label: "Conversations engagées" },
+    { rate: "Conversations devenues qualifiées : 25%", value: "30", label: "Conversations qualifiées" },
+    { rate: "Taux de prise de rendez-vous : 40%", value: "12", label: "RDV qualifiés obtenus", detail: "par mois, par compte LinkedIn", final: true },
+  ];
+
   const clientResults = [
     {
-      initials: "BH",
-      name: "Baptiste Hoguet",
-      role: "Agence de scaling",
-      linkedin: "https://www.linkedin.com/in/baptiste-hoguet-00a171336/",
-      quote: "J'obtiens 40 à 50 rendez-vous qualifiés par mois et je fais passer un cap de chiffre d'affaires aux entreprises que j'accompagne. Les rendez-vous sont ultra-qualifiés et doivent être des personnes faisant entre 3k€ et 30k€/mois.",
-      description: "Il permet aux entreprises qu'il accompagne de passer un cap de chiffre d'affaires grâce à des rendez-vous ultra-qualifiés.",
-      metrics: [
-        { value: "40–50", label: "RDV qualifiés", detail: "/ mois" },
-        { value: "+1 M€", label: "CA", detail: "/ an" },
+      avatars: [
+        { initials: "BH", name: "Baptiste Hoguet", linkedin: "https://www.linkedin.com/in/baptiste-hoguet-00a171336/" },
+        { initials: "TB", name: "Talel Ben Selma", linkedin: "https://www.linkedin.com/in/talel-ben-selma-05ba02261/" },
       ],
-    },
-    {
-      initials: "TB",
-      name: "Talel Ben Selma",
-      role: "Formateur setting & closing",
-      linkedin: "https://www.linkedin.com/in/talel-ben-selma-05ba02261/",
-      quote: "Je scale les boîtes tech et SaaS au-delà de 100k par mois, en partie associé avec Baptiste, j'obtiens 35 à 40 rendez-vous qualifiés par mois et j'installe même le système pour mes clients.",
-      description: "Au cœur de l'écosystème tech et SaaS, il a rendu son acquisition plus prévisible sans devoir tout gérer lui-même.",
+      role: "Associés · Agence de scaling, tech et SaaS",
+      quote: "Associés, nous obtenons 40 à 50 rendez-vous calibrés par mois sans rien faire, avec des infopreneurs à plus de 5 000 $ par mois de chiffre d'affaires, pour les faire scaler à plus de 100 000 $ par mois de CA.",
+      description: "Baptiste et Talel sont associés au sein d'Evo Incubator. Ensemble, ils accompagnent des infopreneurs réalisant plus de 5 000 $ par mois de CA et les font passer le cap des 100 000 $ par mois, sans toucher à la prospection.",
       metrics: [
-        { value: "100 k€+", label: "CA scalé", detail: "/ mois" },
-        { value: "35–40", label: "RDV qualifiés", detail: "/ mois" },
+        { value: "40–50", label: "RDV calibrés", detail: "/ mois, sans rien faire" },
+        { value: "100 k$+", label: "CA scalé", detail: "/ mois pour leurs clients" },
       ],
     },
   ];
@@ -967,24 +1046,29 @@ function MeasuredResults() {
           </div>
           <div className="grid lg:grid-cols-[1.35fr_.65fr]">
             <div className="border-b border-white/10 p-6 sm:p-8 lg:border-b-0 lg:border-r">
-              <div className="flex items-end justify-between gap-6">
-                <div>
-                  <div className="font-mono text-xs uppercase text-white/45">Demandes de connexion</div>
-                  <div className="gold-text mt-3 text-5xl font-bold sm:text-7xl">1 840</div>
-                </div>
-                <div className="pb-2 text-right text-xs text-white/45">sur un mois</div>
+              <div className="font-mono text-xs uppercase text-white/45">En moyenne, pour un compte LinkedIn sur nos campagnes</div>
+              <div className="mt-6">
+                {funnel.map((step, i) => (
+                  <div key={step.label} className={i > 0 ? "mt-4 border-t border-white/5 pt-4" : ""}>
+                    {step.rate && (
+                      <div className="mb-2 inline-flex items-center gap-1.5 rounded-full border border-[color:var(--brand)]/25 bg-[color:var(--brand)]/10 px-2.5 py-0.5 text-[10px] font-semibold uppercase tracking-wider text-[color:var(--brand-light)]">
+                        <ArrowRight className="h-3 w-3" />
+                        {step.rate}
+                      </div>
+                    )}
+                    <div className="flex items-baseline justify-between gap-4">
+                      <span className={`font-mono font-bold ${step.final ? "gold-text text-4xl sm:text-5xl" : "text-2xl text-white sm:text-3xl"}`}>{step.value}</span>
+                      <span className="text-right text-sm text-white/60">{step.label}</span>
+                    </div>
+                    {step.detail && <div className="mt-1 text-right text-xs text-white/35">{step.detail}</div>}
+                  </div>
+                ))}
               </div>
-              <div className="mt-7 h-2 overflow-hidden rounded-full bg-white/10">
-                <div className="h-full w-[92%] rounded-full bg-[color:var(--brand)]" />
-              </div>
-              <p className="mt-5 max-w-xl text-sm leading-6 text-white/55">
-                Prospection ciblée auprès d'infopreneurs réalisant au minimum 5 000 $, pilotée simultanément sur deux comptes LinkedIn.
-              </p>
             </div>
             <div className="grid grid-cols-2 lg:grid-cols-1">
               <div className="border-r border-white/10 p-6 lg:border-b lg:border-r-0 lg:p-8">
                 <div className="text-4xl font-bold text-white">2</div>
-                <div className="mt-2 text-sm text-white/50">comptes LinkedIn</div>
+                <div className="mt-2 text-sm text-white/50">comptes LinkedIn pilotés simultanément</div>
               </div>
               <div className="p-6 lg:p-8">
                 <div className="text-4xl font-bold text-white">5 000 $+</div>
@@ -994,20 +1078,28 @@ function MeasuredResults() {
           </div>
         </div>
 
-        <div className="mt-6 grid gap-6 lg:grid-cols-2">
+        <div className="mt-6 grid gap-6">
           {clientResults.map((client) => (
-            <article key={client.name} className="overflow-hidden rounded-lg border border-white/10 bg-white/[.02]">
-              <div className="flex items-center gap-4 border-b border-white/10 p-6">
-                <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-[color:var(--brand)]/35 bg-[color:var(--brand)]/10 text-sm font-bold text-[color:var(--brand-light)]">
-                  {client.initials}
+            <article key={client.role} className="overflow-hidden rounded-lg border border-white/10 bg-white/[.02]">
+              <div className="flex flex-wrap items-center gap-4 border-b border-white/10 p-6">
+                <div className="flex -space-x-2">
+                  {client.avatars.map((a) => (
+                    <div key={a.initials} className="flex h-11 w-11 items-center justify-center rounded-full border border-[color:var(--brand)]/35 bg-[color:var(--brand)]/10 text-sm font-bold text-[color:var(--brand-light)] ring-2 ring-[#050403]">
+                      {a.initials}
+                    </div>
+                  ))}
                 </div>
                 <div className="min-w-0 flex-1">
-                  <h3 className="font-bold text-white">{client.name}</h3>
+                  <h3 className="font-bold text-white">{client.avatars.map((a) => a.name).join(" & ")}</h3>
                   <p className="mt-0.5 text-xs text-white/45">{client.role}</p>
                 </div>
-                <a href={client.linkedin} target="_blank" rel="noopener noreferrer" aria-label={`Profil LinkedIn de ${client.name}`} className="text-[color:var(--brand-light)] transition-opacity hover:opacity-70">
-                  <Linkedin className="h-5 w-5" />
-                </a>
+                <div className="flex gap-2">
+                  {client.avatars.map((a) => (
+                    <a key={a.linkedin} href={a.linkedin} target="_blank" rel="noopener noreferrer" aria-label={`Profil LinkedIn de ${a.name}`} className="text-[color:var(--brand-light)] transition-opacity hover:opacity-70">
+                      <Linkedin className="h-5 w-5" />
+                    </a>
+                  ))}
+                </div>
               </div>
               <blockquote className="px-6 pt-6 text-sm leading-7 text-white/80">“{client.quote}”</blockquote>
               <p className="px-6 pt-4 text-xs leading-6 text-white/45">{client.description}</p>
@@ -1096,6 +1188,7 @@ function Index() {
       <TrustBar />
       <Marquee />
       <Testimonials />
+      <LatestSignups />
       <HowItWorks />
       <Comparison />
       <MeasuredResults />
