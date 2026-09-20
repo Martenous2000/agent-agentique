@@ -1028,7 +1028,18 @@ function MeasuredResults() {
     },
   ];
 
-  const recentClients = [
+  const recentClients: {
+    initials: string;
+    name: string;
+    role: string;
+    color: string;
+    linkedin: string;
+    badge: string;
+    quote: string;
+    description: string;
+    before?: { label: string; value: string; detail?: string };
+    after?: { label: string; value: string; detail?: string };
+  }[] = [
     {
       initials: "EV",
       name: "Enzo Vidiella",
@@ -1036,7 +1047,7 @@ function MeasuredResults() {
       color: "from-yellow-500 to-orange-700",
       linkedin: "https://www.linkedin.com/in/enzo-vidiella/",
       badge: "",
-      quote: "Je suis à mon compte depuis plus d'1 an et j'aide les business dans la tech et le digital, comme les SaaS, à s'implémenter en Europe et plus précisément en France. En même pas 1 journée j'ai eu mon premier rendez-vous.",
+      quote: "Je suis à mon compte depuis plus d'un an et j'aide les business dans la tech et le digital, comme les SaaS, à s'implémenter en Europe et plus précisément en France. En même pas 1 journée j'ai eu mon premier rendez-vous.",
       description: "Après plusieurs années à développer son activité dans la tech et le digital, Enzo connaît bien le défi auquel sont confrontés les entrepreneurs qui veulent accélérer : trouver de nouvelles opportunités sans passer leurs journées à prospecter. Il a donc décidé de tester une approche plus automatisée pour soutenir son développement commercial.",
       before: { label: "Install", value: "< 1 semaine" },
       after: { label: "Après", value: "5 RDV", detail: "en 4 jours" },
@@ -1052,6 +1063,28 @@ function MeasuredResults() {
       description: "Henry vient tout juste de faire ses premiers pas avec le système. Quelques jours seulement après sa mise en production, les premières conversations commencent déjà à s'enchaîner. Une installation récente, mais des premiers signaux suffisamment concrets pour lui permettre de se projeter sur la suite.",
       before: { label: "Avant", value: "Prospection manuelle" },
       after: { label: "Après", value: "6 RDV", detail: "en 4 jours" },
+    },
+    {
+      initials: "MR",
+      name: "Myriam Renaud",
+      role: "Closeuse indépendante",
+      color: "from-yellow-600 to-amber-800",
+      linkedin: "https://www.linkedin.com/in/myriam-renaud-567563ba/",
+      badge: "",
+      quote: "Depuis janvier 2026, j'utilise le système qui me génère 20 à 25 rendez-vous qualifiés par mois et qui me sert à vendre ma formation en closing pour dépasser 40% de taux de conversion.",
+      description: "Closeuse à son compte, elle utilise le système qui lui génère 20 à 25 rendez-vous qualifiés par mois et qui lui sert à vendre sa formation en closing pour dépasser 40% de taux de conversion.",
+    },
+    {
+      initials: "JB",
+      name: "Jessica Bensaid",
+      role: "Coach commerciaux en entreprise",
+      color: "from-amber-400 to-orange-600",
+      linkedin: "https://www.linkedin.com/in/bensaidjessica/",
+      badge: "",
+      quote: "Je coach les commerciaux en entreprise pour qu'ils surperforment et dépassent leur objectif. Je génère +25 rendez-vous super qualifiés par mois grâce au système en y passant zéro minute.",
+      description: "À la tête de son activité, Jessica accompagne au quotidien des équipes commerciales qui cherchent à franchir un cap dans leurs performances. Son enjeu : pouvoir continuer à développer son activité tout en consacrant son temps à ce qu'elle fait réellement le mieux, l'accompagnement et le coaching.",
+      before: { label: "Avant", value: "Aucun système", detail: "pas de RDV automatiques" },
+      after: { label: "Après", value: "+25 RDV", detail: "super qualifiés / mois" },
     },
   ];
 
@@ -1173,17 +1206,20 @@ function MeasuredResults() {
                 </div>
                 <blockquote className="px-6 pt-6 text-sm leading-7 text-white/80">“{c.quote}”</blockquote>
                 <p className="px-6 pt-4 text-xs leading-6 text-white/45">{c.description}</p>
-                <div className="mt-auto grid grid-cols-2 border-t border-white/10">
-                  <div className="border-r border-white/10 p-6">
-                    <div className="text-xs font-semibold uppercase tracking-wider text-white/40">{c.before.label}</div>
-                    <div className="mt-2 font-semibold text-white/70">{c.before.value}</div>
+                {(c.before || c.after) && (
+                  <div className="mt-auto grid grid-cols-2 border-t border-white/10">
+                    <div className="border-r border-white/10 p-6">
+                      <div className="text-xs font-semibold uppercase tracking-wider text-white/40">{c.before!.label}</div>
+                      <div className="mt-2 font-semibold text-white/70">{c.before!.value}</div>
+                      {c.before!.detail && <div className="mt-0.5 text-xs text-white/40">{c.before!.detail}</div>}
+                    </div>
+                    <div className="p-6">
+                      <div className="text-xs font-semibold uppercase tracking-wider text-white/40">{c.after!.label}</div>
+                      <div className="gold-text mt-2 text-2xl font-bold">{c.after!.value}</div>
+                      <div className="mt-0.5 text-xs text-white/40">{c.after!.detail}</div>
+                    </div>
                   </div>
-                  <div className="p-6">
-                    <div className="text-xs font-semibold uppercase tracking-wider text-white/40">{c.after.label}</div>
-                    <div className="gold-text mt-2 text-2xl font-bold">{c.after.value}</div>
-                    <div className="mt-0.5 text-xs text-white/40">{c.after.detail}</div>
-                  </div>
-                </div>
+                )}
               </article>
             ))}
           </div>
