@@ -708,7 +708,7 @@ function Pricing() {
     },
     {
       name: "Scale",
-      price: "À partir de 4 000€ TTC",
+      price: "À partir de 4 000€",
       sub: "20 RDV qualifiés par mois, engagement sur 30 jours renouvelable",
       badge: "",
       floatingBadge: "Le plus choisi",
@@ -860,7 +860,7 @@ const FAQ_ITEMS = [
   },
   {
     question: "Combien ça coûte ?",
-    answer: "À partir de 200€ par rdv qualifié, avec un engagement minimum de 10 rdv garantis contractuellement, soit 2 000€. Pas de frais de setup, pas d'abonnement caché, reconduction automatique au même tarif. L'offre Scale démarre à 4 000€ TTC par mois pour 20 rdv garantis. Pour les volumes supérieurs à 40 rdv par mois, on établit un devis sur-mesure ensemble.",
+    answer: "À partir de 200€ par rdv qualifié, avec un engagement minimum de 10 rdv garantis contractuellement, soit 2 000€. Pas de frais de setup, pas d'abonnement caché, reconduction automatique au même tarif. L'offre Scale démarre à 4 000€ par mois pour 20 rdv garantis. Pour les volumes supérieurs à 40 rdv par mois, on établit un devis sur-mesure ensemble.",
   },
   {
     question: "Est-ce que je garde le contrôle sur ce qui est envoyé en mon nom ?",
