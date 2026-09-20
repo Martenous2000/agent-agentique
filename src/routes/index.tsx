@@ -327,7 +327,7 @@ function TestimonialRow({ items, duration, reverse }: { items: Testimonial[]; du
   );
 }
 
-function LatestSignups() {
+function HowItWorks() {
   const clients = [
     {
       initials: "EV",
