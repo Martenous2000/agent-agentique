@@ -15,7 +15,7 @@ import {
   Sparkles,
   ChevronDown,
 } from "lucide-react";
-import acquisitionEngineLogo from "@/assets/logo-acquisition-engine.png.asset.json";
+import acquisitionEngineLogo from "@/assets/acquisition-engine-mark.png.asset.json";
 
 const CTA_URL = "https://app.iclosed.io/e/martinvision/session-decouverte";
 
