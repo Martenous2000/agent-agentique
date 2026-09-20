@@ -860,7 +860,7 @@ const FAQ_ITEMS = [
   },
   {
     question: "Combien ça coûte ?",
-    answer: "À partir de 200€ par rdv qualifié, avec un engagement minimum de 10 rdv garantis contractuellement, soit 2 000€. Pas de frais de setup, pas d'abonnement caché, reconduction automatique au même tarif. L'offre Scale démarre à 4 000€ par mois pour 20 rdv garantis. Pour les volumes supérieurs à 40 rdv par mois, on établit un devis sur-mesure ensemble.",
+    answer: "À partir de 200€ par rdv qualifié, avec un engagement minimum de 10 rdv garantis contractuellement, soit 2 000€. Des frais de setup sont appliqués une seule fois à l'installation, puis la reconduction se fait automatiquement au même tarif, sans aucun frais supplémentaire. L'offre Scale démarre à 4 000€ par mois pour 20 rdv garantis. Pour les volumes supérieurs à 40 rdv par mois, on établit un devis sur-mesure ensemble.",
   },
   {
     question: "Est-ce que je garde le contrôle sur ce qui est envoyé en mon nom ?",
@@ -909,6 +909,50 @@ function FAQ() {
               </div>
             );
           })}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function MeasuredResults() {
+  const stats = [
+    { v: "412", l: "appels qualifiés générés ce trimestre", s: "campagnes clients et internes confondues" },
+    { v: "38%", l: "taux de réponse moyen sur LinkedIn", s: "séquences personnalisées par l'IA" },
+    { v: "6 j", l: "délai moyen avant le premier rdv", s: "de l'installation au premier appel booké" },
+    { v: "27 800", l: "conversations prospects gérées", s: "qualification et relances en autopilote" },
+  ];
+  return (
+    <section className="relative overflow-hidden py-24">
+      <div className="pointer-events-none absolute left-1/2 top-1/2 h-[400px] w-[900px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[color:var(--brand)]/[.06] blur-[140px]" />
+      <div className="relative mx-auto max-w-6xl px-6">
+        <div className="text-center">
+          <SectionLabel>Résultats</SectionLabel>
+          <h2 className="mx-auto mt-6 max-w-3xl text-4xl font-bold tracking-tight md:text-5xl">
+            Des résultats <span className="gold-text">mesurés</span>, pas des promesses
+          </h2>
+          <p className="mx-auto mt-4 max-w-2xl text-white/65">
+            Chiffres réels extraits de notre plateforme de prospection (campagnes clients et campagnes internes confondues), mis à jour en septembre 2026.
+          </p>
+        </div>
+        <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          {stats.map((x) => (
+            <div key={x.l} className="card-lift rounded-2xl border border-white/10 bg-white/[.02] p-7 text-center">
+              <div className="gold-text text-5xl font-bold tracking-tight">{x.v}</div>
+              <div className="mt-4 text-sm font-semibold leading-snug text-white/85">{x.l}</div>
+              <div className="mt-2 text-xs text-white/45">{x.s}</div>
+            </div>
+          ))}
+        </div>
+        <div className="mt-12 text-center">
+          <a
+            href="https://cas-clients.visionaryplansagency.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn-premium inline-flex items-center justify-center gap-2 rounded-full px-7 py-3.5 text-sm font-bold tracking-wide"
+          >
+            Voir les cas clients <ArrowRight className="h-4 w-4" />
+          </a>
         </div>
       </div>
     </section>
