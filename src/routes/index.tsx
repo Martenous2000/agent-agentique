@@ -1028,7 +1028,18 @@ function MeasuredResults() {
     },
   ];
 
-  const recentClients = [
+  const recentClients: {
+    initials: string;
+    name: string;
+    role: string;
+    color: string;
+    linkedin: string;
+    badge: string;
+    quote: string;
+    description: string;
+    before?: { label: string; value: string; detail?: string };
+    after?: { label: string; value: string; detail?: string };
+  }[] = [
     {
       initials: "EV",
       name: "Enzo Vidiella",
@@ -1036,7 +1047,7 @@ function MeasuredResults() {
       color: "from-yellow-500 to-orange-700",
       linkedin: "https://www.linkedin.com/in/enzo-vidiella/",
       badge: "",
-      quote: "Je suis à mon compte depuis plus d'1 an et j'aide les business dans la tech et le digital, comme les SaaS, à s'implémenter en Europe et plus précisément en France. En même pas 1 journée j'ai eu mon premier rendez-vous.",
+      quote: "Je suis à mon compte depuis plus d'un an et j'aide les business dans la tech et le digital, comme les SaaS, à s'implémenter en Europe et plus précisément en France. En même pas 1 journée j'ai eu mon premier rendez-vous.",
       description: "Après plusieurs années à développer son activité dans la tech et le digital, Enzo connaît bien le défi auquel sont confrontés les entrepreneurs qui veulent accélérer : trouver de nouvelles opportunités sans passer leurs journées à prospecter. Il a donc décidé de tester une approche plus automatisée pour soutenir son développement commercial.",
       before: { label: "Install", value: "< 1 semaine" },
       after: { label: "Après", value: "5 RDV", detail: "en 4 jours" },
