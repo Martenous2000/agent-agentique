@@ -1019,6 +1019,7 @@ function Index() {
       <Testimonials />
       <HowItWorks />
       <Comparison />
+      <MeasuredResults />
       <Guarantee />
       <Calculator />
       <CostOfInaction />
