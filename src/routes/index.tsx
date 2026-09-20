@@ -1108,7 +1108,13 @@ function MeasuredResults() {
     { rate: "Taux de prise de rendez-vous : 40%", value: "12", label: "RDV qualifiés obtenus", detail: "par mois, par compte LinkedIn", final: true },
   ];
 
-  const clientResults = [
+  const clientResults: {
+    avatars: { initials: string; name: string; linkedin: string }[];
+    role: string;
+    quote: string;
+    description: string;
+    metrics: { value: string; label: string; detail: string }[];
+  }[] = [
     {
       avatars: [
         { initials: "BH", name: "Baptiste Hoguet", linkedin: "https://www.linkedin.com/in/baptiste-hoguet-00a171336/" },
@@ -1121,6 +1127,13 @@ function MeasuredResults() {
         { value: "40–50", label: "RDV calibrés", detail: "/ mois, sans rien faire" },
         { value: "100 k$+", label: "CA scalé", detail: "/ mois pour leurs clients" },
       ],
+    },
+    {
+      avatars: [{ initials: "NL", name: "Nabil Lahiani", linkedin: "https://www.linkedin.com/in/nabil-lahiani/" }],
+      role: "",
+      quote: "Dès le premier jour où Martin m'a installé son système, j'ai pu avoir un premier rendez-vous qualifié. Son système cible super bien les lead sur LinkedIn et les messages ainsi que les relances sont super personnalisées. Je recommende à 100% de travailler avec Martin et son équipe.",
+      description: "",
+      metrics: [],
     },
   ];
 
@@ -1160,13 +1173,25 @@ function MeasuredResults() {
       before: { label: "Avant", value: "Prospection manuelle" },
       after: { label: "Après", value: "6 RDV", detail: "en 4 jours" },
     },
+  ];
+
+  const systemUsers: {
+    initials: string;
+    name: string;
+    role: string;
+    color: string;
+    linkedin?: string;
+    quote: string;
+    description: string;
+    before?: { label: string; value: string; detail?: string };
+    after?: { label: string; value: string; detail?: string };
+  }[] = [
     {
       initials: "MR",
       name: "Myriam Renaud",
       role: "Closeuse indépendante",
       color: "from-yellow-600 to-amber-800",
       linkedin: "https://www.linkedin.com/in/myriam-renaud-567563ba/",
-      badge: "",
       quote: "Depuis janvier 2026, j'utilise le système qui me génère 20 à 25 rendez-vous qualifiés par mois et qui me sert à vendre ma formation en closing pour dépasser 40% de taux de conversion.",
       description: "Closeuse à son compte, elle utilise le système qui lui génère 20 à 25 rendez-vous qualifiés par mois et qui lui sert à vendre sa formation en closing pour dépasser 40% de taux de conversion.",
     },
@@ -1176,11 +1201,20 @@ function MeasuredResults() {
       role: "Coach commerciaux en entreprise",
       color: "from-amber-400 to-orange-600",
       linkedin: "https://www.linkedin.com/in/bensaidjessica/",
-      badge: "",
       quote: "Je coach les commerciaux en entreprise pour qu'ils surperforment et dépassent leur objectif. Je génère +25 rendez-vous super qualifiés par mois grâce au système en y passant zéro minute.",
       description: "À la tête de son activité, Jessica accompagne au quotidien des équipes commerciales qui cherchent à franchir un cap dans leurs performances. Son enjeu : pouvoir continuer à développer son activité tout en consacrant son temps à ce qu'elle fait réellement le mieux, l'accompagnement et le coaching.",
       before: { label: "Avant", value: "Aucun système", detail: "pas de RDV automatiques" },
       after: { label: "Après", value: "+25 RDV", detail: "super qualifiés / mois" },
+    },
+    {
+      initials: "SL",
+      name: "Samuel Lyon",
+      role: "Entrepreneur, infrastructure IA",
+      color: "from-amber-500 to-yellow-700",
+      quote: "Je propose une infrastructure IA qui fait gagner un temps fou pour les grands cabinets sur la partie réseaux sociaux, facturation, devis, etc. Après 5 mois avec le système dans mon activité, j'obtiens 35 à 40 rendez-vous chaque mois en utilisant aussi le compte de ma femme en complémentarité du mien.",
+      description: "Avec sa femme, Samuel développe une activité dans laquelle l'acquisition occupe une place importante. Plutôt que de limiter l'utilisation du système à sa propre prospection, il l'a intégré à leur organisation et permet également aux membres de son équipe d'en profiter. Une manière pour eux de structurer leur développement commercial autour d'une mécanique commune.",
+      before: { label: "Avant", value: "Salarié", detail: "secteur sécurité" },
+      after: { label: "Après", value: "35–40 RDV", detail: "/ mois depuis 5 mois" },
     },
   ];
 
@@ -1237,9 +1271,13 @@ function MeasuredResults() {
           </div>
         </div>
 
-        <div className="mt-6 grid gap-6">
+        <div className="mt-14">
+          <div className="text-center">
+            <SectionLabel>Ceux qui font plus de 150 000€/mois grâce au système</SectionLabel>
+          </div>
+          <div className="mt-8 grid gap-6">
           {clientResults.map((client) => (
-            <article key={client.role} className="overflow-hidden rounded-lg border border-white/10 bg-white/[.02]">
+            <article key={client.avatars[0].initials} className="overflow-hidden rounded-lg border border-white/10 bg-white/[.02]">
               <div className="flex flex-wrap items-center gap-4 border-b border-white/10 p-6">
                 <div className="flex -space-x-2">
                   {client.avatars.map((a) => (
@@ -1250,7 +1288,7 @@ function MeasuredResults() {
                 </div>
                 <div className="min-w-0 flex-1">
                   <h3 className="font-bold text-white">{client.avatars.map((a) => a.name).join(" & ")}</h3>
-                  <p className="mt-0.5 text-xs text-white/45">{client.role}</p>
+                  {client.role && <p className="mt-0.5 text-xs text-white/45">{client.role}</p>}
                 </div>
                 <div className="flex gap-2">
                   {client.avatars.map((a) => (
@@ -1261,18 +1299,21 @@ function MeasuredResults() {
                 </div>
               </div>
               <blockquote className="px-6 pt-6 text-sm leading-7 text-white/80">“{client.quote}”</blockquote>
-              <p className="px-6 pt-4 text-xs leading-6 text-white/45">{client.description}</p>
-              <div className="mt-6 grid grid-cols-2 border-t border-white/10">
-                {client.metrics.map((metric, index) => (
-                  <div key={metric.label} className={`p-6 ${index === 0 ? "border-r border-white/10" : ""}`}>
-                    <div className="gold-text text-3xl font-bold sm:text-4xl">{metric.value}</div>
-                    <div className="mt-2 text-xs font-semibold uppercase text-white/70">{metric.label}</div>
-                    <div className="mt-1 text-xs text-white/40">{metric.detail}</div>
-                  </div>
-                ))}
-              </div>
+              {client.description && <p className="px-6 pt-4 text-xs leading-6 text-white/45">{client.description}</p>}
+              {client.metrics.length > 0 && (
+                <div className="mt-6 grid grid-cols-2 border-t border-white/10">
+                  {client.metrics.map((metric, index) => (
+                    <div key={metric.label} className={`p-6 ${index === 0 ? "border-r border-white/10" : ""}`}>
+                      <div className="gold-text text-3xl font-bold sm:text-4xl">{metric.value}</div>
+                      <div className="mt-2 text-xs font-semibold uppercase text-white/70">{metric.label}</div>
+                      <div className="mt-1 text-xs text-white/40">{metric.detail}</div>
+                    </div>
+                  ))}
+                </div>
+              )}
             </article>
           ))}
+          </div>
         </div>
 
         <div className="mt-14">
@@ -1299,6 +1340,51 @@ function MeasuredResults() {
                   <a href={c.linkedin} target="_blank" rel="noopener noreferrer" aria-label={`Profil LinkedIn de ${c.name}`} className="text-[color:var(--brand-light)] transition-opacity hover:opacity-70">
                     <Linkedin className="h-5 w-5" />
                   </a>
+                </div>
+                <blockquote className="px-6 pt-6 text-sm leading-7 text-white/80">“{c.quote}”</blockquote>
+                <p className="px-6 pt-4 text-xs leading-6 text-white/45">{c.description}</p>
+                {(c.before || c.after) && (
+                  <div className="mt-auto grid grid-cols-2 border-t border-white/10">
+                    <div className="border-r border-white/10 p-6">
+                      <div className="text-xs font-semibold uppercase tracking-wider text-white/40">{c.before!.label}</div>
+                      <div className="mt-2 font-semibold text-white/70">{c.before!.value}</div>
+                      {c.before!.detail && <div className="mt-0.5 text-xs text-white/40">{c.before!.detail}</div>}
+                    </div>
+                    <div className="p-6">
+                      <div className="text-xs font-semibold uppercase tracking-wider text-white/40">{c.after!.label}</div>
+                      <div className="gold-text mt-2 text-2xl font-bold">{c.after!.value}</div>
+                      <div className="mt-0.5 text-xs text-white/40">{c.after!.detail}</div>
+                    </div>
+                  </div>
+                )}
+              </article>
+            ))}
+          </div>
+        </div>
+
+        <div className="mt-14">
+          <div className="text-center">
+            <SectionLabel>Ceux qui vivent du système</SectionLabel>
+            <p className="mx-auto mt-4 max-w-2xl text-white/65">
+              Le système est installé chez eux depuis des mois et remplit leur agenda.
+            </p>
+          </div>
+          <div className="mt-8 grid gap-6 lg:grid-cols-2">
+            {systemUsers.map((c) => (
+              <article key={c.name} className="card-lift flex flex-col overflow-hidden rounded-2xl border border-white/10 bg-white/[.02]">
+                <div className="flex flex-wrap items-center gap-4 border-b border-white/10 p-6">
+                  <div className={`flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-gradient-to-br ${c.color} text-sm font-bold text-black/80`}>
+                    {c.initials}
+                  </div>
+                  <div className="min-w-0 flex-1">
+                    <h3 className="font-bold text-white">{c.name}</h3>
+                    <p className="mt-0.5 text-xs text-white/45">{c.role}</p>
+                  </div>
+                  {c.linkedin && (
+                    <a href={c.linkedin} target="_blank" rel="noopener noreferrer" aria-label={`Profil LinkedIn de ${c.name}`} className="text-[color:var(--brand-light)] transition-opacity hover:opacity-70">
+                      <Linkedin className="h-5 w-5" />
+                    </a>
+                  )}
                 </div>
                 <blockquote className="px-6 pt-6 text-sm leading-7 text-white/80">“{c.quote}”</blockquote>
                 <p className="px-6 pt-4 text-xs leading-6 text-white/45">{c.description}</p>
