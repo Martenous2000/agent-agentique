@@ -629,15 +629,19 @@ function CostOfInaction() {
         <div className="mx-auto mt-12 overflow-hidden rounded-2xl border border-white/10 bg-white/[.025] font-mono shadow-[0_24px_80px_-35px_var(--brand)]">
           <div className="flex flex-col gap-2 border-b border-white/10 px-7 py-7 text-base font-semibold sm:flex-row sm:items-center sm:justify-between sm:text-lg">
             <span className="text-white/70">RDV manqués chaque mois, faute de système actif</span>
-            <span className="whitespace-nowrap text-white">10 à 20</span>
+            <span className="whitespace-nowrap text-white">30 à 40</span>
           </div>
           <div className="flex flex-col gap-2 border-b border-white/10 px-7 py-7 text-base font-semibold sm:flex-row sm:items-center sm:justify-between sm:text-lg">
             <span className="text-white/70">Panier moyen par client signé</span>
             <span className="whitespace-nowrap text-white">× 5 000&nbsp;€</span>
           </div>
+          <div className="flex flex-col gap-2 border-b border-white/10 px-7 py-7 text-base font-semibold sm:flex-row sm:items-center sm:justify-between sm:text-lg">
+            <span className="text-white/70">Exemple avec un taux de closing à 30%</span>
+            <span className="whitespace-nowrap text-white">9 à 12 clients signés perdus</span>
+          </div>
           <div className="flex flex-col gap-2 bg-red-600 px-7 py-7 text-lg font-bold sm:flex-row sm:items-center sm:justify-between sm:text-xl">
-            <span>Pipeline perdu chaque mois</span>
-            <span className="whitespace-nowrap">50 à 100 k€</span>
+            <span>CA perdu chaque mois</span>
+            <span className="whitespace-nowrap">45 à 60 k€</span>
           </div>
         </div>
         <p className="mx-auto mt-10 text-center text-lg text-white/60">
