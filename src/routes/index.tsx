@@ -1108,7 +1108,13 @@ function MeasuredResults() {
     { rate: "Taux de prise de rendez-vous : 40%", value: "12", label: "RDV qualifiés obtenus", detail: "par mois, par compte LinkedIn", final: true },
   ];
 
-  const clientResults = [
+  const clientResults: {
+    avatars: { initials: string; name: string; linkedin: string }[];
+    role: string;
+    quote: string;
+    description: string;
+    metrics: { value: string; label: string; detail: string }[];
+  }[] = [
     {
       avatars: [
         { initials: "BH", name: "Baptiste Hoguet", linkedin: "https://www.linkedin.com/in/baptiste-hoguet-00a171336/" },
@@ -1121,6 +1127,13 @@ function MeasuredResults() {
         { value: "40–50", label: "RDV calibrés", detail: "/ mois, sans rien faire" },
         { value: "100 k$+", label: "CA scalé", detail: "/ mois pour leurs clients" },
       ],
+    },
+    {
+      avatars: [{ initials: "NL", name: "Nabil Lahiani", linkedin: "https://www.linkedin.com/in/nabil-lahiani/" }],
+      role: "",
+      quote: "Dès le premier jour où Martin m'a installé son système, j'ai pu avoir un premier rendez-vous qualifié. Son système cible super bien les lead sur LinkedIn et les messages ainsi que les relances sont super personnalisées. Je recommende à 100% de travailler avec Martin et son équipe.",
+      description: "",
+      metrics: [],
     },
   ];
 
