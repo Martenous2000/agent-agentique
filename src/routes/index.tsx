@@ -920,11 +920,31 @@ function FAQ() {
 }
 
 function MeasuredResults() {
-  const stats = [
-    { v: "412", l: "appels qualifiés générés ce trimestre", s: "campagnes clients et internes confondues" },
-    { v: "38%", l: "taux de réponse moyen sur LinkedIn", s: "séquences personnalisées par l'IA" },
-    { v: "6 j", l: "délai moyen avant le premier rdv", s: "de l'installation au premier appel booké" },
-    { v: "27 800", l: "conversations prospects gérées", s: "qualification et relances en autopilote" },
+  const clientResults = [
+    {
+      initials: "BH",
+      name: "Baptiste Hoguet",
+      role: "Agence de scaling",
+      linkedin: "https://www.linkedin.com/in/baptiste-hoguet-00a171336/",
+      quote: "J'obtiens 40 à 50 rendez-vous qualifiés par mois et je fais passer un cap de chiffre d'affaires aux entreprises que j'accompagne. Les rendez-vous sont ultra-qualifiés et doivent être des personnes faisant entre 3k€ et 30k€/mois.",
+      description: "Il permet aux entreprises qu'il accompagne de passer un cap de chiffre d'affaires grâce à des rendez-vous ultra-qualifiés.",
+      metrics: [
+        { value: "40–50", label: "RDV qualifiés", detail: "/ mois" },
+        { value: "+1 M€", label: "CA", detail: "/ an" },
+      ],
+    },
+    {
+      initials: "TB",
+      name: "Talel Ben Selma",
+      role: "Formateur setting & closing",
+      linkedin: "https://www.linkedin.com/in/talel-ben-selma-05ba02261/",
+      quote: "Je scale les boîtes tech et SaaS au-delà de 100k par mois, en partie associé avec Baptiste, j'obtiens 35 à 40 rendez-vous qualifiés par mois et j'installe même le système pour mes clients.",
+      description: "Au cœur de l'écosystème tech et SaaS, il a rendu son acquisition plus prévisible sans devoir tout gérer lui-même.",
+      metrics: [
+        { value: "100 k€+", label: "CA scalé", detail: "/ mois" },
+        { value: "35–40", label: "RDV qualifiés", detail: "/ mois" },
+      ],
+    },
   ];
   return (
     <section className="relative overflow-hidden py-24">
@@ -936,16 +956,71 @@ function MeasuredResults() {
             Des résultats <span className="gold-text">mesurés</span>, pas des promesses
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-white/65">
-            Chiffres réels extraits de notre plateforme de prospection (campagnes clients et campagnes internes confondues), mis à jour en septembre 2026.
+            Chiffres réels extraits de notre plateforme de prospection, mis à jour en septembre 2026.
           </p>
         </div>
-        <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-          {stats.map((x) => (
-            <div key={x.l} className="card-lift rounded-2xl border border-white/10 bg-white/[.02] p-7 text-center">
-              <div className="gold-text text-5xl font-bold tracking-tight">{x.v}</div>
-              <div className="mt-4 text-sm font-semibold leading-snug text-white/85">{x.l}</div>
-              <div className="mt-2 text-xs text-white/45">{x.s}</div>
+
+        <div className="mt-14 overflow-hidden rounded-lg border border-white/10 bg-white/[.02]">
+          <div className="flex flex-col gap-2 border-b border-white/10 px-6 py-5 font-mono text-xs text-white/50 sm:flex-row sm:items-center sm:justify-between sm:px-8">
+            <span>Campagne <strong className="text-white">Evo Incubator</strong> · infopreneurs à 5 000 $ minimum</span>
+            <span>30 jours · données réelles</span>
+          </div>
+          <div className="grid lg:grid-cols-[1.35fr_.65fr]">
+            <div className="border-b border-white/10 p-6 sm:p-8 lg:border-b-0 lg:border-r">
+              <div className="flex items-end justify-between gap-6">
+                <div>
+                  <div className="font-mono text-xs uppercase text-white/45">Demandes de connexion</div>
+                  <div className="gold-text mt-3 text-5xl font-bold sm:text-7xl">1 840</div>
+                </div>
+                <div className="pb-2 text-right text-xs text-white/45">sur un mois</div>
+              </div>
+              <div className="mt-7 h-2 overflow-hidden rounded-full bg-white/10">
+                <div className="h-full w-[92%] rounded-full bg-[color:var(--brand)]" />
+              </div>
+              <p className="mt-5 max-w-xl text-sm leading-6 text-white/55">
+                Prospection ciblée auprès d'infopreneurs réalisant au minimum 5 000 $, pilotée simultanément sur deux comptes LinkedIn.
+              </p>
             </div>
+            <div className="grid grid-cols-2 lg:grid-cols-1">
+              <div className="border-r border-white/10 p-6 lg:border-b lg:border-r-0 lg:p-8">
+                <div className="text-4xl font-bold text-white">2</div>
+                <div className="mt-2 text-sm text-white/50">comptes LinkedIn</div>
+              </div>
+              <div className="p-6 lg:p-8">
+                <div className="text-4xl font-bold text-white">5 000 $+</div>
+                <div className="mt-2 text-sm text-white/50">CA minimum ciblé</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div className="mt-6 grid gap-6 lg:grid-cols-2">
+          {clientResults.map((client) => (
+            <article key={client.name} className="overflow-hidden rounded-lg border border-white/10 bg-white/[.02]">
+              <div className="flex items-center gap-4 border-b border-white/10 p-6">
+                <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-[color:var(--brand)]/35 bg-[color:var(--brand)]/10 text-sm font-bold text-[color:var(--brand-light)]">
+                  {client.initials}
+                </div>
+                <div className="min-w-0 flex-1">
+                  <h3 className="font-bold text-white">{client.name}</h3>
+                  <p className="mt-0.5 text-xs text-white/45">{client.role}</p>
+                </div>
+                <a href={client.linkedin} target="_blank" rel="noopener noreferrer" aria-label={`Profil LinkedIn de ${client.name}`} className="text-[color:var(--brand-light)] transition-opacity hover:opacity-70">
+                  <Linkedin className="h-5 w-5" />
+                </a>
+              </div>
+              <blockquote className="px-6 pt-6 text-sm leading-7 text-white/80">“{client.quote}”</blockquote>
+              <p className="px-6 pt-4 text-xs leading-6 text-white/45">{client.description}</p>
+              <div className="mt-6 grid grid-cols-2 border-t border-white/10">
+                {client.metrics.map((metric, index) => (
+                  <div key={metric.label} className={`p-6 ${index === 0 ? "border-r border-white/10" : ""}`}>
+                    <div className="gold-text text-3xl font-bold sm:text-4xl">{metric.value}</div>
+                    <div className="mt-2 text-xs font-semibold uppercase text-white/70">{metric.label}</div>
+                    <div className="mt-1 text-xs text-white/40">{metric.detail}</div>
+                  </div>
+                ))}
+              </div>
+            </article>
           ))}
         </div>
         <div className="mt-12 text-center">
