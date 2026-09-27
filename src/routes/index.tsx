@@ -21,7 +21,7 @@ import {
 } from "lucide-react";
 import acquisitionEngineLogo from "@/assets/acquisition-engine-mark-transparent.png.asset.json";
 
-const CTA_URL = "https://app.iclosed.io/e/martinvision/session-decouverte";
+const CTA_URL = "https://app.iclosed.io/e/acquisitionengine/session-decouverte";
 const WHATSAPP_URL = "https://wa.me/33786663503";
 
 export const Route = createFileRoute("/")({
@@ -95,7 +95,6 @@ function Nav() {
           <a href="#comment" className="text-sm font-medium text-[color:var(--brand-light)]/80 hover:text-[color:var(--brand-light)] transition-colors duration-300">Comment ça marche</a>
           <a href="#comparaison" className="text-sm font-medium text-[color:var(--brand-light)]/80 hover:text-[color:var(--brand-light)] transition-colors duration-300">Comparaison</a>
           <a href="#calculateur" className="text-sm font-medium text-[color:var(--brand-light)]/80 hover:text-[color:var(--brand-light)] transition-colors duration-300">Calculateur</a>
-          <a href="#tarifs" className="text-sm font-medium text-[color:var(--brand-light)]/80 hover:text-[color:var(--brand-light)] transition-colors duration-300">Tarifs</a>
 
         </div>
         <div className="flex items-center gap-3">
@@ -859,7 +858,7 @@ function BookCall() {
           <div className="relative overflow-hidden rounded-2xl border border-[color:var(--brand)]/40 bg-[#0c0904]/90 shadow-[0_0_80px_-30px_var(--brand)]">
             <div
               className="iclosed-widget"
-              data-url="https://app.iclosed.io/e/martinvision/session-decouverte"
+              data-url="https://app.iclosed.io/e/acquisitionengine/session-decouverte"
               style={{ minWidth: "320px", width: "100%", height: "620px" }}
             />
           </div>
