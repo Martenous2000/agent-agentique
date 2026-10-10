@@ -86,7 +86,15 @@ function Nav() {
     <nav className="sticky top-0 z-50 border-b border-[color:var(--brand)]/15 bg-[#080603]/80 backdrop-blur-xl">
       <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
         <a href="#" className="flex min-w-0 items-center gap-3">
-          <img src={acquisitionEngineLogo.url} alt="" className="h-11 w-13 shrink-0 object-contain" />
+          <img
+            src={acquisitionEngineLogo.url}
+            alt="Logo Acquisition Engine"
+            className="h-12 w-auto shrink-0 object-contain"
+            style={{
+              filter:
+                "brightness(1.9) saturate(1.25) drop-shadow(0 0 12px color-mix(in srgb, var(--brand) 45%, transparent))",
+            }}
+          />
           <span className="truncate text-base font-bold tracking-tight sm:text-lg">
             Acquisition <span className="gold-text-shine">Engine™</span>
           </span>
