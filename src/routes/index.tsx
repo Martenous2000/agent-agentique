@@ -20,6 +20,7 @@ import {
   XIcon,
 } from "lucide-react";
 import acquisitionEngineLogo from "@/assets/acquisition-engine-mark-transparent.png.asset.json";
+import { cn } from "@/lib/utils";
 
 const CTA_URL = "https://app.iclosed.io/e/acquisitionengine/session-decouverte";
 const WHATSAPP_URL = "https://wa.me/33786663503";
@@ -67,7 +68,7 @@ function Cta({ children, variant = "primary", className = "" }: { children: Reac
       ? "btn-premium"
       : "border border-[color:var(--brand)]/30 bg-[color:var(--brand)]/[.06] text-[color:var(--brand-light)] hover:bg-[color:var(--brand)]/15 hover:border-[color:var(--brand)]/60 transition-all duration-300";
   return (
-    <a href={CTA_URL} target="_blank" rel="noopener noreferrer" className={`${base} ${styles} ${className}`}>
+    <a href={CTA_URL} target="_blank" rel="noopener noreferrer" className={cn(base, styles, className)}>
       {children}
     </a>
   );
@@ -86,7 +87,15 @@ function Nav() {
     <nav className="sticky top-0 z-50 border-b border-[color:var(--brand)]/15 bg-[#080603]/80 backdrop-blur-xl">
       <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
         <a href="#" className="flex min-w-0 items-center gap-3">
-          <img src={acquisitionEngineLogo.url} alt="" className="h-11 w-13 shrink-0 object-contain" />
+          <img
+            src={acquisitionEngineLogo.url}
+            alt="Logo Acquisition Engine"
+            className="h-12 w-auto shrink-0 object-contain"
+            style={{
+              filter:
+                "brightness(1.9) saturate(1.25) drop-shadow(0 0 12px color-mix(in srgb, var(--brand) 45%, transparent))",
+            }}
+          />
           <span className="truncate text-base font-bold tracking-tight sm:text-lg">
             Acquisition <span className="gold-text-shine">Engine™</span>
           </span>
