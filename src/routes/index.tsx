@@ -342,13 +342,15 @@ function Testimonials() {
     { c: "MR", n: "Myriam Renaud", r: "Closeuse indépendante, formation closing, France", color: "from-yellow-600 to-amber-800", linkedin: "https://www.linkedin.com/in/myriam-renaud-567563ba/", q: "Depuis janvier 2026, je génère 20 à 25 rdv qualifiés par mois sans toucher à quoi que ce soit. Mon taux de conversion dépasse 40%. Je me concentre uniquement sur les appels et la formation." },
     { c: "SL", n: "Samuel Lyon", r: "Infrastructure IA, France", color: "from-orange-500 to-amber-700", linkedin: "https://www.linkedin.com/in/samuel-lyon-b02465399/", q: "Parti de salarié dans la sécurité avec 0 rdv et 0 vente. Après 5 mois avec le système sur mon compte et celui de ma femme, on tourne à 35 à 40 rdv qualifiés par mois en continu." },
     { c: "BG", n: "Burdy Goureige", r: "Architecte solutions IA, secteur nettoyage, France", color: "from-yellow-500 to-amber-700", linkedin: "https://www.linkedin.com/in/burdy-goureige-0b15ab303/", q: "Il y a 2 semaines, j'ai signé un contrat à 8 000€ dans le nettoyage grâce au système. Je génère 20 rdv qualifiés par mois en automatique, sur une niche très ciblée où la prospection manuelle ne fonctionnait pas." },
+    { c: "FL", n: "Franck Lopez Correa", r: "Architecte en automatisation intelligente, optimisation des processus d'entreprise, France", color: "from-yellow-600 to-orange-800", linkedin: "https://www.linkedin.com/in/francklc/", q: "On voulait augmenter le nombre de rendez-vous sans augmenter proportionnellement le temps passé sur l'acquisition. En un peu plus d'un mois, on a obtenu 29 rendez-vous qualifiés. Avant, les résultats variaient énormément d'une semaine à l'autre. Aujourd'hui, on a une approche beaucoup plus régulière et on peut mieux anticiper les prochaines étapes de notre développement commercial." },
     { c: "TB", n: "Talel Ben Selma", r: "Formateur setting et closing, tech et SaaS, France", color: "from-amber-600 to-yellow-800", linkedin: "https://www.linkedin.com/in/talel-ben-selma-05ba02261/", q: "Je scale les boîtes tech et SaaS au-delà de 100K€ par mois. Le système me génère 35 à 40 rdv qualifiés par mois et je l'installe maintenant chez mes propres clients tellement il est fiable." },
     { c: "HA", n: "Henry Acolaste", r: "France", color: "from-orange-600 to-amber-900", linkedin: "https://www.linkedin.com/in/henry-acolatse/", q: "Le système a été installé il y a quelques jours. 6 rendez-vous en 4 jours, les conversations sont qualitatives. Je n'avais pas imaginé des résultats aussi rapides." },
     { c: "EV", n: "Enzo Vidiella", r: "Tech et digital, implantation Europe, France", color: "from-yellow-500 to-orange-700", linkedin: "https://www.linkedin.com/in/enzo-vidiella/", q: "Premier rdv le jour même de l'installation. 5 rdv en 2 jours. J'accompagne des SaaS sur leur implantation en France et je n'ai plus à penser à la prospection." },
+    { c: "MG", n: "Maxime Gervilla", r: "Consultant et expert en implémentation de solutions IA, France", color: "from-amber-400 to-yellow-700", linkedin: "https://www.linkedin.com/in/maxime-gervilla/", q: "Ce qui m'a surpris, c'est la vitesse à laquelle les premiers résultats sont arrivés. On a obtenu 5 rendez-vous en moins d'une semaine, avec des prospects qui correspondaient réellement à notre cible. Après un mois, on avait déjà plusieurs opportunités commerciales sérieuses." },
   ];
 
-  const rowA = reviews.slice(0, 4);
-  const rowB = reviews.slice(4);
+  const rowA = reviews.slice(0, 5);
+  const rowB = reviews.slice(5);
 
   return (
     <section className="relative overflow-hidden py-24">
@@ -386,7 +388,7 @@ function TestimonialRow({ items, duration, reverse }: { items: Testimonial[]; du
     >
       {doubled.map((r, idx) => (
         <div key={`${r.n}-${idx}`} className="mr-6 w-[340px] flex-shrink-0 md:w-[400px]">
-          <div className="card-lift border-flow-gold h-full rounded-2xl p-6">
+          <div className="card-lift border-flow-gold flex h-full flex-col rounded-2xl p-6">
             <div className="mb-4 flex items-center justify-between">
               <div className="flex gap-0.5 text-[color:var(--brand-light)]">
                 {[...Array(5)].map((_, i) => <Star key={i} className="h-4 w-4 fill-current" />)}
@@ -395,12 +397,12 @@ function TestimonialRow({ items, duration, reverse }: { items: Testimonial[]; du
                 Client vérifié
               </span>
             </div>
-            <p className="text-sm leading-relaxed text-white/85">"{r.q}"</p>
-            <div className="mt-6 flex items-center gap-3 border-t border-[color:var(--brand)]/10 pt-4">
+            <p className="flex-1 pb-6 text-sm leading-relaxed text-white/85">"{r.q}"</p>
+            <div className="mt-auto flex items-center gap-3 border-t border-[color:var(--brand)]/10 pt-4">
               <div className={`flex h-10 w-10 items-center justify-center rounded-full bg-gradient-to-br ${r.color} text-sm font-bold text-black/80`}>{r.c}</div>
               <div className="min-w-0 flex-1">
                 <div className="truncate font-semibold">{r.n}</div>
-                <div className="truncate text-xs text-white/50">{r.r}</div>
+                <div className="text-xs leading-snug text-white/50">{r.r}</div>
               </div>
               {r.linkedin && (
                 <a
