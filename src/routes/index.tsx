@@ -68,7 +68,7 @@ function Cta({ children, variant = "primary", className = "" }: { children: Reac
       ? "btn-premium"
       : "border border-[color:var(--brand)]/30 bg-[color:var(--brand)]/[.06] text-[color:var(--brand-light)] hover:bg-[color:var(--brand)]/15 hover:border-[color:var(--brand)]/60 transition-all duration-300";
   return (
-    <a href={CTA_URL} target="_blank" rel="noopener noreferrer" className={`${base} ${styles} ${className}`}>
+    <a href={CTA_URL} target="_blank" rel="noopener noreferrer" className={cn(base, styles, className)}>
       {children}
     </a>
   );
