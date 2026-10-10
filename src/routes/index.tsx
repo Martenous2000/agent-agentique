@@ -402,7 +402,7 @@ function TestimonialRow({ items, duration, reverse }: { items: Testimonial[]; du
               <div className={`flex h-10 w-10 items-center justify-center rounded-full bg-gradient-to-br ${r.color} text-sm font-bold text-black/80`}>{r.c}</div>
               <div className="min-w-0 flex-1">
                 <div className="truncate font-semibold">{r.n}</div>
-                <div className="truncate text-xs text-white/50">{r.r}</div>
+                <div className="text-xs leading-snug text-white/50">{r.r}</div>
               </div>
               {r.linkedin && (
                 <a
