@@ -20,6 +20,7 @@ import {
   XIcon,
 } from "lucide-react";
 import acquisitionEngineLogo from "@/assets/acquisition-engine-mark-transparent.png.asset.json";
+import { cn } from "@/lib/utils";
 
 const CTA_URL = "https://app.iclosed.io/e/acquisitionengine/session-decouverte";
 const WHATSAPP_URL = "https://wa.me/33786663503";
