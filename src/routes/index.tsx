@@ -20,6 +20,7 @@ import {
   XIcon,
 } from "lucide-react";
 import acquisitionEngineLogo from "@/assets/acquisition-engine-mark-transparent.png.asset.json";
+import acquisitionEngineBlueLogo from "@/assets/acquisition-engine-blue.png.asset.json";
 import { cn } from "@/lib/utils";
 
 const CTA_URL = "https://app.iclosed.io/e/acquisitionengine/session-decouverte";
@@ -88,13 +89,9 @@ function Nav() {
       <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
         <a href="#" className="flex min-w-0 items-center gap-3">
           <img
-            src={acquisitionEngineLogo.url}
+            src={acquisitionEngineBlueLogo.url}
             alt="Logo Acquisition Engine"
-            className="h-12 w-auto shrink-0 object-contain"
-            style={{
-              filter:
-                "brightness(1.9) saturate(1.25) drop-shadow(0 0 12px color-mix(in srgb, var(--brand) 45%, transparent))",
-            }}
+            className="h-10 w-[70px] shrink-0 object-contain sm:h-12 sm:w-[84px]"
           />
           <span className="truncate text-base font-bold tracking-tight sm:text-lg">
             Acquisition <span className="gold-text-shine">Engine™</span>
@@ -974,11 +971,11 @@ function MeasuredResults() {
         { initials: "TB", name: "Talel Ben Selma", linkedin: "https://www.linkedin.com/in/talel-ben-selma-05ba02261/" },
       ],
       role: "Associés · Agence de scaling, tech et SaaS",
-      quote: "Associés, nous obtenons 40 à 50 rendez-vous calibrés par mois sans rien faire, avec des infopreneurs à plus de 5 000 $ par mois de chiffre d'affaires, pour les faire scaler à plus de 100 000 $ par mois de CA.",
-      description: "Baptiste et Talel sont associés au sein d'Evo Incubator. Ensemble, ils accompagnent des infopreneurs réalisant plus de 5 000 $ par mois de CA et les font passer le cap des 100 000 $ par mois, sans toucher à la prospection.",
+      quote: "Associés, nous obtenons 40 à 50 rendez-vous calibrés par mois sans rien faire, avec des infopreneurs à plus de 5 000 € par mois de chiffre d'affaires, pour les faire scaler à plus de 100 000 € par mois de CA.",
+      description: "Baptiste et Talel sont associés au sein d'Evo Incubator. Ensemble, ils accompagnent des infopreneurs réalisant plus de 5 000 € par mois de CA et les font passer le cap des 100 000 € par mois, sans toucher à la prospection.",
       metrics: [
         { value: "40–50", label: "RDV calibrés", detail: "/ mois, sans rien faire" },
-        { value: "100 k$+", label: "CA scalé", detail: "/ mois pour leurs clients" },
+        { value: "100 k€+", label: "CA scalé", detail: "/ mois pour leurs clients" },
       ],
     },
     {
