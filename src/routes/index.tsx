@@ -217,7 +217,7 @@ function Hero() {
       <div className="relative mx-auto max-w-6xl px-6 pt-28 pb-20 text-center">
         <span className="animate-rise inline-flex items-center gap-2 rounded-full border border-[color:var(--brand)]/40 bg-[color:var(--brand)]/10 px-4 py-1.5 text-xs font-medium text-[color:var(--brand-light)] shadow-[0_0_25px_-8px_var(--brand)]">
           <span className="h-1.5 w-1.5 rounded-full bg-[color:var(--brand-light)] animate-blink" />
-          Offre de lancement : places limitées
+          Premier rendez-vous qualifié offert
         </span>
         <h1 className="animate-rise mt-8 text-5xl font-bold leading-[1.05] tracking-tight md:text-7xl" style={{ animationDelay: ".1s" }}>
           <span className="text-white">Le seul agent IA qui vous</span>
@@ -1076,7 +1076,7 @@ function MeasuredResults() {
 
         <div className="mt-14 overflow-hidden rounded-lg border border-white/10 bg-white/[.02]">
           <div className="flex flex-col gap-2 border-b border-white/10 px-6 py-5 font-mono text-xs text-white/50 sm:flex-row sm:items-center sm:justify-between sm:px-8">
-            <span>Campagne <strong className="text-white">Evo Incubator</strong> · infopreneurs à 5 000 $ minimum</span>
+            <span>Campagne <strong className="text-white">Evo Incubator</strong> · infopreneurs à 5&nbsp;000&nbsp;€ minimum</span>
             <span>30 jours · données réelles</span>
           </div>
           <div className="grid lg:grid-cols-[1.35fr_.65fr]">
@@ -1106,7 +1106,7 @@ function MeasuredResults() {
                 <div className="mt-2 text-sm text-white/50">comptes LinkedIn pilotés simultanément</div>
               </div>
               <div className="p-6 lg:p-8">
-                <div className="text-4xl font-bold text-white">5 000 $+</div>
+                <div className="text-4xl font-bold text-white">5&nbsp;000&nbsp;€+</div>
                 <div className="mt-2 text-sm text-white/50">CA minimum ciblé</div>
               </div>
             </div>
