@@ -1050,6 +1050,7 @@ function MeasuredResults() {
       name: "Samuel Lyon",
       role: "Entrepreneur, infrastructure IA",
       color: "from-amber-500 to-yellow-700",
+      linkedin: "https://www.linkedin.com/in/samuel-lyon-b02465399/",
       quote: "Je propose une infrastructure IA qui fait gagner un temps fou pour les grands cabinets sur la partie réseaux sociaux, facturation, devis, etc. Après 5 mois avec le système dans mon activité, j'obtiens 35 à 40 rendez-vous chaque mois en utilisant aussi le compte de ma femme en complémentarité du mien.",
       description: "Avec sa femme, Samuel développe une activité dans laquelle l'acquisition occupe une place importante. Plutôt que de limiter l'utilisation du système à sa propre prospection, il l'a intégré à leur organisation et permet également aux membres de son équipe d'en profiter. Une manière pour eux de structurer leur développement commercial autour d'une mécanique commune.",
       before: { label: "Avant", value: "Salarié", detail: "secteur sécurité" },
